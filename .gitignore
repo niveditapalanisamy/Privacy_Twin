@@ -3,3 +3,13 @@ __pycache__/
 *.pyc
 data/*.sqlite3
 .pytest_cache/
+node_modules/
+.next/
+*.tsbuildinfo
+.env*
+data/
+test-results*/
+playwright-report*/
+*.log
+web/next-env.d.ts
+web/AGENTS.md
