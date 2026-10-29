@@ -15,6 +15,7 @@ class FakeGemini:
         self.error = None
         self.wait = None
         self.started = threading.Event()
+        self.confidence = .99
 
     def key(self):
         return 'test-credential-never-export'
@@ -30,7 +31,7 @@ class FakeGemini:
         for f in fields:
             for scope in f['scopes']:
                 decisions.append(dict(field_id=f['field_id'], scope=scope, outcome='clear', selected_class=f['suggested'] if scope == 'classification' else None,
-                    confidence=.99, rationale='The supplied aggregate pattern supports this proposed decision.', suggestion='Verify ownership and intended use with the data owner.', evidence_ids=[e['evidence_id'] for e in f['evidence']]))
+                    confidence=self.confidence, rationale='The supplied aggregate pattern supports this proposed decision.', suggestion='Verify ownership and intended use with the data owner.', evidence_ids=[e['evidence_id'] for e in f['evidence']]))
         return dict(summary='Aggregate review completed for the supplied batch.', decisions=decisions), {'totalTokenCount': 42}
 
 
@@ -79,6 +80,26 @@ def test_automatic_review_validates_and_exports_provenance(rig):
     ai.decide(cls['id'], 'revoke')
     assert not service.state()['fields'][0]['reviews'].get('classification')
     assert ai.get(run['id'])['proposals'][0]['status'] == 'revoked'
+
+
+@pytest.mark.parametrize('confidence,expected', [(.7, 'applied'), (.699, 'pending')])
+def test_seventy_percent_threshold_is_inclusive_and_preserves_metadata_checks(rig, confidence, expected):
+    _, ai, provider, _ = rig
+    provider.confidence = confidence
+    run = wait_for(ai, ai.start(RunOptions(mode='automatic', confidence_threshold=.7))['id'])
+    classification = next(p for p in run['proposals'] if p['scope'] == 'classification')
+    metadata = next(p for p in run['proposals'] if p['scope'] == 'metadata')
+    assert run['options']['confidence_threshold'] == .7
+    assert classification['status'] == expected
+    assert metadata['status'] == 'pending'
+    assert metadata['payload']['decision']['outcome'] == 'unresolved'
+    assert metadata['payload']['decision']['validation_notes']
+
+
+def test_threshold_below_seventy_percent_is_rejected():
+    from pydantic import ValidationError
+    with pytest.raises(ValidationError):
+        RunOptions(confidence_threshold=.699)
 
 
 def test_draft_reject_and_changed_snapshot_block_application(rig):

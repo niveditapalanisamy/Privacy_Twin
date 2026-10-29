@@ -201,6 +201,24 @@ export type Configuration = {
   checklist: string[];
 };
 export type Evaluation = {
+  baseline_method?: string;
+  baselines?: {
+    name: string;
+    policy_id: string;
+    macro_f1: number | null;
+    cases: number;
+    abstentions: number;
+    stress_errors: number;
+    stress_cases: number;
+    metrics: {
+      label: string;
+      precision: number;
+      recall: number;
+      f1: number;
+      support: number;
+      predicted: number;
+    }[];
+  }[];
   id: string;
   policy_id: string;
   created_at: string;

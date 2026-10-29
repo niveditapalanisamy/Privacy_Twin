@@ -66,6 +66,16 @@ class AIAction(StrictModel):
     action: str
 
 
+class SensitivityIn(StrictModel):
+    snapshot_id: str
+    disabled_groups: list[str] = Field(default_factory=list, max_length=3)
+    without_checksums: bool = False
+
+
+class ChallengeIn(StrictModel):
+    scenario: str = "all"
+
+
 def create_app(db_path=None):
     @asynccontextmanager
     async def lifespan(application):
@@ -143,6 +153,25 @@ def create_app(db_path=None):
     @app.get("/api/fields/{field_id}")
     def detail(field_id: str):
         return service.detail(field_id)
+
+    @app.post("/api/fields/{field_id}/sensitivity")
+    def experiment(field_id: str, body: SensitivityIn):
+        from core.engine import sensitivity
+        detail = service.detail(field_id)
+        snapshot = next((s for s in detail["snapshots"] if s["id"] == body.snapshot_id), None)
+        if snapshot is None:
+            raise ValueError("Select an available snapshot for this field")
+        return sensitivity(snapshot["payload"], body.disabled_groups, body.without_checksums) | {"snapshot_id": snapshot["id"]}
+
+    @app.get("/api/challenge")
+    def challenge_options():
+        from core.challenge import SCENARIOS
+        return {"scenarios": SCENARIOS}
+
+    @app.post("/api/challenge")
+    def challenge(body: ChallengeIn):
+        from core.challenge import run_challenge
+        return run_challenge(body.scenario)
 
     @app.post("/api/sources")
     def register(name: str = Form(...), kind: str = Form(...), file: UploadFile = File(...)):

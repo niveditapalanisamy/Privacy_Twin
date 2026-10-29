@@ -1,0 +1,55 @@
+{
+  "initial": {
+    "rows": 20,
+    "fields": 4,
+    "metadata_gaps": 20,
+    "ready": 0,
+    "columns": [
+      {
+        "field": "age",
+        "candidate": "Demographic",
+        "score": 0.7,
+        "non_empty": 20,
+        "distinct": 20
+      },
+      {
+        "field": "email",
+        "candidate": "Contact",
+        "score": 0.7,
+        "non_empty": 20,
+        "distinct": 20
+      },
+      {
+        "field": "employee_id",
+        "candidate": "Identity",
+        "score": 0.7,
+        "non_empty": 20,
+        "distinct": 20
+      },
+      {
+        "field": "postal_code",
+        "candidate": "Location",
+        "score": 0.7,
+        "non_empty": 20,
+        "distinct": 2
+      }
+    ]
+  },
+  "after_metadata": {
+    "metadata_gaps": 0,
+    "ready_before_reviews": 0
+  },
+  "after_all_clear_reviews": {
+    "ready": 4,
+    "metadata_gaps": 0
+  },
+  "after_replacement": {
+    "employee_id_candidate": "Contact",
+    "employee_id_score": 0.5,
+    "classification_state": "reopened",
+    "metadata_state": "current",
+    "reopened": 1,
+    "ready": 3,
+    "metadata_gaps": 0
+  }
+}

@@ -1,0 +1,190 @@
+.proof-intro {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 20px 24px;
+  background: #f1eefb;
+  border-radius: 14px;
+  margin: 0 0 18px;
+}
+.challenge-panel > :not(.panel-heading),
+.experiment-panel > :not(.panel-heading) {
+  margin-left: 24px;
+  margin-right: 24px;
+}
+.challenge-panel .challenge-results,
+.experiment-panel .experiment-results {
+  padding-bottom: 24px;
+}
+.challenge-panel td:last-child {
+  white-space: normal;
+  min-width: 240px;
+  max-width: 440px;
+  line-height: 1.7;
+}
+.proof-intro > svg {
+  flex-shrink: 0;
+  color: #6650d8;
+}
+.proof-intro p {
+  margin: 0;
+  line-height: 1.75;
+  max-width: 950px;
+}
+.proof-controls {
+  display: flex;
+  align-items: flex-end;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+.proof-controls label {
+  display: grid;
+  gap: 8px;
+  flex: 1;
+  max-width: 600px;
+  font-size: 13px;
+  font-weight: 600;
+}
+.proof-controls select {
+  width: 100%;
+  min-width: 0;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: white;
+  color: var(--ink);
+}
+.proof-note {
+  font-size: 12px;
+  line-height: 1.7;
+  color: var(--muted);
+  margin: 14px 0;
+}
+.proof-stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin: 22px 0;
+}
+.proof-stats > div {
+  padding: 18px;
+  border-radius: 12px;
+  background: #f6f4fc;
+  display: grid;
+  gap: 8px;
+}
+.proof-stats strong {
+  font-size: 28px;
+  color: #503bb9;
+}
+.proof-stats span {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+.challenge-case {
+  padding: 16px 0;
+  border-top: 1px solid var(--line);
+}
+.challenge-case > summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  cursor: pointer;
+  font-weight: 600;
+}
+.challenge-case p {
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--muted);
+}
+.proof-json {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  max-width: 550px;
+  font-size: 11px;
+  padding: 12px;
+  background: #f5f3fa;
+}
+.signal-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+.signal-controls label {
+  display: flex;
+  gap: 9px;
+  align-items: center;
+  padding: 12px 16px;
+  background: #f4f1fb;
+  border-radius: 10px;
+  font-size: 13px;
+}
+.signal-controls input {
+  accent-color: #6650d8;
+  width: 17px;
+  height: 17px;
+}
+.proof-comparison {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin: 20px 0;
+}
+.proof-comparison > div {
+  display: grid;
+  gap: 10px;
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+.proof-comparison span {
+  font-size: 12px;
+  color: var(--muted);
+}
+.proof-comparison strong {
+  font-size: 24px;
+}
+.story-strip {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  gap: 20px;
+  padding: 24px;
+  border: 1px solid #d9d0ef;
+  border-radius: 18px;
+  background: linear-gradient(110deg, #ece7fb, #effaf6);
+  margin-bottom: 24px;
+}
+.story-strip strong {
+  display: block;
+  font-size: 17px;
+  margin-bottom: 8px;
+  color: var(--ink);
+}
+.story-strip p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.7;
+}
+@media (max-width: 700px) {
+  .proof-stats {
+    grid-template-columns: 1fr 1fr;
+  }
+  .proof-comparison,
+  .story-strip {
+    grid-template-columns: 1fr;
+  }
+  .proof-intro {
+    padding: 16px;
+    align-items: flex-start;
+  }
+  .proof-controls > button {
+    width: 100%;
+  }
+  .challenge-case > summary {
+    align-items: flex-start;
+  }
+}

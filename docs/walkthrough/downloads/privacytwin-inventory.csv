@@ -1,0 +1,5 @@
+field_id,source,table,field,suggested,ambiguous,availability,classification,metadata,gaps
+69efce3f-1f99-5daa-996b-ffc8722b151f,Learning walkthrough,csv,age,Demographic,False,present,current,current,0
+d88ef004-3c9c-5152-939d-0b821c114396,Learning walkthrough,csv,email,Contact,False,present,current,current,0
+a2420ad6-7430-5e21-9005-a794e09599f5,Learning walkthrough,csv,employee_id,Contact,False,present,reopened,current,0
+1becdddc-bf22-5c37-b3c8-3a84465a7917,Learning walkthrough,csv,postal_code,Location,False,present,current,current,0

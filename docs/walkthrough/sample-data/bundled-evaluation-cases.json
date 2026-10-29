@@ -1,0 +1,21 @@
+[
+ {"field":"contact","values":["one@example.test","two@example.test","three@example.test"],"expected":"Contact"},
+ {"field":"mobile","values":["9876543210","+91 9123456789"],"expected":"Contact"},
+ {"field":"employee_id","values":["EMP-4040","EMP-5050"],"expected":"Identity"},
+ {"field":"account_id","values":["ACC-1000","ACC-1001"],"expected":"Identity"},
+ {"field":"pin_code","values":["600001","560001"],"expected":"Location"},
+ {"field":"postal","values":["110001","400001"],"expected":"Location"},
+ {"field":"pan","values":["ABCPD1234E","AAAPA1234A"],"expected":"Official ID"},
+ {"field":"registration","values":["27AAPFU0939F1ZV"],"expected":"Official ID"},
+ {"field":"dob","values":["1994-04-16","1982-12-20"],"expected":"Demographic"},
+ {"field":"age","values":["28","45","60"],"expected":"Demographic"},
+ {"field":"description","values":["blue item","green item"],"expected":null},
+ {"field":"empty","values":["","",null],"expected":null},
+ {"field":"email","values":["EMP-1000","EMP-2000"],"expected":"Identity","stress":true},
+ {"field":"loyalty_id","values":["9876543210","9123456789"],"expected":"Contact","stress":true},
+ {"field":"branch_ifsc","values":["SBIN0001234","HDFC0001234"],"expected":null,"stress":true},
+ {"field":"phone","values":["not a phone","9123456789 extra"],"expected":null,"stress":true},
+ {"field":"dob","values":["1990-99-99","unknown"],"expected":null,"stress":true},
+ {"field":"opaque_registration","values":["27AAPFU0939F1Z0","27AAPFU0939F1Z0"],"expected":null,"stress":true},
+ {"field":"opaque_reference","values":["234567890123","234567890123"],"expected":null,"stress":true}
+]

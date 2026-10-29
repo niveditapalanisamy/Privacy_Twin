@@ -1,0 +1,426 @@
+{
+  "id": "b25bf4c3-7c88-4a3f-8240-587225f49327",
+  "created_at": "2026-10-29T16:50:19.155+00:00",
+  "policy_id": "72a1cecd0026f75612ef6f3835e5c95fceeebc5ca9d786ba69f4f95baf3991b9",
+  "fixture_digest": "5d16b2274fa68498b1dac3c0e57389b54763aa718562d62a2acc6d4370f3dc33",
+  "suite": "Bundled synthetic regression set",
+  "independent_heldout": false,
+  "limitations": "This is a reproducible regression benchmark, not an independent held-out accuracy claim. Abstentions count as false negatives for supported classes; stress cases are separate.",
+  "metrics": [
+    {
+      "label": "Identity",
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 2,
+      "predicted": 2
+    },
+    {
+      "label": "Contact",
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 2,
+      "predicted": 2
+    },
+    {
+      "label": "Location",
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 2,
+      "predicted": 2
+    },
+    {
+      "label": "Official ID",
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 2,
+      "predicted": 2
+    },
+    {
+      "label": "Demographic",
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 2,
+      "predicted": 2
+    }
+  ],
+  "macro_f1": 1.0,
+  "cases": 12,
+  "abstentions": 2,
+  "stress_cases": 7,
+  "stress_errors": 0,
+  "results": [
+    {
+      "field": "contact",
+      "expected": "Contact",
+      "predicted": "Contact",
+      "ambiguous": false,
+      "mixed": false,
+      "stress": false
+    },
+    {
+      "field": "mobile",
+      "expected": "Contact",
+      "predicted": "Contact",
+      "ambiguous": false,
+      "mixed": false,
+      "stress": false
+    },
+    {
+      "field": "employee_id",
+      "expected": "Identity",
+      "predicted": "Identity",
+      "ambiguous": false,
+      "mixed": false,
+      "stress": false
+    },
+    {
+      "field": "account_id",
+      "expected": "Identity",
+      "predicted": "Identity",
+      "ambiguous": false,
+      "mixed": false,
+      "stress": false
+    },
+    {
+      "field": "pin_code",
+      "expected": "Location",
+      "predicted": "Location",
+      "ambiguous": false,
+      "mixed": false,
+      "stress": false
+    },
+    {
+      "field": "postal",
+      "expected": "Location",
+      "predicted": "Location",
+      "ambiguous": false,
+      "mixed": false,
+      "stress": false
+    },
+    {
+      "field": "pan",
+      "expected": "Official ID",
+      "predicted": "Official ID",
+      "ambiguous": false,
+      "mixed": false,
+      "stress": false
+    },
+    {
+      "field": "registration",
+      "expected": "Official ID",
+      "predicted": "Official ID",
+      "ambiguous": false,
+      "mixed": false,
+      "stress": false
+    },
+    {
+      "field": "dob",
+      "expected": "Demographic",
+      "predicted": "Demographic",
+      "ambiguous": false,
+      "mixed": false,
+      "stress": false
+    },
+    {
+      "field": "age",
+      "expected": "Demographic",
+      "predicted": "Demographic",
+      "ambiguous": false,
+      "mixed": false,
+      "stress": false
+    },
+    {
+      "field": "description",
+      "expected": null,
+      "predicted": null,
+      "ambiguous": false,
+      "mixed": false,
+      "stress": false
+    },
+    {
+      "field": "empty",
+      "expected": null,
+      "predicted": null,
+      "ambiguous": false,
+      "mixed": false,
+      "stress": false
+    },
+    {
+      "field": "email",
+      "expected": "Identity",
+      "predicted": "Identity",
+      "ambiguous": false,
+      "mixed": false,
+      "stress": true
+    },
+    {
+      "field": "loyalty_id",
+      "expected": "Contact",
+      "predicted": "Contact",
+      "ambiguous": false,
+      "mixed": false,
+      "stress": true
+    },
+    {
+      "field": "branch_ifsc",
+      "expected": null,
+      "predicted": null,
+      "ambiguous": false,
+      "mixed": false,
+      "stress": true
+    },
+    {
+      "field": "phone",
+      "expected": null,
+      "predicted": null,
+      "ambiguous": false,
+      "mixed": false,
+      "stress": true
+    },
+    {
+      "field": "dob",
+      "expected": null,
+      "predicted": null,
+      "ambiguous": false,
+      "mixed": false,
+      "stress": true
+    },
+    {
+      "field": "opaque_registration",
+      "expected": null,
+      "predicted": null,
+      "ambiguous": false,
+      "mixed": false,
+      "stress": true
+    },
+    {
+      "field": "opaque_reference",
+      "expected": null,
+      "predicted": null,
+      "ambiguous": false,
+      "mixed": false,
+      "stress": true
+    }
+  ],
+  "replay": [
+    {
+      "case": "Value-pattern change",
+      "scope": "classification",
+      "expected_reopen": true,
+      "actual_reopen": true,
+      "passed": true
+    },
+    {
+      "case": "Value-pattern change",
+      "scope": "metadata",
+      "expected_reopen": false,
+      "actual_reopen": false,
+      "passed": true
+    },
+    {
+      "case": "Metadata-only change",
+      "scope": "classification",
+      "expected_reopen": false,
+      "actual_reopen": false,
+      "passed": true
+    },
+    {
+      "case": "Metadata-only change",
+      "scope": "metadata",
+      "expected_reopen": true,
+      "actual_reopen": true,
+      "passed": true
+    },
+    {
+      "case": "Identical rescan",
+      "scope": "classification",
+      "expected_reopen": false,
+      "actual_reopen": false,
+      "passed": true
+    },
+    {
+      "case": "Identical rescan",
+      "scope": "metadata",
+      "expected_reopen": false,
+      "actual_reopen": false,
+      "passed": true
+    }
+  ],
+  "baselines": [
+    {
+      "name": "Header rules",
+      "policy_id": "a0f5809ffeda547bc4e60ac974bd09a4751c838991efb175830ab884672900b8",
+      "metrics": [
+        {
+          "label": "Identity",
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 2,
+          "predicted": 2
+        },
+        {
+          "label": "Contact",
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 2,
+          "predicted": 2
+        },
+        {
+          "label": "Location",
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 2,
+          "predicted": 2
+        },
+        {
+          "label": "Official ID",
+          "precision": 1.0,
+          "recall": 0.5,
+          "f1": 0.6666666666666666,
+          "support": 2,
+          "predicted": 1
+        },
+        {
+          "label": "Demographic",
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 2,
+          "predicted": 2
+        }
+      ],
+      "cases": 12,
+      "macro_f1": 0.9333333333333333,
+      "abstentions": 3,
+      "stress_errors": 4,
+      "stress_cases": 7
+    },
+    {
+      "name": "Headers + patterns",
+      "policy_id": "6b1b0fae58d77b270ff909725fb4889a3235fa0279ecb66cd08c3d530015bc9e",
+      "metrics": [
+        {
+          "label": "Identity",
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 2,
+          "predicted": 2
+        },
+        {
+          "label": "Contact",
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 2,
+          "predicted": 2
+        },
+        {
+          "label": "Location",
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 2,
+          "predicted": 2
+        },
+        {
+          "label": "Official ID",
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 2,
+          "predicted": 2
+        },
+        {
+          "label": "Demographic",
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 2,
+          "predicted": 2
+        }
+      ],
+      "cases": 12,
+      "macro_f1": 1.0,
+      "abstentions": 2,
+      "stress_errors": 2,
+      "stress_cases": 7
+    },
+    {
+      "name": "Full validation",
+      "policy_id": "72a1cecd0026f75612ef6f3835e5c95fceeebc5ca9d786ba69f4f95baf3991b9",
+      "metrics": [
+        {
+          "label": "Identity",
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 2,
+          "predicted": 2
+        },
+        {
+          "label": "Contact",
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 2,
+          "predicted": 2
+        },
+        {
+          "label": "Location",
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 2,
+          "predicted": 2
+        },
+        {
+          "label": "Official ID",
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 2,
+          "predicted": 2
+        },
+        {
+          "label": "Demographic",
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 2,
+          "predicted": 2
+        }
+      ],
+      "cases": 12,
+      "macro_f1": 1.0,
+      "abstentions": 2,
+      "stress_errors": 0,
+      "stress_cases": 7
+    }
+  ],
+  "baseline_method": "Same cases and acceptance threshold. Header-only assigns weight 1 to headers; the pattern variant removes only Aadhaar/GSTIN checksums. Full validation uses the saved configuration. Stress cases stay separate. No improvement is assumed.",
+  "scope_metrics": [
+    {
+      "scope": "classification",
+      "correct": 3,
+      "total": 3,
+      "false_reopenings": 0,
+      "missed_reopenings": 0
+    },
+    {
+      "scope": "metadata",
+      "correct": 3,
+      "total": 3,
+      "false_reopenings": 0,
+      "missed_reopenings": 0
+    }
+  ]
+}

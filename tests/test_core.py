@@ -306,7 +306,7 @@ def test_export_references_and_immutability(service):
 def test_measured_evaluation_and_custom_labels(service):
     assert service.state()['evaluation'] is None
     report=evaluate(service)
-    assert report['cases']==12 and report['stress_cases']==5
+    assert report['cases']==12 and report['stress_cases']==7
     assert all(r['passed'] for r in report['replay'])
     assert report['independent_heldout'] is False
     custom=evaluate(service,[{'field':'email','values':['one@example.test'],'expected':'Identity'}])

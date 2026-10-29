@@ -15,5 +15,7 @@
  {"field":"loyalty_id","values":["9876543210","9123456789"],"expected":"Contact","stress":true},
  {"field":"branch_ifsc","values":["SBIN0001234","HDFC0001234"],"expected":null,"stress":true},
  {"field":"phone","values":["not a phone","9123456789 extra"],"expected":null,"stress":true},
- {"field":"dob","values":["1990-99-99","unknown"],"expected":null,"stress":true}
+ {"field":"dob","values":["1990-99-99","unknown"],"expected":null,"stress":true},
+ {"field":"opaque_registration","values":["27AAPFU0939F1Z0","27AAPFU0939F1Z0"],"expected":null,"stress":true},
+ {"field":"opaque_reference","values":["234567890123","234567890123"],"expected":null,"stress":true}
 ]

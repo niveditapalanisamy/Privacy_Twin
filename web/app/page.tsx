@@ -51,6 +51,7 @@ import {
 import DetailView from "./field-view";
 import SettingsView from "./settings-view";
 import ExportsView from "./exports-view";
+import ReviewChallenge from "./review-challenge";
 
 const navigation = steps.map((s) => ({
   id: s.id,
@@ -947,6 +948,26 @@ function Sources({
           </Button>
         }
       />
+      <div className="story-strip">
+        <div>
+          <strong>Find personal data. Keep its evidence current.</strong>
+          <p>
+            Scan CSV and SQLite sources, inspect the evidence, and record human
+            decisions.
+          </p>
+        </div>
+        <div>
+          <strong>Two questions, two reviews</strong>
+          <p>What is this field? Is its purpose and retention documented?</p>
+        </div>
+        <div>
+          <strong>When evidence changes</strong>
+          <p>
+            ReviewGuard reopens affected decisions and explains why. Try the
+            challenge in Changes.
+          </p>
+        </div>
+      </div>
       <div className="source-intake">
         <section
           className={`dropzone ${drag ? "dragging" : ""}`}
@@ -1167,6 +1188,7 @@ function Changes({
   return (
     <>
       <Hero title="Change history" />
+      <ReviewChallenge />
       <div className="change-counters">
         <div>
           <span className="counter-symbol amber">

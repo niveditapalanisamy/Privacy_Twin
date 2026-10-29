@@ -1,0 +1,273 @@
+{
+  "scopes": [
+    "classification",
+    "metadata"
+  ],
+  "fields": [
+    {
+      "ambiguous": false,
+      "candidates": [
+        {
+          "contributions": {
+            "declared_context": 0,
+            "name_hint": 0.2,
+            "value_format": 0.25
+          },
+          "label": "Contact",
+          "score": 0.45
+        }
+      ],
+      "evidence": [
+        {
+          "candidate_class": "Contact",
+          "evidence_id": "ev:value:email",
+          "group": "value_format",
+          "matches": 10,
+          "pass_rate": 0.5,
+          "sampled_non_null": 20,
+          "strength": 0.5
+        },
+        {
+          "candidate_class": "Contact",
+          "evidence_id": "ev:header:email",
+          "group": "name_hint",
+          "strength": 1
+        },
+        {
+          "candidate_class": "Contact",
+          "evidence_id": "ev:value:phone_in",
+          "group": "value_format",
+          "matches": 10,
+          "pass_rate": 0.5,
+          "sampled_non_null": 20,
+          "strength": 0.5
+        },
+        {
+          "candidate_class": "Contact",
+          "evidence_id": "ev:header:phone_in",
+          "group": "name_hint",
+          "strength": 1
+        }
+      ],
+      "field_id": "cc2bb685-dea1-53db-bc0d-c7ee41dc6b31",
+      "insufficient": false,
+      "metadata": [
+        {
+          "key": "purpose",
+          "reason": "Not declared",
+          "revision": 0,
+          "status": "missing"
+        },
+        {
+          "key": "retention",
+          "reason": "Not declared",
+          "revision": 0,
+          "status": "missing"
+        },
+        {
+          "key": "retention_start_trigger",
+          "reason": "Not declared",
+          "revision": 0,
+          "status": "missing"
+        },
+        {
+          "key": "owner",
+          "reason": "Not declared",
+          "revision": 0,
+          "status": "missing"
+        },
+        {
+          "key": "provenance",
+          "reason": "Not declared",
+          "revision": 0,
+          "status": "missing"
+        }
+      ],
+      "mixed": true,
+      "profile": {
+        "distinct_count": 20,
+        "max_length": 19,
+        "min_length": 10,
+        "non_null": 20,
+        "null_count": 0,
+        "null_rate": 0,
+        "rows": 20,
+        "shapes": {
+          "mixed": 10,
+          "numeric": 10
+        }
+      },
+      "scopes": [
+        "classification",
+        "metadata"
+      ],
+      "suggested": "Contact"
+    },
+    {
+      "ambiguous": false,
+      "candidates": [
+        {
+          "contributions": {
+            "declared_context": 0,
+            "name_hint": 0.2,
+            "value_format": 0.5
+          },
+          "label": "Contact",
+          "score": 0.7
+        }
+      ],
+      "evidence": [
+        {
+          "candidate_class": "Contact",
+          "evidence_id": "ev:value:email",
+          "group": "value_format",
+          "matches": 20,
+          "pass_rate": 1,
+          "sampled_non_null": 20,
+          "strength": 1
+        },
+        {
+          "candidate_class": "Contact",
+          "evidence_id": "ev:header:email",
+          "group": "name_hint",
+          "strength": 1
+        }
+      ],
+      "field_id": "0a353108-f238-5a08-b938-ffeea21e299e",
+      "insufficient": false,
+      "metadata": [
+        {
+          "key": "purpose",
+          "reason": "Not declared",
+          "revision": 0,
+          "status": "missing"
+        },
+        {
+          "key": "retention",
+          "reason": "Not declared",
+          "revision": 0,
+          "status": "missing"
+        },
+        {
+          "key": "retention_start_trigger",
+          "reason": "Not declared",
+          "revision": 0,
+          "status": "missing"
+        },
+        {
+          "key": "owner",
+          "reason": "Not declared",
+          "revision": 0,
+          "status": "missing"
+        },
+        {
+          "key": "provenance",
+          "reason": "Not declared",
+          "revision": 0,
+          "status": "missing"
+        }
+      ],
+      "mixed": false,
+      "profile": {
+        "distinct_count": 20,
+        "max_length": 21,
+        "min_length": 21,
+        "non_null": 20,
+        "null_count": 0,
+        "null_rate": 0,
+        "rows": 20,
+        "shapes": {
+          "mixed": 20
+        }
+      },
+      "scopes": [
+        "classification",
+        "metadata"
+      ],
+      "suggested": "Contact"
+    },
+    {
+      "ambiguous": false,
+      "candidates": [
+        {
+          "contributions": {
+            "declared_context": 0,
+            "name_hint": 0.2,
+            "value_format": 0.5
+          },
+          "label": "Identity",
+          "score": 0.7
+        }
+      ],
+      "evidence": [
+        {
+          "candidate_class": "Identity",
+          "evidence_id": "ev:value:internal_id",
+          "group": "value_format",
+          "matches": 20,
+          "pass_rate": 1,
+          "sampled_non_null": 20,
+          "strength": 1
+        },
+        {
+          "candidate_class": "Identity",
+          "evidence_id": "ev:header:internal_id",
+          "group": "name_hint",
+          "strength": 1
+        }
+      ],
+      "field_id": "446dcfa2-e1c6-5e6f-946c-b6a16a49538f",
+      "insufficient": false,
+      "metadata": [
+        {
+          "key": "purpose",
+          "reason": "Not declared",
+          "revision": 0,
+          "status": "missing"
+        },
+        {
+          "key": "retention",
+          "reason": "Not declared",
+          "revision": 0,
+          "status": "missing"
+        },
+        {
+          "key": "retention_start_trigger",
+          "reason": "Not declared",
+          "revision": 0,
+          "status": "missing"
+        },
+        {
+          "key": "owner",
+          "reason": "Not declared",
+          "revision": 0,
+          "status": "missing"
+        },
+        {
+          "key": "provenance",
+          "reason": "Not declared",
+          "revision": 0,
+          "status": "missing"
+        }
+      ],
+      "mixed": false,
+      "profile": {
+        "distinct_count": 20,
+        "max_length": 8,
+        "min_length": 8,
+        "non_null": 20,
+        "null_count": 0,
+        "null_rate": 0,
+        "rows": 20,
+        "shapes": {
+          "mixed": 20
+        }
+      },
+      "scopes": [
+        "classification",
+        "metadata"
+      ],
+      "suggested": "Identity"
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "generated_at": "2026-10-29T17:25:32.384Z",
+  "provider": "Actual Google Gemini API",
+  "simulated": false,
+  "external_provider_calls_requested": 1,
+  "confidence_threshold": 0.7,
+  "model": "gemini-3.1-flash-lite",
+  "workspace_id": "b1ca20be-992b-447c-b8f7-f7ac590985b0",
+  "source": "Synthetic live AI learning source",
+  "steps": [
+    {
+      "id": "01-input",
+      "title": "Choose the synthetic input",
+      "explanation": "Twenty synthetic records contain three fields: email, employee_id and a mixed contact_value. No owner purpose or retention is declared. The source file stays local; the provider receives aggregate evidence instead of these rows.",
+      "observed": "Input selected; the source has not yet been registered.",
+      "screenshot": "screenshots/01-input.png"
+    },
+    {
+      "id": "02-before-ai",
+      "title": "The deterministic scanner runs first",
+      "explanation": "The ordinary scanner calculates candidate classes and evidence before any AI call. The mixed contact_value contains both email and mobile-shaped values. All three fields still need reviews and declared metadata.",
+      "observed": "3 scanned fields; 15 missing metadata items; no saved reviews.",
+      "screenshot": "screenshots/02-before-ai.png"
+    },
+    {
+      "id": "03-options",
+      "title": "Configure this review at 70%",
+      "explanation": "For this requested review, automatic mode allows locally validated clear proposals at or above 70% model confidence to apply. Both scopes are requested for three fields. Mixed evidence and missing metadata still require unresolved outcomes. Field-name sharing is off.",
+      "observed": "Actual Gemini API; maximum 3 fields; classification and metadata; confidence threshold 70% inclusive; field names off.",
+      "screenshot": "screenshots/03-options.png"
+    },
+    {
+      "id": "04-started",
+      "title": "The server sends the aggregate evidence",
+      "explanation": "The server freezes the selected evidence, snapshot references and review scopes. The real provider is called by the background worker. There is no simulated response or browser-route fixture in this capture.",
+      "observed": "Run 9bc769ec-a6ad-4492-90c4-21c02a002087; 3 fields requested. The screenshot records the state at capture time.",
+      "screenshot": "screenshots/04-started.png"
+    },
+    {
+      "id": "05-provider-error",
+      "title": "The real provider did not complete the run",
+      "explanation": "This is the actual failure/quota state. No fabricated proposals are substituted and no automatic fallback is used. Progress remains saved. This capture makes no automatic retry.",
+      "observed": "Gemini could not be reached or returned an unreadable response. Resume this run later.",
+      "screenshot": "screenshots/05-provider-error.png"
+    }
+  ],
+  "browser_errors": [],
+  "before": {
+    "fields": 3,
+    "metadata_gaps": 15,
+    "reviews": 0
+  },
+  "run_id": "9bc769ec-a6ad-4492-90c4-21c02a002087",
+  "provider_result": {
+    "id": "9bc769ec-a6ad-4492-90c4-21c02a002087",
+    "status": "failed",
+    "processed": 0,
+    "error": "Gemini could not be reached or returned an unreadable response. Resume this run later.",
+    "created_at": "2026-10-29T17:25:36.127+00:00",
+    "options": {
+      "confidence_threshold": 0.7,
+      "max_fields": 3,
+      "mode": "automatic",
+      "scopes": [
+        "classification",
+        "metadata"
+      ],
+      "share_field_names": false,
+      "source_id": "b1b03738-fe77-4201-b970-0b0c89d5f9ee"
+    },
+    "total": 3,
+    "summaries": [],
+    "usage": {},
+    "model": "gemini-3.1-flash-lite",
+    "proposals": []
+  },
+  "outcome": "provider_did_not_complete"
+}

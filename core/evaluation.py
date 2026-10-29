@@ -10,6 +10,44 @@ from .storage import now
 CASES = Path(__file__).resolve().parent.parent / "evaluation" / "cases.json"
 
 
+def class_metrics(results):
+    metrics = []
+    for family in CLASSES:
+        tp = sum(r["predicted"] == family and r["expected"] == family for r in results)
+        fp = sum(r["predicted"] == family and r["expected"] != family for r in results)
+        fn = sum(r["predicted"] != family and r["expected"] == family for r in results)
+        support = sum(r["expected"] == family for r in results)
+        precision = tp/(tp+fp) if tp+fp else 0
+        recall = tp/(tp+fn) if tp+fn else 0
+        f1 = 2*precision*recall/(precision+recall) if precision+recall else 0
+        metrics.append(dict(label=family, precision=precision, recall=recall, f1=f1, support=support, predicted=tp+fp))
+    return metrics
+
+
+def baseline_comparison(cases, config):
+    variants = []
+    for name in ("Header rules", "Headers + patterns", "Full validation"):
+        policy = copy.deepcopy(config)
+        if name == "Header rules":
+            policy["weights"] = dict(name_hint=1.0, value_format=0.0, declared_context=0.0)
+            for rule in policy["rules"]:
+                rule["pattern"] = ""
+        elif name == "Headers + patterns":
+            for rule in policy["rules"]:
+                if rule["check"] in ("verhoeff", "gstin"):
+                    rule["check"] = ""
+        results = [dict(expected=c["expected"], predicted=analyze(c["field"], c["values"], policy)["suggested"], stress=bool(c.get("stress"))) for c in cases]
+        headline = [r for r in results if not r["stress"]]
+        metrics = class_metrics(headline)
+        supported = [m for m in metrics if m["support"]]
+        variants.append(dict(name=name, policy_id=digest(policy), metrics=metrics, cases=len(headline),
+                             macro_f1=sum(m["f1"] for m in supported)/len(supported) if supported else None,
+                             abstentions=sum(r["predicted"] is None for r in headline),
+                             stress_errors=sum(r["predicted"] != r["expected"] for r in results if r["stress"]),
+                             stress_cases=sum(r["stress"] for r in results)))
+    return variants
+
+
 def evaluate(service, cases=None):
     with service.store.connection() as c:
         policy_id, config = service.store.config(c)
@@ -28,16 +66,7 @@ def evaluate(service, cases=None):
         result = analyze(case["field"], case["values"], config)
         results.append(dict(field=case["field"], expected=case["expected"], predicted=result["suggested"], ambiguous=result["ambiguous"], mixed=result["mixed"], stress=bool(case.get("stress"))))
     headline = [r for r in results if not r["stress"]]
-    metrics = []
-    for family in CLASSES:
-        tp = sum(r["predicted"] == family and r["expected"] == family for r in headline)
-        fp = sum(r["predicted"] == family and r["expected"] != family for r in headline)
-        fn = sum(r["predicted"] != family and r["expected"] == family for r in headline)
-        support = sum(r["expected"] == family for r in headline)
-        precision = tp/(tp+fp) if tp+fp else 0
-        recall = tp/(tp+fn) if tp+fn else 0
-        f1 = 2*precision*recall/(precision+recall) if precision+recall else 0
-        metrics.append(dict(label=family, precision=precision, recall=recall, f1=f1, support=support, predicted=tp+fp))
+    metrics = class_metrics(headline)
     declaration = dict(purpose="Synthetic account operations", retention_duration=3, retention_unit="years", retention_start_trigger="", owner="Demo owner", provenance="Synthetic fixture", meaning="")
     base = analyze("loyalty_id", [f"LOY-{1000+i}" for i in range(50)], config)
     changed = analyze("loyalty_id", [f"910000{i:04d}" if i < 40 else f"LOY-{1000+i}" for i in range(50)], config)
@@ -58,7 +87,8 @@ def evaluate(service, cases=None):
                   metrics=metrics, macro_f1=sum(m["f1"] for m in supported)/len(supported) if supported else None,
                   cases=len(headline), abstentions=sum(r["predicted"] is None for r in headline),
                   stress_cases=sum(r["stress"] for r in results), stress_errors=sum(r["predicted"] != r["expected"] for r in results if r["stress"]),
-                  results=results, replay=replay,
+                  results=results, replay=replay, baselines=baseline_comparison(cases, config),
+                  baseline_method="Same cases and acceptance threshold. Header-only assigns weight 1 to headers; the pattern variant removes only Aadhaar/GSTIN checksums. Full validation uses the saved configuration. Stress cases stay separate. No improvement is assumed.",
                   scope_metrics=[dict(scope=s, correct=sum(r["passed"] for r in replay if r["scope"]==s), total=sum(r["scope"]==s for r in replay),
                                       false_reopenings=sum(r["actual_reopen"] and not r["expected_reopen"] for r in replay if r["scope"]==s),
                                       missed_reopenings=sum(not r["actual_reopen"] and r["expected_reopen"] for r in replay if r["scope"]==s)) for s in ("classification", "metadata")])

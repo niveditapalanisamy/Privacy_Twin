@@ -1,0 +1,814 @@
+{
+  "format_version": "2.0",
+  "generated_at": "2026-10-29T17:08:54.513+00:00",
+  "workspace_id": "c4113ff3-bfec-464c-85fe-a768599ff87e",
+  "reviews": [
+    {
+      "id": "7c092565-c6b6-49b1-a351-fe0b5becf9eb",
+      "field_id": "a2420ad6-7430-5e21-9005-a794e09599f5",
+      "scope": "classification",
+      "outcome": "clear",
+      "selected_class": "Identity",
+      "rationale": "I inspected the observed value patterns, their counts and the synthetic employee context.",
+      "reviewer": "Learning demo reviewer",
+      "snapshot_id": "0d5ee504-a25f-4e92-b8bb-6b9d1348c4ef",
+      "declaration_id": null,
+      "dependencies": {
+        "ambiguous": false,
+        "candidates": [
+          "Identity"
+        ],
+        "evidence": {
+          "ev:value:internal_id": {
+            "matches": 20,
+            "pass_rate": 1.0,
+            "sampled_non_null": 20
+          }
+        },
+        "insufficient": false,
+        "materiality": {
+          "minimum_denominator": 10,
+          "rate_delta": 0.1
+        },
+        "meaning": null,
+        "mixed": false,
+        "rules": {
+          "internal_id": "27042e2be4f49c8b1b2e4b27cd9cb635fba215f425cb054df9afc4ad031760e3"
+        },
+        "sampling": {
+          "id": "full-scan-v1",
+          "null_policy": "empty or whitespace only",
+          "order_independent": true
+        },
+        "scoring": {
+          "acceptance": 0.25,
+          "near_tie": 0.12,
+          "weights": {
+            "declared_context": 0.3,
+            "name_hint": 0.2,
+            "value_format": 0.5
+          }
+        },
+        "selected_evidence": [
+          "ev:value:internal_id",
+          "ev:header:internal_id"
+        ],
+        "suggested": "Identity"
+      },
+      "relies_on_meaning": 0,
+      "state": "reopened",
+      "created_at": "2026-10-29T17:08:32.042+00:00"
+    },
+    {
+      "id": "5cb06a12-89a9-4f30-8ef4-3f6fa1a30e04",
+      "field_id": "a2420ad6-7430-5e21-9005-a794e09599f5",
+      "scope": "metadata",
+      "outcome": "unresolved",
+      "selected_class": null,
+      "rationale": "The purpose and retention are missing; owner clarification is still required.",
+      "reviewer": "Learning demo reviewer",
+      "snapshot_id": "0d5ee504-a25f-4e92-b8bb-6b9d1348c4ef",
+      "declaration_id": null,
+      "dependencies": {
+        "checklist": [
+          "owner",
+          "provenance",
+          "purpose",
+          "retention",
+          "retention_start_trigger"
+        ],
+        "declaration": {
+          "meaning": "",
+          "owner": "",
+          "provenance": "",
+          "purpose": "",
+          "retention_duration": null,
+          "retention_start_trigger": "",
+          "retention_unit": ""
+        },
+        "resolver": "field-complete-override-v1",
+        "selected_evidence": [
+          "ev:value:internal_id",
+          "ev:header:internal_id"
+        ]
+      },
+      "relies_on_meaning": 0,
+      "state": "superseded",
+      "created_at": "2026-10-29T17:08:32.468+00:00"
+    },
+    {
+      "id": "8b8728ea-5c97-46bb-bd73-a11ba536d1f1",
+      "field_id": "a2420ad6-7430-5e21-9005-a794e09599f5",
+      "scope": "metadata",
+      "outcome": "clear",
+      "selected_class": null,
+      "rationale": "I reviewed the owner-supplied synthetic purpose, retention trigger and provenance.",
+      "reviewer": "Learning demo reviewer",
+      "snapshot_id": "0d5ee504-a25f-4e92-b8bb-6b9d1348c4ef",
+      "declaration_id": "d1c698e3-8516-4699-8940-47f79eda0208",
+      "dependencies": {
+        "checklist": [
+          "owner",
+          "provenance",
+          "purpose",
+          "retention",
+          "retention_start_trigger"
+        ],
+        "declaration": {
+          "meaning": "",
+          "owner": "Synthetic People Operations",
+          "provenance": "Synthetic owner statement v1 for this walkthrough",
+          "purpose": "Maintain the synthetic employee directory",
+          "retention_duration": 2,
+          "retention_start_trigger": "End of employment",
+          "retention_unit": "years"
+        },
+        "resolver": "field-complete-override-v1",
+        "selected_evidence": [
+          "ev:value:internal_id",
+          "ev:header:internal_id"
+        ]
+      },
+      "relies_on_meaning": 0,
+      "state": "current",
+      "created_at": "2026-10-29T17:08:36.478+00:00"
+    },
+    {
+      "id": "589fa85a-a31a-4557-919a-778ee929d6ff",
+      "field_id": "d88ef004-3c9c-5152-939d-0b821c114396",
+      "scope": "classification",
+      "outcome": "clear",
+      "selected_class": "Contact",
+      "rationale": "I inspected the observed value patterns, their counts and the synthetic employee context.",
+      "reviewer": "Learning demo reviewer",
+      "snapshot_id": "680f9375-f2a9-45af-bcf4-14e87da147af",
+      "declaration_id": "d1c698e3-8516-4699-8940-47f79eda0208",
+      "dependencies": {
+        "ambiguous": false,
+        "candidates": [
+          "Contact"
+        ],
+        "evidence": {
+          "ev:value:email": {
+            "matches": 20,
+            "pass_rate": 1.0,
+            "sampled_non_null": 20
+          }
+        },
+        "insufficient": false,
+        "materiality": {
+          "minimum_denominator": 10,
+          "rate_delta": 0.1
+        },
+        "meaning": null,
+        "mixed": false,
+        "rules": {
+          "email": "f7003ca9ada627a42bd277a3a5751cec88dde6b3552703b3057d26de9d2b376f"
+        },
+        "sampling": {
+          "id": "full-scan-v1",
+          "null_policy": "empty or whitespace only",
+          "order_independent": true
+        },
+        "scoring": {
+          "acceptance": 0.25,
+          "near_tie": 0.12,
+          "weights": {
+            "declared_context": 0.3,
+            "name_hint": 0.2,
+            "value_format": 0.5
+          }
+        },
+        "selected_evidence": [
+          "ev:value:email",
+          "ev:header:email"
+        ],
+        "suggested": "Contact"
+      },
+      "relies_on_meaning": 0,
+      "state": "current",
+      "created_at": "2026-10-29T17:08:38.107+00:00"
+    },
+    {
+      "id": "dad5a415-8f27-4c23-a350-d00f18e6a5d9",
+      "field_id": "d88ef004-3c9c-5152-939d-0b821c114396",
+      "scope": "metadata",
+      "outcome": "clear",
+      "selected_class": null,
+      "rationale": "I reviewed the owner-supplied synthetic purpose, retention trigger and provenance.",
+      "reviewer": "Learning demo reviewer",
+      "snapshot_id": "680f9375-f2a9-45af-bcf4-14e87da147af",
+      "declaration_id": "d1c698e3-8516-4699-8940-47f79eda0208",
+      "dependencies": {
+        "checklist": [
+          "owner",
+          "provenance",
+          "purpose",
+          "retention",
+          "retention_start_trigger"
+        ],
+        "declaration": {
+          "meaning": "",
+          "owner": "Synthetic People Operations",
+          "provenance": "Synthetic owner statement v1 for this walkthrough",
+          "purpose": "Maintain the synthetic employee directory",
+          "retention_duration": 2,
+          "retention_start_trigger": "End of employment",
+          "retention_unit": "years"
+        },
+        "resolver": "field-complete-override-v1",
+        "selected_evidence": [
+          "ev:value:email",
+          "ev:header:email"
+        ]
+      },
+      "relies_on_meaning": 0,
+      "state": "current",
+      "created_at": "2026-10-29T17:08:38.458+00:00"
+    },
+    {
+      "id": "f9cc53bc-4171-4fe4-9853-367b635eb395",
+      "field_id": "1becdddc-bf22-5c37-b3c8-3a84465a7917",
+      "scope": "classification",
+      "outcome": "clear",
+      "selected_class": "Location",
+      "rationale": "I inspected the observed value patterns, their counts and the synthetic employee context.",
+      "reviewer": "Learning demo reviewer",
+      "snapshot_id": "a99b083b-615f-4cdc-a5de-744ce637f306",
+      "declaration_id": "d1c698e3-8516-4699-8940-47f79eda0208",
+      "dependencies": {
+        "ambiguous": false,
+        "candidates": [
+          "Location"
+        ],
+        "evidence": {
+          "ev:value:postal_in": {
+            "matches": 20,
+            "pass_rate": 1.0,
+            "sampled_non_null": 20
+          }
+        },
+        "insufficient": false,
+        "materiality": {
+          "minimum_denominator": 10,
+          "rate_delta": 0.1
+        },
+        "meaning": null,
+        "mixed": false,
+        "rules": {
+          "postal_in": "e3b11033b49d1efb325006ad6a1cbfb9482bbc62cafe3e77844ddcd13a11cc32"
+        },
+        "sampling": {
+          "id": "full-scan-v1",
+          "null_policy": "empty or whitespace only",
+          "order_independent": true
+        },
+        "scoring": {
+          "acceptance": 0.25,
+          "near_tie": 0.12,
+          "weights": {
+            "declared_context": 0.3,
+            "name_hint": 0.2,
+            "value_format": 0.5
+          }
+        },
+        "selected_evidence": [
+          "ev:value:postal_in",
+          "ev:header:postal_in"
+        ],
+        "suggested": "Location"
+      },
+      "relies_on_meaning": 0,
+      "state": "current",
+      "created_at": "2026-10-29T17:08:40.090+00:00"
+    },
+    {
+      "id": "1cbfcb61-ac84-43a3-ba73-bd4a318e9ac0",
+      "field_id": "1becdddc-bf22-5c37-b3c8-3a84465a7917",
+      "scope": "metadata",
+      "outcome": "clear",
+      "selected_class": null,
+      "rationale": "I reviewed the owner-supplied synthetic purpose, retention trigger and provenance.",
+      "reviewer": "Learning demo reviewer",
+      "snapshot_id": "a99b083b-615f-4cdc-a5de-744ce637f306",
+      "declaration_id": "d1c698e3-8516-4699-8940-47f79eda0208",
+      "dependencies": {
+        "checklist": [
+          "owner",
+          "provenance",
+          "purpose",
+          "retention",
+          "retention_start_trigger"
+        ],
+        "declaration": {
+          "meaning": "",
+          "owner": "Synthetic People Operations",
+          "provenance": "Synthetic owner statement v1 for this walkthrough",
+          "purpose": "Maintain the synthetic employee directory",
+          "retention_duration": 2,
+          "retention_start_trigger": "End of employment",
+          "retention_unit": "years"
+        },
+        "resolver": "field-complete-override-v1",
+        "selected_evidence": [
+          "ev:value:postal_in",
+          "ev:header:postal_in"
+        ]
+      },
+      "relies_on_meaning": 0,
+      "state": "current",
+      "created_at": "2026-10-29T17:08:40.494+00:00"
+    },
+    {
+      "id": "e891b2e6-2986-4671-a06e-ce923c83e441",
+      "field_id": "69efce3f-1f99-5daa-996b-ffc8722b151f",
+      "scope": "classification",
+      "outcome": "clear",
+      "selected_class": "Demographic",
+      "rationale": "I inspected the observed value patterns, their counts and the synthetic employee context.",
+      "reviewer": "Learning demo reviewer",
+      "snapshot_id": "ef37b741-9c92-4ea3-8a0a-534e6f59e126",
+      "declaration_id": "d1c698e3-8516-4699-8940-47f79eda0208",
+      "dependencies": {
+        "ambiguous": false,
+        "candidates": [
+          "Demographic"
+        ],
+        "evidence": {
+          "ev:value:age": {
+            "matches": 20,
+            "pass_rate": 1.0,
+            "sampled_non_null": 20
+          }
+        },
+        "insufficient": false,
+        "materiality": {
+          "minimum_denominator": 10,
+          "rate_delta": 0.1
+        },
+        "meaning": null,
+        "mixed": false,
+        "rules": {
+          "age": "36f3d777b2993f456ed146a088610a11dad3f03bb81e33d9940e9616c6cfcb1a"
+        },
+        "sampling": {
+          "id": "full-scan-v1",
+          "null_policy": "empty or whitespace only",
+          "order_independent": true
+        },
+        "scoring": {
+          "acceptance": 0.25,
+          "near_tie": 0.12,
+          "weights": {
+            "declared_context": 0.3,
+            "name_hint": 0.2,
+            "value_format": 0.5
+          }
+        },
+        "selected_evidence": [
+          "ev:value:age",
+          "ev:header:age"
+        ],
+        "suggested": "Demographic"
+      },
+      "relies_on_meaning": 0,
+      "state": "current",
+      "created_at": "2026-10-29T17:08:42.192+00:00"
+    },
+    {
+      "id": "98814d0d-a3d3-4a9b-b72e-a0911960e94f",
+      "field_id": "69efce3f-1f99-5daa-996b-ffc8722b151f",
+      "scope": "metadata",
+      "outcome": "clear",
+      "selected_class": null,
+      "rationale": "I reviewed the owner-supplied synthetic purpose, retention trigger and provenance.",
+      "reviewer": "Learning demo reviewer",
+      "snapshot_id": "ef37b741-9c92-4ea3-8a0a-534e6f59e126",
+      "declaration_id": "d1c698e3-8516-4699-8940-47f79eda0208",
+      "dependencies": {
+        "checklist": [
+          "owner",
+          "provenance",
+          "purpose",
+          "retention",
+          "retention_start_trigger"
+        ],
+        "declaration": {
+          "meaning": "",
+          "owner": "Synthetic People Operations",
+          "provenance": "Synthetic owner statement v1 for this walkthrough",
+          "purpose": "Maintain the synthetic employee directory",
+          "retention_duration": 2,
+          "retention_start_trigger": "End of employment",
+          "retention_unit": "years"
+        },
+        "resolver": "field-complete-override-v1",
+        "selected_evidence": [
+          "ev:value:age",
+          "ev:header:age"
+        ]
+      },
+      "relies_on_meaning": 0,
+      "state": "current",
+      "created_at": "2026-10-29T17:08:42.590+00:00"
+    }
+  ],
+  "events": [
+    {
+      "id": 1,
+      "field_id": null,
+      "review_id": null,
+      "scan_id": "2f334b44-867b-48f5-a32c-c780eecfd3e0",
+      "type": "scan_committed",
+      "scope": null,
+      "before_state": null,
+      "after_state": null,
+      "reason": "Scanned 20 rows and 4 fields",
+      "comparisons": [],
+      "created_at": "2026-10-29T17:08:28.500+00:00"
+    },
+    {
+      "id": 2,
+      "field_id": "a2420ad6-7430-5e21-9005-a794e09599f5",
+      "review_id": "7c092565-c6b6-49b1-a351-fe0b5becf9eb",
+      "scan_id": "2f334b44-867b-48f5-a32c-c780eecfd3e0",
+      "type": "review_saved",
+      "scope": "classification",
+      "before_state": null,
+      "after_state": "current",
+      "reason": "I inspected the observed value patterns, their counts and the synthetic employee context.",
+      "comparisons": [],
+      "created_at": "2026-10-29T17:08:32.042+00:00"
+    },
+    {
+      "id": 3,
+      "field_id": "a2420ad6-7430-5e21-9005-a794e09599f5",
+      "review_id": "5cb06a12-89a9-4f30-8ef4-3f6fa1a30e04",
+      "scan_id": "2f334b44-867b-48f5-a32c-c780eecfd3e0",
+      "type": "review_saved",
+      "scope": "metadata",
+      "before_state": null,
+      "after_state": "current",
+      "reason": "The purpose and retention are missing; owner clarification is still required.",
+      "comparisons": [],
+      "created_at": "2026-10-29T17:08:32.468+00:00"
+    },
+    {
+      "id": 4,
+      "field_id": "a2420ad6-7430-5e21-9005-a794e09599f5",
+      "review_id": "7c092565-c6b6-49b1-a351-fe0b5becf9eb",
+      "scan_id": null,
+      "type": "preserved",
+      "scope": "classification",
+      "before_state": "current",
+      "after_state": "current",
+      "reason": "Review dependencies unchanged",
+      "comparisons": [],
+      "created_at": "2026-10-29T17:08:34.293+00:00"
+    },
+    {
+      "id": 5,
+      "field_id": "a2420ad6-7430-5e21-9005-a794e09599f5",
+      "review_id": "5cb06a12-89a9-4f30-8ef4-3f6fa1a30e04",
+      "scan_id": null,
+      "type": "reopened",
+      "scope": "metadata",
+      "before_state": "current",
+      "after_state": "reopened",
+      "reason": "Declared owner changed; Declared provenance changed; Declared purpose changed; Declared retention duration changed; Declared retention start trigger changed; Declared retention unit changed",
+      "comparisons": [
+        {
+          "after": "Synthetic People Operations",
+          "before": "",
+          "dependency": "owner",
+          "material": true,
+          "reason": "Declared owner changed"
+        },
+        {
+          "after": "Synthetic owner statement v1 for this walkthrough",
+          "before": "",
+          "dependency": "provenance",
+          "material": true,
+          "reason": "Declared provenance changed"
+        },
+        {
+          "after": "Maintain the synthetic employee directory",
+          "before": "",
+          "dependency": "purpose",
+          "material": true,
+          "reason": "Declared purpose changed"
+        },
+        {
+          "after": 2,
+          "before": null,
+          "dependency": "retention_duration",
+          "material": true,
+          "reason": "Declared retention duration changed"
+        },
+        {
+          "after": "End of employment",
+          "before": "",
+          "dependency": "retention_start_trigger",
+          "material": true,
+          "reason": "Declared retention start trigger changed"
+        },
+        {
+          "after": "years",
+          "before": "",
+          "dependency": "retention_unit",
+          "material": true,
+          "reason": "Declared retention unit changed"
+        }
+      ],
+      "created_at": "2026-10-29T17:08:34.293+00:00"
+    },
+    {
+      "id": 6,
+      "field_id": "a2420ad6-7430-5e21-9005-a794e09599f5",
+      "review_id": null,
+      "scan_id": null,
+      "type": "declaration_saved",
+      "scope": null,
+      "before_state": null,
+      "after_state": null,
+      "reason": "Saved table declaration revision 1",
+      "comparisons": [],
+      "created_at": "2026-10-29T17:08:34.293+00:00"
+    },
+    {
+      "id": 7,
+      "field_id": "a2420ad6-7430-5e21-9005-a794e09599f5",
+      "review_id": "5cb06a12-89a9-4f30-8ef4-3f6fa1a30e04",
+      "scan_id": null,
+      "type": "superseded",
+      "scope": "metadata",
+      "before_state": "reopened",
+      "after_state": "superseded",
+      "reason": "Replaced by a new review decision",
+      "comparisons": [],
+      "created_at": "2026-10-29T17:08:36.478+00:00"
+    },
+    {
+      "id": 8,
+      "field_id": "a2420ad6-7430-5e21-9005-a794e09599f5",
+      "review_id": "8b8728ea-5c97-46bb-bd73-a11ba536d1f1",
+      "scan_id": "2f334b44-867b-48f5-a32c-c780eecfd3e0",
+      "type": "review_saved",
+      "scope": "metadata",
+      "before_state": null,
+      "after_state": "current",
+      "reason": "I reviewed the owner-supplied synthetic purpose, retention trigger and provenance.",
+      "comparisons": [],
+      "created_at": "2026-10-29T17:08:36.478+00:00"
+    },
+    {
+      "id": 9,
+      "field_id": "d88ef004-3c9c-5152-939d-0b821c114396",
+      "review_id": "589fa85a-a31a-4557-919a-778ee929d6ff",
+      "scan_id": "2f334b44-867b-48f5-a32c-c780eecfd3e0",
+      "type": "review_saved",
+      "scope": "classification",
+      "before_state": null,
+      "after_state": "current",
+      "reason": "I inspected the observed value patterns, their counts and the synthetic employee context.",
+      "comparisons": [],
+      "created_at": "2026-10-29T17:08:38.107+00:00"
+    },
+    {
+      "id": 10,
+      "field_id": "d88ef004-3c9c-5152-939d-0b821c114396",
+      "review_id": "dad5a415-8f27-4c23-a350-d00f18e6a5d9",
+      "scan_id": "2f334b44-867b-48f5-a32c-c780eecfd3e0",
+      "type": "review_saved",
+      "scope": "metadata",
+      "before_state": null,
+      "after_state": "current",
+      "reason": "I reviewed the owner-supplied synthetic purpose, retention trigger and provenance.",
+      "comparisons": [],
+      "created_at": "2026-10-29T17:08:38.458+00:00"
+    },
+    {
+      "id": 11,
+      "field_id": "1becdddc-bf22-5c37-b3c8-3a84465a7917",
+      "review_id": "f9cc53bc-4171-4fe4-9853-367b635eb395",
+      "scan_id": "2f334b44-867b-48f5-a32c-c780eecfd3e0",
+      "type": "review_saved",
+      "scope": "classification",
+      "before_state": null,
+      "after_state": "current",
+      "reason": "I inspected the observed value patterns, their counts and the synthetic employee context.",
+      "comparisons": [],
+      "created_at": "2026-10-29T17:08:40.090+00:00"
+    },
+    {
+      "id": 12,
+      "field_id": "1becdddc-bf22-5c37-b3c8-3a84465a7917",
+      "review_id": "1cbfcb61-ac84-43a3-ba73-bd4a318e9ac0",
+      "scan_id": "2f334b44-867b-48f5-a32c-c780eecfd3e0",
+      "type": "review_saved",
+      "scope": "metadata",
+      "before_state": null,
+      "after_state": "current",
+      "reason": "I reviewed the owner-supplied synthetic purpose, retention trigger and provenance.",
+      "comparisons": [],
+      "created_at": "2026-10-29T17:08:40.494+00:00"
+    },
+    {
+      "id": 13,
+      "field_id": "69efce3f-1f99-5daa-996b-ffc8722b151f",
+      "review_id": "e891b2e6-2986-4671-a06e-ce923c83e441",
+      "scan_id": "2f334b44-867b-48f5-a32c-c780eecfd3e0",
+      "type": "review_saved",
+      "scope": "classification",
+      "before_state": null,
+      "after_state": "current",
+      "reason": "I inspected the observed value patterns, their counts and the synthetic employee context.",
+      "comparisons": [],
+      "created_at": "2026-10-29T17:08:42.192+00:00"
+    },
+    {
+      "id": 14,
+      "field_id": "69efce3f-1f99-5daa-996b-ffc8722b151f",
+      "review_id": "98814d0d-a3d3-4a9b-b72e-a0911960e94f",
+      "scan_id": "2f334b44-867b-48f5-a32c-c780eecfd3e0",
+      "type": "review_saved",
+      "scope": "metadata",
+      "before_state": null,
+      "after_state": "current",
+      "reason": "I reviewed the owner-supplied synthetic purpose, retention trigger and provenance.",
+      "comparisons": [],
+      "created_at": "2026-10-29T17:08:42.590+00:00"
+    },
+    {
+      "id": 15,
+      "field_id": "a2420ad6-7430-5e21-9005-a794e09599f5",
+      "review_id": "7c092565-c6b6-49b1-a351-fe0b5becf9eb",
+      "scan_id": "5a4734f6-fb4f-4c7b-b378-d47dc4fce2aa",
+      "type": "reopened",
+      "scope": "classification",
+      "before_state": "current",
+      "after_state": "reopened",
+      "reason": "Suggested changed; Candidates changed; Rules changed; Value-pattern evidence appeared or disappeared; Value-pattern evidence appeared or disappeared",
+      "comparisons": [
+        {
+          "after": "Contact",
+          "before": "Identity",
+          "dependency": "suggested",
+          "material": true,
+          "reason": "Suggested changed"
+        },
+        {
+          "after": [
+            "Contact",
+            "Identity"
+          ],
+          "before": [
+            "Identity"
+          ],
+          "dependency": "candidates",
+          "material": true,
+          "reason": "Candidates changed"
+        },
+        {
+          "after": {
+            "internal_id": "27042e2be4f49c8b1b2e4b27cd9cb635fba215f425cb054df9afc4ad031760e3",
+            "phone_in": "b0c2fceac6fb6a8e4a550e5ba3d59cadb2c909d76a64ccd85c2387c6253b355a"
+          },
+          "before": {
+            "internal_id": "27042e2be4f49c8b1b2e4b27cd9cb635fba215f425cb054df9afc4ad031760e3"
+          },
+          "dependency": "rules",
+          "material": true,
+          "reason": "Rules changed"
+        },
+        {
+          "after": null,
+          "before": {
+            "matches": 20,
+            "pass_rate": 1.0,
+            "sampled_non_null": 20
+          },
+          "dependency": "ev:value:internal_id",
+          "material": true,
+          "reason": "Value-pattern evidence appeared or disappeared"
+        },
+        {
+          "after": {
+            "matches": 20,
+            "pass_rate": 1.0,
+            "sampled_non_null": 20
+          },
+          "before": null,
+          "dependency": "ev:value:phone_in",
+          "material": true,
+          "reason": "Value-pattern evidence appeared or disappeared"
+        }
+      ],
+      "created_at": "2026-10-29T17:08:44.377+00:00"
+    },
+    {
+      "id": 16,
+      "field_id": "a2420ad6-7430-5e21-9005-a794e09599f5",
+      "review_id": "8b8728ea-5c97-46bb-bd73-a11ba536d1f1",
+      "scan_id": "5a4734f6-fb4f-4c7b-b378-d47dc4fce2aa",
+      "type": "preserved",
+      "scope": "metadata",
+      "before_state": "current",
+      "after_state": "current",
+      "reason": "Review dependencies unchanged",
+      "comparisons": [],
+      "created_at": "2026-10-29T17:08:44.377+00:00"
+    },
+    {
+      "id": 17,
+      "field_id": "d88ef004-3c9c-5152-939d-0b821c114396",
+      "review_id": "589fa85a-a31a-4557-919a-778ee929d6ff",
+      "scan_id": "5a4734f6-fb4f-4c7b-b378-d47dc4fce2aa",
+      "type": "preserved",
+      "scope": "classification",
+      "before_state": "current",
+      "after_state": "current",
+      "reason": "Review dependencies unchanged",
+      "comparisons": [],
+      "created_at": "2026-10-29T17:08:44.377+00:00"
+    },
+    {
+      "id": 18,
+      "field_id": "d88ef004-3c9c-5152-939d-0b821c114396",
+      "review_id": "dad5a415-8f27-4c23-a350-d00f18e6a5d9",
+      "scan_id": "5a4734f6-fb4f-4c7b-b378-d47dc4fce2aa",
+      "type": "preserved",
+      "scope": "metadata",
+      "before_state": "current",
+      "after_state": "current",
+      "reason": "Review dependencies unchanged",
+      "comparisons": [],
+      "created_at": "2026-10-29T17:08:44.377+00:00"
+    },
+    {
+      "id": 19,
+      "field_id": "1becdddc-bf22-5c37-b3c8-3a84465a7917",
+      "review_id": "f9cc53bc-4171-4fe4-9853-367b635eb395",
+      "scan_id": "5a4734f6-fb4f-4c7b-b378-d47dc4fce2aa",
+      "type": "preserved",
+      "scope": "classification",
+      "before_state": "current",
+      "after_state": "current",
+      "reason": "Review dependencies unchanged",
+      "comparisons": [],
+      "created_at": "2026-10-29T17:08:44.377+00:00"
+    },
+    {
+      "id": 20,
+      "field_id": "1becdddc-bf22-5c37-b3c8-3a84465a7917",
+      "review_id": "1cbfcb61-ac84-43a3-ba73-bd4a318e9ac0",
+      "scan_id": "5a4734f6-fb4f-4c7b-b378-d47dc4fce2aa",
+      "type": "preserved",
+      "scope": "metadata",
+      "before_state": "current",
+      "after_state": "current",
+      "reason": "Review dependencies unchanged",
+      "comparisons": [],
+      "created_at": "2026-10-29T17:08:44.377+00:00"
+    },
+    {
+      "id": 21,
+      "field_id": "69efce3f-1f99-5daa-996b-ffc8722b151f",
+      "review_id": "e891b2e6-2986-4671-a06e-ce923c83e441",
+      "scan_id": "5a4734f6-fb4f-4c7b-b378-d47dc4fce2aa",
+      "type": "preserved",
+      "scope": "classification",
+      "before_state": "current",
+      "after_state": "current",
+      "reason": "Review dependencies unchanged",
+      "comparisons": [],
+      "created_at": "2026-10-29T17:08:44.378+00:00"
+    },
+    {
+      "id": 22,
+      "field_id": "69efce3f-1f99-5daa-996b-ffc8722b151f",
+      "review_id": "98814d0d-a3d3-4a9b-b72e-a0911960e94f",
+      "scan_id": "5a4734f6-fb4f-4c7b-b378-d47dc4fce2aa",
+      "type": "preserved",
+      "scope": "metadata",
+      "before_state": "current",
+      "after_state": "current",
+      "reason": "Review dependencies unchanged",
+      "comparisons": [],
+      "created_at": "2026-10-29T17:08:44.378+00:00"
+    },
+    {
+      "id": 23,
+      "field_id": null,
+      "review_id": null,
+      "scan_id": "5a4734f6-fb4f-4c7b-b378-d47dc4fce2aa",
+      "type": "scan_committed",
+      "scope": null,
+      "before_state": null,
+      "after_state": null,
+      "reason": "Scanned 20 rows and 4 fields",
+      "comparisons": [],
+      "created_at": "2026-10-29T17:08:44.378+00:00"
+    }
+  ]
+}

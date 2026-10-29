@@ -22,7 +22,7 @@ class RunOptions(BaseModel):
     mode: Literal['draft', 'automatic'] = 'draft'
     source_id: str | None = None
     scopes: list[Literal['classification', 'metadata']] = Field(default_factory=lambda: ['classification', 'metadata'], min_length=1, max_length=2)
-    confidence_threshold: float = Field(default=.95, ge=.8, le=1, allow_inf_nan=False)
+    confidence_threshold: float = Field(default=.95, ge=.7, le=1, allow_inf_nan=False)
     max_fields: int = Field(default=100, ge=1, le=250)
     share_field_names: bool = False
 

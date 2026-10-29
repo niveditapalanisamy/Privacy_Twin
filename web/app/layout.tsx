@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import "./experience.css";
 import "./visual.css";
+import "./proof.css";
 
 export const metadata: Metadata = {
   title: "PrivacyTwin",

@@ -13,3 +13,12 @@ playwright-report*/
 *.log
 web/next-env.d.ts
 web/AGENTS.md
+
+# Regenerable combined downloads duplicate committed screenshots and reports.
+docs/walkthrough/PrivacyTwin-Full-Walkthrough.zip
+docs/ai-live/Actual-AI-Review-70-Percent.zip
+
+# Curated prior-run evidence is committed under docs/ai-live/references/.
+docs/ai-live-95-reference/
+docs/ai-live-70-attempt-1/
+docs/ai-live/screenshots/05-provider-error.png

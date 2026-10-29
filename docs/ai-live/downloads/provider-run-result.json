@@ -1,0 +1,227 @@
+{
+  "id": "d2181d5e-34f3-4c1f-9b78-a5dc55319742",
+  "status": "completed",
+  "processed": 3,
+  "error": "",
+  "created_at": "2026-10-29T17:28:09.182+00:00",
+  "options": {
+    "confidence_threshold": 0.7,
+    "max_fields": 3,
+    "mode": "automatic",
+    "scopes": [
+      "classification",
+      "metadata"
+    ],
+    "share_field_names": false,
+    "source_id": "00a21151-7eb1-4346-873a-416fef03a4c3"
+  },
+  "total": 3,
+  "summaries": [
+    "Reviewed three fields for classification and metadata completeness. Found conflicting data evidence in the first field and missing mandatory metadata for all fields."
+  ],
+  "usage": {
+    "candidatesTokenCount": 839,
+    "promptTokenCount": 1284,
+    "totalTokenCount": 2123
+  },
+  "model": "gemini-3.1-flash-lite",
+  "proposals": [
+    {
+      "id": "1f7c8d72-0f24-4564-8bb8-8dfff64c108f",
+      "run_id": "d2181d5e-34f3-4c1f-9b78-a5dc55319742",
+      "field_id": "cc2bb685-dea1-53db-bc0d-c7ee41dc6b31",
+      "scope": "classification",
+      "payload": {
+        "decision": {
+          "confidence": 0.45,
+          "evidence_ids": [
+            "ev:value:email",
+            "ev:value:phone_in"
+          ],
+          "field_id": "cc2bb685-dea1-53db-bc0d-c7ee41dc6b31",
+          "outcome": "unresolved",
+          "rationale": "Evidence suggests a mix of email and phone formats, leading to conflicting classification candidates.",
+          "scope": "classification",
+          "selected_class": null,
+          "suggestion": "Decompose the field into separate email and phone number columns.",
+          "validation_notes": []
+        },
+        "expected_review_id": null,
+        "model": "gemini-3.1-flash-lite",
+        "prompt_version": "privacy-review-v1",
+        "token": {
+          "expected_declaration_id": null,
+          "expected_policy_id": "72a1cecd0026f75612ef6f3835e5c95fceeebc5ca9d786ba69f4f95baf3991b9",
+          "expected_snapshot_id": "5547de74-01a7-49a9-aa06-835118c2543f"
+        }
+      },
+      "status": "pending",
+      "review_id": null,
+      "created_at": "2026-10-29T17:28:13.393+00:00",
+      "field": "contact_value"
+    },
+    {
+      "id": "9b676fe9-d679-4af6-b15b-753cb2be4340",
+      "run_id": "d2181d5e-34f3-4c1f-9b78-a5dc55319742",
+      "field_id": "cc2bb685-dea1-53db-bc0d-c7ee41dc6b31",
+      "scope": "metadata",
+      "payload": {
+        "decision": {
+          "confidence": 1,
+          "evidence_ids": [],
+          "field_id": "cc2bb685-dea1-53db-bc0d-c7ee41dc6b31",
+          "outcome": "unresolved",
+          "rationale": "All required metadata fields (purpose, retention, owner, etc.) are missing.",
+          "scope": "metadata",
+          "selected_class": null,
+          "suggestion": "Populate the required metadata fields according to organizational policy.",
+          "validation_notes": []
+        },
+        "expected_review_id": null,
+        "model": "gemini-3.1-flash-lite",
+        "prompt_version": "privacy-review-v1",
+        "token": {
+          "expected_declaration_id": null,
+          "expected_policy_id": "72a1cecd0026f75612ef6f3835e5c95fceeebc5ca9d786ba69f4f95baf3991b9",
+          "expected_snapshot_id": "5547de74-01a7-49a9-aa06-835118c2543f"
+        }
+      },
+      "status": "pending",
+      "review_id": null,
+      "created_at": "2026-10-29T17:28:13.394+00:00",
+      "field": "contact_value"
+    },
+    {
+      "id": "d9040a85-9779-4ad2-915a-f322757674b7",
+      "run_id": "d2181d5e-34f3-4c1f-9b78-a5dc55319742",
+      "field_id": "0a353108-f238-5a08-b938-ffeea21e299e",
+      "scope": "classification",
+      "payload": {
+        "decision": {
+          "confidence": 0.7,
+          "evidence_ids": [
+            "ev:value:email",
+            "ev:header:email"
+          ],
+          "field_id": "0a353108-f238-5a08-b938-ffeea21e299e",
+          "outcome": "clear",
+          "rationale": "Consistent email format and header naming support the Contact classification.",
+          "scope": "classification",
+          "selected_class": "Contact",
+          "suggestion": "Confirm data lifecycle requirements for this contact information.",
+          "validation_notes": []
+        },
+        "expected_review_id": null,
+        "model": "gemini-3.1-flash-lite",
+        "prompt_version": "privacy-review-v1",
+        "token": {
+          "expected_declaration_id": null,
+          "expected_policy_id": "72a1cecd0026f75612ef6f3835e5c95fceeebc5ca9d786ba69f4f95baf3991b9",
+          "expected_snapshot_id": "8c0d08ea-ef42-4fa3-8214-24af57025dd2"
+        }
+      },
+      "status": "applied",
+      "review_id": "7a6a8009-1fcc-4586-a9dd-f6359cc08516",
+      "created_at": "2026-10-29T17:28:13.394+00:00",
+      "field": "email",
+      "review_state": "current"
+    },
+    {
+      "id": "176038a4-b05c-42e8-959b-346b8a4ada46",
+      "run_id": "d2181d5e-34f3-4c1f-9b78-a5dc55319742",
+      "field_id": "0a353108-f238-5a08-b938-ffeea21e299e",
+      "scope": "metadata",
+      "payload": {
+        "decision": {
+          "confidence": 1,
+          "evidence_ids": [],
+          "field_id": "0a353108-f238-5a08-b938-ffeea21e299e",
+          "outcome": "unresolved",
+          "rationale": "All required metadata fields are missing.",
+          "scope": "metadata",
+          "selected_class": null,
+          "suggestion": "Provide missing purpose and retention information.",
+          "validation_notes": []
+        },
+        "expected_review_id": null,
+        "model": "gemini-3.1-flash-lite",
+        "prompt_version": "privacy-review-v1",
+        "token": {
+          "expected_declaration_id": null,
+          "expected_policy_id": "72a1cecd0026f75612ef6f3835e5c95fceeebc5ca9d786ba69f4f95baf3991b9",
+          "expected_snapshot_id": "8c0d08ea-ef42-4fa3-8214-24af57025dd2"
+        }
+      },
+      "status": "pending",
+      "review_id": null,
+      "created_at": "2026-10-29T17:28:13.394+00:00",
+      "field": "email"
+    },
+    {
+      "id": "51c1b0b7-bf5e-4cac-8bfe-707a5105bd2f",
+      "run_id": "d2181d5e-34f3-4c1f-9b78-a5dc55319742",
+      "field_id": "446dcfa2-e1c6-5e6f-946c-b6a16a49538f",
+      "scope": "classification",
+      "payload": {
+        "decision": {
+          "confidence": 0.7,
+          "evidence_ids": [
+            "ev:value:internal_id",
+            "ev:header:internal_id"
+          ],
+          "field_id": "446dcfa2-e1c6-5e6f-946c-b6a16a49538f",
+          "outcome": "clear",
+          "rationale": "Strong evidence provided by internal ID value format and header naming.",
+          "scope": "classification",
+          "selected_class": "Identity",
+          "suggestion": "Ensure this identity field is adequately protected with access controls.",
+          "validation_notes": []
+        },
+        "expected_review_id": null,
+        "model": "gemini-3.1-flash-lite",
+        "prompt_version": "privacy-review-v1",
+        "token": {
+          "expected_declaration_id": null,
+          "expected_policy_id": "72a1cecd0026f75612ef6f3835e5c95fceeebc5ca9d786ba69f4f95baf3991b9",
+          "expected_snapshot_id": "5a24d64c-5ac2-49a7-baab-6a2992779a2c"
+        }
+      },
+      "status": "applied",
+      "review_id": "b44d2708-8078-4e06-bc90-4867331244dc",
+      "created_at": "2026-10-29T17:28:13.394+00:00",
+      "field": "employee_id",
+      "review_state": "current"
+    },
+    {
+      "id": "49e6c59d-d8df-4a25-ab9b-9215f5172187",
+      "run_id": "d2181d5e-34f3-4c1f-9b78-a5dc55319742",
+      "field_id": "446dcfa2-e1c6-5e6f-946c-b6a16a49538f",
+      "scope": "metadata",
+      "payload": {
+        "decision": {
+          "confidence": 1,
+          "evidence_ids": [],
+          "field_id": "446dcfa2-e1c6-5e6f-946c-b6a16a49538f",
+          "outcome": "unresolved",
+          "rationale": "All required metadata fields are missing.",
+          "scope": "metadata",
+          "selected_class": null,
+          "suggestion": "Document purpose and ownership for this identifier.",
+          "validation_notes": []
+        },
+        "expected_review_id": null,
+        "model": "gemini-3.1-flash-lite",
+        "prompt_version": "privacy-review-v1",
+        "token": {
+          "expected_declaration_id": null,
+          "expected_policy_id": "72a1cecd0026f75612ef6f3835e5c95fceeebc5ca9d786ba69f4f95baf3991b9",
+          "expected_snapshot_id": "5a24d64c-5ac2-49a7-baab-6a2992779a2c"
+        }
+      },
+      "status": "pending",
+      "review_id": null,
+      "created_at": "2026-10-29T17:28:13.394+00:00",
+      "field": "employee_id"
+    }
+  ]
+}

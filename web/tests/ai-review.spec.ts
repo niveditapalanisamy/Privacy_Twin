@@ -18,7 +18,7 @@ test("AI controls submit scope, pause, resume, cancel and export without a brows
     const options = route.request().postDataJSON();
     expect(options.mode).toBe("draft");
     expect(options.share_field_names).toBe(false);
-    expect(options.confidence_threshold).toBe(0.95);
+    expect(options.confidence_threshold).toBe(0.7);
     expect(JSON.stringify(options)).not.toContain("key");
     current = {
       id: "test-run",
@@ -53,6 +53,10 @@ test("AI controls submit scope, pause, resume, cancel and export without a brows
     controls.getByText("Key configured", { exact: true }),
   ).toBeVisible();
   await controls.getByLabel("Review mode").selectOption("draft");
+  await expect(controls.getByLabel("Minimum model confidence")).toHaveValue(
+    "0.95",
+  );
+  await controls.getByLabel("Minimum model confidence").selectOption("0.7");
   await controls
     .getByRole("button", { name: "Start review", exact: true })
     .click();

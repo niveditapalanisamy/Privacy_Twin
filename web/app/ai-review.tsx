@@ -218,6 +218,7 @@ export default function AIReview({
               })
             }
           >
+            <option value={0.7}>70%</option>
             <option value={0.8}>80%</option>
             <option value={0.9}>90%</option>
             <option value={0.95}>95%</option>

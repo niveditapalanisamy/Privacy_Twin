@@ -1,0 +1,2020 @@
+{
+  "format_version": "2.0",
+  "generated_at": "2026-10-29T17:08:54.499+00:00",
+  "workspace_id": "c4113ff3-bfec-464c-85fe-a768599ff87e",
+  "reviews": [
+    {
+      "id": "7c092565-c6b6-49b1-a351-fe0b5becf9eb",
+      "field_id": "a2420ad6-7430-5e21-9005-a794e09599f5",
+      "scope": "classification",
+      "outcome": "clear",
+      "selected_class": "Identity",
+      "rationale": "I inspected the observed value patterns, their counts and the synthetic employee context.",
+      "reviewer": "Learning demo reviewer",
+      "snapshot_id": "0d5ee504-a25f-4e92-b8bb-6b9d1348c4ef",
+      "declaration_id": null,
+      "dependencies": {
+        "ambiguous": false,
+        "candidates": [
+          "Identity"
+        ],
+        "evidence": {
+          "ev:value:internal_id": {
+            "matches": 20,
+            "pass_rate": 1.0,
+            "sampled_non_null": 20
+          }
+        },
+        "insufficient": false,
+        "materiality": {
+          "minimum_denominator": 10,
+          "rate_delta": 0.1
+        },
+        "meaning": null,
+        "mixed": false,
+        "rules": {
+          "internal_id": "27042e2be4f49c8b1b2e4b27cd9cb635fba215f425cb054df9afc4ad031760e3"
+        },
+        "sampling": {
+          "id": "full-scan-v1",
+          "null_policy": "empty or whitespace only",
+          "order_independent": true
+        },
+        "scoring": {
+          "acceptance": 0.25,
+          "near_tie": 0.12,
+          "weights": {
+            "declared_context": 0.3,
+            "name_hint": 0.2,
+            "value_format": 0.5
+          }
+        },
+        "selected_evidence": [
+          "ev:value:internal_id",
+          "ev:header:internal_id"
+        ],
+        "suggested": "Identity"
+      },
+      "relies_on_meaning": 0,
+      "state": "reopened",
+      "created_at": "2026-10-29T17:08:32.042+00:00"
+    },
+    {
+      "id": "5cb06a12-89a9-4f30-8ef4-3f6fa1a30e04",
+      "field_id": "a2420ad6-7430-5e21-9005-a794e09599f5",
+      "scope": "metadata",
+      "outcome": "unresolved",
+      "selected_class": null,
+      "rationale": "The purpose and retention are missing; owner clarification is still required.",
+      "reviewer": "Learning demo reviewer",
+      "snapshot_id": "0d5ee504-a25f-4e92-b8bb-6b9d1348c4ef",
+      "declaration_id": null,
+      "dependencies": {
+        "checklist": [
+          "owner",
+          "provenance",
+          "purpose",
+          "retention",
+          "retention_start_trigger"
+        ],
+        "declaration": {
+          "meaning": "",
+          "owner": "",
+          "provenance": "",
+          "purpose": "",
+          "retention_duration": null,
+          "retention_start_trigger": "",
+          "retention_unit": ""
+        },
+        "resolver": "field-complete-override-v1",
+        "selected_evidence": [
+          "ev:value:internal_id",
+          "ev:header:internal_id"
+        ]
+      },
+      "relies_on_meaning": 0,
+      "state": "superseded",
+      "created_at": "2026-10-29T17:08:32.468+00:00"
+    },
+    {
+      "id": "8b8728ea-5c97-46bb-bd73-a11ba536d1f1",
+      "field_id": "a2420ad6-7430-5e21-9005-a794e09599f5",
+      "scope": "metadata",
+      "outcome": "clear",
+      "selected_class": null,
+      "rationale": "I reviewed the owner-supplied synthetic purpose, retention trigger and provenance.",
+      "reviewer": "Learning demo reviewer",
+      "snapshot_id": "0d5ee504-a25f-4e92-b8bb-6b9d1348c4ef",
+      "declaration_id": "d1c698e3-8516-4699-8940-47f79eda0208",
+      "dependencies": {
+        "checklist": [
+          "owner",
+          "provenance",
+          "purpose",
+          "retention",
+          "retention_start_trigger"
+        ],
+        "declaration": {
+          "meaning": "",
+          "owner": "Synthetic People Operations",
+          "provenance": "Synthetic owner statement v1 for this walkthrough",
+          "purpose": "Maintain the synthetic employee directory",
+          "retention_duration": 2,
+          "retention_start_trigger": "End of employment",
+          "retention_unit": "years"
+        },
+        "resolver": "field-complete-override-v1",
+        "selected_evidence": [
+          "ev:value:internal_id",
+          "ev:header:internal_id"
+        ]
+      },
+      "relies_on_meaning": 0,
+      "state": "current",
+      "created_at": "2026-10-29T17:08:36.478+00:00"
+    },
+    {
+      "id": "589fa85a-a31a-4557-919a-778ee929d6ff",
+      "field_id": "d88ef004-3c9c-5152-939d-0b821c114396",
+      "scope": "classification",
+      "outcome": "clear",
+      "selected_class": "Contact",
+      "rationale": "I inspected the observed value patterns, their counts and the synthetic employee context.",
+      "reviewer": "Learning demo reviewer",
+      "snapshot_id": "680f9375-f2a9-45af-bcf4-14e87da147af",
+      "declaration_id": "d1c698e3-8516-4699-8940-47f79eda0208",
+      "dependencies": {
+        "ambiguous": false,
+        "candidates": [
+          "Contact"
+        ],
+        "evidence": {
+          "ev:value:email": {
+            "matches": 20,
+            "pass_rate": 1.0,
+            "sampled_non_null": 20
+          }
+        },
+        "insufficient": false,
+        "materiality": {
+          "minimum_denominator": 10,
+          "rate_delta": 0.1
+        },
+        "meaning": null,
+        "mixed": false,
+        "rules": {
+          "email": "f7003ca9ada627a42bd277a3a5751cec88dde6b3552703b3057d26de9d2b376f"
+        },
+        "sampling": {
+          "id": "full-scan-v1",
+          "null_policy": "empty or whitespace only",
+          "order_independent": true
+        },
+        "scoring": {
+          "acceptance": 0.25,
+          "near_tie": 0.12,
+          "weights": {
+            "declared_context": 0.3,
+            "name_hint": 0.2,
+            "value_format": 0.5
+          }
+        },
+        "selected_evidence": [
+          "ev:value:email",
+          "ev:header:email"
+        ],
+        "suggested": "Contact"
+      },
+      "relies_on_meaning": 0,
+      "state": "current",
+      "created_at": "2026-10-29T17:08:38.107+00:00"
+    },
+    {
+      "id": "dad5a415-8f27-4c23-a350-d00f18e6a5d9",
+      "field_id": "d88ef004-3c9c-5152-939d-0b821c114396",
+      "scope": "metadata",
+      "outcome": "clear",
+      "selected_class": null,
+      "rationale": "I reviewed the owner-supplied synthetic purpose, retention trigger and provenance.",
+      "reviewer": "Learning demo reviewer",
+      "snapshot_id": "680f9375-f2a9-45af-bcf4-14e87da147af",
+      "declaration_id": "d1c698e3-8516-4699-8940-47f79eda0208",
+      "dependencies": {
+        "checklist": [
+          "owner",
+          "provenance",
+          "purpose",
+          "retention",
+          "retention_start_trigger"
+        ],
+        "declaration": {
+          "meaning": "",
+          "owner": "Synthetic People Operations",
+          "provenance": "Synthetic owner statement v1 for this walkthrough",
+          "purpose": "Maintain the synthetic employee directory",
+          "retention_duration": 2,
+          "retention_start_trigger": "End of employment",
+          "retention_unit": "years"
+        },
+        "resolver": "field-complete-override-v1",
+        "selected_evidence": [
+          "ev:value:email",
+          "ev:header:email"
+        ]
+      },
+      "relies_on_meaning": 0,
+      "state": "current",
+      "created_at": "2026-10-29T17:08:38.458+00:00"
+    },
+    {
+      "id": "f9cc53bc-4171-4fe4-9853-367b635eb395",
+      "field_id": "1becdddc-bf22-5c37-b3c8-3a84465a7917",
+      "scope": "classification",
+      "outcome": "clear",
+      "selected_class": "Location",
+      "rationale": "I inspected the observed value patterns, their counts and the synthetic employee context.",
+      "reviewer": "Learning demo reviewer",
+      "snapshot_id": "a99b083b-615f-4cdc-a5de-744ce637f306",
+      "declaration_id": "d1c698e3-8516-4699-8940-47f79eda0208",
+      "dependencies": {
+        "ambiguous": false,
+        "candidates": [
+          "Location"
+        ],
+        "evidence": {
+          "ev:value:postal_in": {
+            "matches": 20,
+            "pass_rate": 1.0,
+            "sampled_non_null": 20
+          }
+        },
+        "insufficient": false,
+        "materiality": {
+          "minimum_denominator": 10,
+          "rate_delta": 0.1
+        },
+        "meaning": null,
+        "mixed": false,
+        "rules": {
+          "postal_in": "e3b11033b49d1efb325006ad6a1cbfb9482bbc62cafe3e77844ddcd13a11cc32"
+        },
+        "sampling": {
+          "id": "full-scan-v1",
+          "null_policy": "empty or whitespace only",
+          "order_independent": true
+        },
+        "scoring": {
+          "acceptance": 0.25,
+          "near_tie": 0.12,
+          "weights": {
+            "declared_context": 0.3,
+            "name_hint": 0.2,
+            "value_format": 0.5
+          }
+        },
+        "selected_evidence": [
+          "ev:value:postal_in",
+          "ev:header:postal_in"
+        ],
+        "suggested": "Location"
+      },
+      "relies_on_meaning": 0,
+      "state": "current",
+      "created_at": "2026-10-29T17:08:40.090+00:00"
+    },
+    {
+      "id": "1cbfcb61-ac84-43a3-ba73-bd4a318e9ac0",
+      "field_id": "1becdddc-bf22-5c37-b3c8-3a84465a7917",
+      "scope": "metadata",
+      "outcome": "clear",
+      "selected_class": null,
+      "rationale": "I reviewed the owner-supplied synthetic purpose, retention trigger and provenance.",
+      "reviewer": "Learning demo reviewer",
+      "snapshot_id": "a99b083b-615f-4cdc-a5de-744ce637f306",
+      "declaration_id": "d1c698e3-8516-4699-8940-47f79eda0208",
+      "dependencies": {
+        "checklist": [
+          "owner",
+          "provenance",
+          "purpose",
+          "retention",
+          "retention_start_trigger"
+        ],
+        "declaration": {
+          "meaning": "",
+          "owner": "Synthetic People Operations",
+          "provenance": "Synthetic owner statement v1 for this walkthrough",
+          "purpose": "Maintain the synthetic employee directory",
+          "retention_duration": 2,
+          "retention_start_trigger": "End of employment",
+          "retention_unit": "years"
+        },
+        "resolver": "field-complete-override-v1",
+        "selected_evidence": [
+          "ev:value:postal_in",
+          "ev:header:postal_in"
+        ]
+      },
+      "relies_on_meaning": 0,
+      "state": "current",
+      "created_at": "2026-10-29T17:08:40.494+00:00"
+    },
+    {
+      "id": "e891b2e6-2986-4671-a06e-ce923c83e441",
+      "field_id": "69efce3f-1f99-5daa-996b-ffc8722b151f",
+      "scope": "classification",
+      "outcome": "clear",
+      "selected_class": "Demographic",
+      "rationale": "I inspected the observed value patterns, their counts and the synthetic employee context.",
+      "reviewer": "Learning demo reviewer",
+      "snapshot_id": "ef37b741-9c92-4ea3-8a0a-534e6f59e126",
+      "declaration_id": "d1c698e3-8516-4699-8940-47f79eda0208",
+      "dependencies": {
+        "ambiguous": false,
+        "candidates": [
+          "Demographic"
+        ],
+        "evidence": {
+          "ev:value:age": {
+            "matches": 20,
+            "pass_rate": 1.0,
+            "sampled_non_null": 20
+          }
+        },
+        "insufficient": false,
+        "materiality": {
+          "minimum_denominator": 10,
+          "rate_delta": 0.1
+        },
+        "meaning": null,
+        "mixed": false,
+        "rules": {
+          "age": "36f3d777b2993f456ed146a088610a11dad3f03bb81e33d9940e9616c6cfcb1a"
+        },
+        "sampling": {
+          "id": "full-scan-v1",
+          "null_policy": "empty or whitespace only",
+          "order_independent": true
+        },
+        "scoring": {
+          "acceptance": 0.25,
+          "near_tie": 0.12,
+          "weights": {
+            "declared_context": 0.3,
+            "name_hint": 0.2,
+            "value_format": 0.5
+          }
+        },
+        "selected_evidence": [
+          "ev:value:age",
+          "ev:header:age"
+        ],
+        "suggested": "Demographic"
+      },
+      "relies_on_meaning": 0,
+      "state": "current",
+      "created_at": "2026-10-29T17:08:42.192+00:00"
+    },
+    {
+      "id": "98814d0d-a3d3-4a9b-b72e-a0911960e94f",
+      "field_id": "69efce3f-1f99-5daa-996b-ffc8722b151f",
+      "scope": "metadata",
+      "outcome": "clear",
+      "selected_class": null,
+      "rationale": "I reviewed the owner-supplied synthetic purpose, retention trigger and provenance.",
+      "reviewer": "Learning demo reviewer",
+      "snapshot_id": "ef37b741-9c92-4ea3-8a0a-534e6f59e126",
+      "declaration_id": "d1c698e3-8516-4699-8940-47f79eda0208",
+      "dependencies": {
+        "checklist": [
+          "owner",
+          "provenance",
+          "purpose",
+          "retention",
+          "retention_start_trigger"
+        ],
+        "declaration": {
+          "meaning": "",
+          "owner": "Synthetic People Operations",
+          "provenance": "Synthetic owner statement v1 for this walkthrough",
+          "purpose": "Maintain the synthetic employee directory",
+          "retention_duration": 2,
+          "retention_start_trigger": "End of employment",
+          "retention_unit": "years"
+        },
+        "resolver": "field-complete-override-v1",
+        "selected_evidence": [
+          "ev:value:age",
+          "ev:header:age"
+        ]
+      },
+      "relies_on_meaning": 0,
+      "state": "current",
+      "created_at": "2026-10-29T17:08:42.590+00:00"
+    }
+  ],
+  "events": [
+    {
+      "id": 1,
+      "field_id": null,
+      "review_id": null,
+      "scan_id": "2f334b44-867b-48f5-a32c-c780eecfd3e0",
+      "type": "scan_committed",
+      "scope": null,
+      "before_state": null,
+      "after_state": null,
+      "reason": "Scanned 20 rows and 4 fields",
+      "comparisons": [],
+      "created_at": "2026-10-29T17:08:28.500+00:00"
+    },
+    {
+      "id": 2,
+      "field_id": "a2420ad6-7430-5e21-9005-a794e09599f5",
+      "review_id": "7c092565-c6b6-49b1-a351-fe0b5becf9eb",
+      "scan_id": "2f334b44-867b-48f5-a32c-c780eecfd3e0",
+      "type": "review_saved",
+      "scope": "classification",
+      "before_state": null,
+      "after_state": "current",
+      "reason": "I inspected the observed value patterns, their counts and the synthetic employee context.",
+      "comparisons": [],
+      "created_at": "2026-10-29T17:08:32.042+00:00"
+    },
+    {
+      "id": 3,
+      "field_id": "a2420ad6-7430-5e21-9005-a794e09599f5",
+      "review_id": "5cb06a12-89a9-4f30-8ef4-3f6fa1a30e04",
+      "scan_id": "2f334b44-867b-48f5-a32c-c780eecfd3e0",
+      "type": "review_saved",
+      "scope": "metadata",
+      "before_state": null,
+      "after_state": "current",
+      "reason": "The purpose and retention are missing; owner clarification is still required.",
+      "comparisons": [],
+      "created_at": "2026-10-29T17:08:32.468+00:00"
+    },
+    {
+      "id": 4,
+      "field_id": "a2420ad6-7430-5e21-9005-a794e09599f5",
+      "review_id": "7c092565-c6b6-49b1-a351-fe0b5becf9eb",
+      "scan_id": null,
+      "type": "preserved",
+      "scope": "classification",
+      "before_state": "current",
+      "after_state": "current",
+      "reason": "Review dependencies unchanged",
+      "comparisons": [],
+      "created_at": "2026-10-29T17:08:34.293+00:00"
+    },
+    {
+      "id": 5,
+      "field_id": "a2420ad6-7430-5e21-9005-a794e09599f5",
+      "review_id": "5cb06a12-89a9-4f30-8ef4-3f6fa1a30e04",
+      "scan_id": null,
+      "type": "reopened",
+      "scope": "metadata",
+      "before_state": "current",
+      "after_state": "reopened",
+      "reason": "Declared owner changed; Declared provenance changed; Declared purpose changed; Declared retention duration changed; Declared retention start trigger changed; Declared retention unit changed",
+      "comparisons": [
+        {
+          "after": "Synthetic People Operations",
+          "before": "",
+          "dependency": "owner",
+          "material": true,
+          "reason": "Declared owner changed"
+        },
+        {
+          "after": "Synthetic owner statement v1 for this walkthrough",
+          "before": "",
+          "dependency": "provenance",
+          "material": true,
+          "reason": "Declared provenance changed"
+        },
+        {
+          "after": "Maintain the synthetic employee directory",
+          "before": "",
+          "dependency": "purpose",
+          "material": true,
+          "reason": "Declared purpose changed"
+        },
+        {
+          "after": 2,
+          "before": null,
+          "dependency": "retention_duration",
+          "material": true,
+          "reason": "Declared retention duration changed"
+        },
+        {
+          "after": "End of employment",
+          "before": "",
+          "dependency": "retention_start_trigger",
+          "material": true,
+          "reason": "Declared retention start trigger changed"
+        },
+        {
+          "after": "years",
+          "before": "",
+          "dependency": "retention_unit",
+          "material": true,
+          "reason": "Declared retention unit changed"
+        }
+      ],
+      "created_at": "2026-10-29T17:08:34.293+00:00"
+    },
+    {
+      "id": 6,
+      "field_id": "a2420ad6-7430-5e21-9005-a794e09599f5",
+      "review_id": null,
+      "scan_id": null,
+      "type": "declaration_saved",
+      "scope": null,
+      "before_state": null,
+      "after_state": null,
+      "reason": "Saved table declaration revision 1",
+      "comparisons": [],
+      "created_at": "2026-10-29T17:08:34.293+00:00"
+    },
+    {
+      "id": 7,
+      "field_id": "a2420ad6-7430-5e21-9005-a794e09599f5",
+      "review_id": "5cb06a12-89a9-4f30-8ef4-3f6fa1a30e04",
+      "scan_id": null,
+      "type": "superseded",
+      "scope": "metadata",
+      "before_state": "reopened",
+      "after_state": "superseded",
+      "reason": "Replaced by a new review decision",
+      "comparisons": [],
+      "created_at": "2026-10-29T17:08:36.478+00:00"
+    },
+    {
+      "id": 8,
+      "field_id": "a2420ad6-7430-5e21-9005-a794e09599f5",
+      "review_id": "8b8728ea-5c97-46bb-bd73-a11ba536d1f1",
+      "scan_id": "2f334b44-867b-48f5-a32c-c780eecfd3e0",
+      "type": "review_saved",
+      "scope": "metadata",
+      "before_state": null,
+      "after_state": "current",
+      "reason": "I reviewed the owner-supplied synthetic purpose, retention trigger and provenance.",
+      "comparisons": [],
+      "created_at": "2026-10-29T17:08:36.478+00:00"
+    },
+    {
+      "id": 9,
+      "field_id": "d88ef004-3c9c-5152-939d-0b821c114396",
+      "review_id": "589fa85a-a31a-4557-919a-778ee929d6ff",
+      "scan_id": "2f334b44-867b-48f5-a32c-c780eecfd3e0",
+      "type": "review_saved",
+      "scope": "classification",
+      "before_state": null,
+      "after_state": "current",
+      "reason": "I inspected the observed value patterns, their counts and the synthetic employee context.",
+      "comparisons": [],
+      "created_at": "2026-10-29T17:08:38.107+00:00"
+    },
+    {
+      "id": 10,
+      "field_id": "d88ef004-3c9c-5152-939d-0b821c114396",
+      "review_id": "dad5a415-8f27-4c23-a350-d00f18e6a5d9",
+      "scan_id": "2f334b44-867b-48f5-a32c-c780eecfd3e0",
+      "type": "review_saved",
+      "scope": "metadata",
+      "before_state": null,
+      "after_state": "current",
+      "reason": "I reviewed the owner-supplied synthetic purpose, retention trigger and provenance.",
+      "comparisons": [],
+      "created_at": "2026-10-29T17:08:38.458+00:00"
+    },
+    {
+      "id": 11,
+      "field_id": "1becdddc-bf22-5c37-b3c8-3a84465a7917",
+      "review_id": "f9cc53bc-4171-4fe4-9853-367b635eb395",
+      "scan_id": "2f334b44-867b-48f5-a32c-c780eecfd3e0",
+      "type": "review_saved",
+      "scope": "classification",
+      "before_state": null,
+      "after_state": "current",
+      "reason": "I inspected the observed value patterns, their counts and the synthetic employee context.",
+      "comparisons": [],
+      "created_at": "2026-10-29T17:08:40.090+00:00"
+    },
+    {
+      "id": 12,
+      "field_id": "1becdddc-bf22-5c37-b3c8-3a84465a7917",
+      "review_id": "1cbfcb61-ac84-43a3-ba73-bd4a318e9ac0",
+      "scan_id": "2f334b44-867b-48f5-a32c-c780eecfd3e0",
+      "type": "review_saved",
+      "scope": "metadata",
+      "before_state": null,
+      "after_state": "current",
+      "reason": "I reviewed the owner-supplied synthetic purpose, retention trigger and provenance.",
+      "comparisons": [],
+      "created_at": "2026-10-29T17:08:40.494+00:00"
+    },
+    {
+      "id": 13,
+      "field_id": "69efce3f-1f99-5daa-996b-ffc8722b151f",
+      "review_id": "e891b2e6-2986-4671-a06e-ce923c83e441",
+      "scan_id": "2f334b44-867b-48f5-a32c-c780eecfd3e0",
+      "type": "review_saved",
+      "scope": "classification",
+      "before_state": null,
+      "after_state": "current",
+      "reason": "I inspected the observed value patterns, their counts and the synthetic employee context.",
+      "comparisons": [],
+      "created_at": "2026-10-29T17:08:42.192+00:00"
+    },
+    {
+      "id": 14,
+      "field_id": "69efce3f-1f99-5daa-996b-ffc8722b151f",
+      "review_id": "98814d0d-a3d3-4a9b-b72e-a0911960e94f",
+      "scan_id": "2f334b44-867b-48f5-a32c-c780eecfd3e0",
+      "type": "review_saved",
+      "scope": "metadata",
+      "before_state": null,
+      "after_state": "current",
+      "reason": "I reviewed the owner-supplied synthetic purpose, retention trigger and provenance.",
+      "comparisons": [],
+      "created_at": "2026-10-29T17:08:42.590+00:00"
+    },
+    {
+      "id": 15,
+      "field_id": "a2420ad6-7430-5e21-9005-a794e09599f5",
+      "review_id": "7c092565-c6b6-49b1-a351-fe0b5becf9eb",
+      "scan_id": "5a4734f6-fb4f-4c7b-b378-d47dc4fce2aa",
+      "type": "reopened",
+      "scope": "classification",
+      "before_state": "current",
+      "after_state": "reopened",
+      "reason": "Suggested changed; Candidates changed; Rules changed; Value-pattern evidence appeared or disappeared; Value-pattern evidence appeared or disappeared",
+      "comparisons": [
+        {
+          "after": "Contact",
+          "before": "Identity",
+          "dependency": "suggested",
+          "material": true,
+          "reason": "Suggested changed"
+        },
+        {
+          "after": [
+            "Contact",
+            "Identity"
+          ],
+          "before": [
+            "Identity"
+          ],
+          "dependency": "candidates",
+          "material": true,
+          "reason": "Candidates changed"
+        },
+        {
+          "after": {
+            "internal_id": "27042e2be4f49c8b1b2e4b27cd9cb635fba215f425cb054df9afc4ad031760e3",
+            "phone_in": "b0c2fceac6fb6a8e4a550e5ba3d59cadb2c909d76a64ccd85c2387c6253b355a"
+          },
+          "before": {
+            "internal_id": "27042e2be4f49c8b1b2e4b27cd9cb635fba215f425cb054df9afc4ad031760e3"
+          },
+          "dependency": "rules",
+          "material": true,
+          "reason": "Rules changed"
+        },
+        {
+          "after": null,
+          "before": {
+            "matches": 20,
+            "pass_rate": 1.0,
+            "sampled_non_null": 20
+          },
+          "dependency": "ev:value:internal_id",
+          "material": true,
+          "reason": "Value-pattern evidence appeared or disappeared"
+        },
+        {
+          "after": {
+            "matches": 20,
+            "pass_rate": 1.0,
+            "sampled_non_null": 20
+          },
+          "before": null,
+          "dependency": "ev:value:phone_in",
+          "material": true,
+          "reason": "Value-pattern evidence appeared or disappeared"
+        }
+      ],
+      "created_at": "2026-10-29T17:08:44.377+00:00"
+    },
+    {
+      "id": 16,
+      "field_id": "a2420ad6-7430-5e21-9005-a794e09599f5",
+      "review_id": "8b8728ea-5c97-46bb-bd73-a11ba536d1f1",
+      "scan_id": "5a4734f6-fb4f-4c7b-b378-d47dc4fce2aa",
+      "type": "preserved",
+      "scope": "metadata",
+      "before_state": "current",
+      "after_state": "current",
+      "reason": "Review dependencies unchanged",
+      "comparisons": [],
+      "created_at": "2026-10-29T17:08:44.377+00:00"
+    },
+    {
+      "id": 17,
+      "field_id": "d88ef004-3c9c-5152-939d-0b821c114396",
+      "review_id": "589fa85a-a31a-4557-919a-778ee929d6ff",
+      "scan_id": "5a4734f6-fb4f-4c7b-b378-d47dc4fce2aa",
+      "type": "preserved",
+      "scope": "classification",
+      "before_state": "current",
+      "after_state": "current",
+      "reason": "Review dependencies unchanged",
+      "comparisons": [],
+      "created_at": "2026-10-29T17:08:44.377+00:00"
+    },
+    {
+      "id": 18,
+      "field_id": "d88ef004-3c9c-5152-939d-0b821c114396",
+      "review_id": "dad5a415-8f27-4c23-a350-d00f18e6a5d9",
+      "scan_id": "5a4734f6-fb4f-4c7b-b378-d47dc4fce2aa",
+      "type": "preserved",
+      "scope": "metadata",
+      "before_state": "current",
+      "after_state": "current",
+      "reason": "Review dependencies unchanged",
+      "comparisons": [],
+      "created_at": "2026-10-29T17:08:44.377+00:00"
+    },
+    {
+      "id": 19,
+      "field_id": "1becdddc-bf22-5c37-b3c8-3a84465a7917",
+      "review_id": "f9cc53bc-4171-4fe4-9853-367b635eb395",
+      "scan_id": "5a4734f6-fb4f-4c7b-b378-d47dc4fce2aa",
+      "type": "preserved",
+      "scope": "classification",
+      "before_state": "current",
+      "after_state": "current",
+      "reason": "Review dependencies unchanged",
+      "comparisons": [],
+      "created_at": "2026-10-29T17:08:44.377+00:00"
+    },
+    {
+      "id": 20,
+      "field_id": "1becdddc-bf22-5c37-b3c8-3a84465a7917",
+      "review_id": "1cbfcb61-ac84-43a3-ba73-bd4a318e9ac0",
+      "scan_id": "5a4734f6-fb4f-4c7b-b378-d47dc4fce2aa",
+      "type": "preserved",
+      "scope": "metadata",
+      "before_state": "current",
+      "after_state": "current",
+      "reason": "Review dependencies unchanged",
+      "comparisons": [],
+      "created_at": "2026-10-29T17:08:44.377+00:00"
+    },
+    {
+      "id": 21,
+      "field_id": "69efce3f-1f99-5daa-996b-ffc8722b151f",
+      "review_id": "e891b2e6-2986-4671-a06e-ce923c83e441",
+      "scan_id": "5a4734f6-fb4f-4c7b-b378-d47dc4fce2aa",
+      "type": "preserved",
+      "scope": "classification",
+      "before_state": "current",
+      "after_state": "current",
+      "reason": "Review dependencies unchanged",
+      "comparisons": [],
+      "created_at": "2026-10-29T17:08:44.378+00:00"
+    },
+    {
+      "id": 22,
+      "field_id": "69efce3f-1f99-5daa-996b-ffc8722b151f",
+      "review_id": "98814d0d-a3d3-4a9b-b72e-a0911960e94f",
+      "scan_id": "5a4734f6-fb4f-4c7b-b378-d47dc4fce2aa",
+      "type": "preserved",
+      "scope": "metadata",
+      "before_state": "current",
+      "after_state": "current",
+      "reason": "Review dependencies unchanged",
+      "comparisons": [],
+      "created_at": "2026-10-29T17:08:44.378+00:00"
+    },
+    {
+      "id": 23,
+      "field_id": null,
+      "review_id": null,
+      "scan_id": "5a4734f6-fb4f-4c7b-b378-d47dc4fce2aa",
+      "type": "scan_committed",
+      "scope": null,
+      "before_state": null,
+      "after_state": null,
+      "reason": "Scanned 20 rows and 4 fields",
+      "comparisons": [],
+      "created_at": "2026-10-29T17:08:44.378+00:00"
+    }
+  ],
+  "sources": [
+    {
+      "id": "de9976b6-3b4e-453c-a03f-c8242315d03c",
+      "name": "Learning walkthrough",
+      "kind": "CSV",
+      "synthetic": 0,
+      "demo_key": null,
+      "revision": 2,
+      "status": "ready",
+      "error": null,
+      "created_at": "2026-10-29T17:08:28.355+00:00",
+      "field_count": 4,
+      "row_count": 20,
+      "last_scan": "2026-10-29T17:08:44.377+00:00"
+    }
+  ],
+  "inventory": [
+    {
+      "id": "69efce3f-1f99-5daa-996b-ffc8722b151f",
+      "source_id": "de9976b6-3b4e-453c-a03f-c8242315d03c",
+      "table_key": "csv",
+      "name": "age",
+      "availability": "present",
+      "latest_snapshot": "75be0ac5-4942-4d4e-ac65-f7863fe67018",
+      "source_name": "Learning walkthrough",
+      "source_kind": "CSV",
+      "snapshot_id": "75be0ac5-4942-4d4e-ac65-f7863fe67018",
+      "scan_id": "5a4734f6-fb4f-4c7b-b378-d47dc4fce2aa",
+      "suggested": "Demographic",
+      "ambiguous": false,
+      "mixed": false,
+      "profile": {
+        "distinct_count": 20,
+        "max_length": 2,
+        "min_length": 2,
+        "non_null": 20,
+        "null_count": 0,
+        "null_rate": 0.0,
+        "rows": 20,
+        "shapes": {
+          "numeric": 20
+        }
+      },
+      "candidates": [
+        {
+          "contributions": {
+            "declared_context": 0.0,
+            "name_hint": 0.2,
+            "value_format": 0.5
+          },
+          "label": "Demographic",
+          "score": 0.7
+        }
+      ],
+      "reviews": {
+        "classification": {
+          "id": "e891b2e6-2986-4671-a06e-ce923c83e441",
+          "scope": "classification",
+          "state": "current",
+          "outcome": "clear",
+          "selected_class": "Demographic"
+        },
+        "metadata": {
+          "id": "98814d0d-a3d3-4a9b-b72e-a0911960e94f",
+          "scope": "metadata",
+          "state": "current",
+          "outcome": "clear",
+          "selected_class": null
+        }
+      },
+      "gap_count": 0,
+      "declaration_revision": 1,
+      "policy_stale": false
+    },
+    {
+      "id": "d88ef004-3c9c-5152-939d-0b821c114396",
+      "source_id": "de9976b6-3b4e-453c-a03f-c8242315d03c",
+      "table_key": "csv",
+      "name": "email",
+      "availability": "present",
+      "latest_snapshot": "ffd99254-0cab-4a66-95ab-453e9e23118c",
+      "source_name": "Learning walkthrough",
+      "source_kind": "CSV",
+      "snapshot_id": "ffd99254-0cab-4a66-95ab-453e9e23118c",
+      "scan_id": "5a4734f6-fb4f-4c7b-b378-d47dc4fce2aa",
+      "suggested": "Contact",
+      "ambiguous": false,
+      "mixed": false,
+      "profile": {
+        "distinct_count": 20,
+        "max_length": 21,
+        "min_length": 21,
+        "non_null": 20,
+        "null_count": 0,
+        "null_rate": 0.0,
+        "rows": 20,
+        "shapes": {
+          "mixed": 20
+        }
+      },
+      "candidates": [
+        {
+          "contributions": {
+            "declared_context": 0.0,
+            "name_hint": 0.2,
+            "value_format": 0.5
+          },
+          "label": "Contact",
+          "score": 0.7
+        }
+      ],
+      "reviews": {
+        "classification": {
+          "id": "589fa85a-a31a-4557-919a-778ee929d6ff",
+          "scope": "classification",
+          "state": "current",
+          "outcome": "clear",
+          "selected_class": "Contact"
+        },
+        "metadata": {
+          "id": "dad5a415-8f27-4c23-a350-d00f18e6a5d9",
+          "scope": "metadata",
+          "state": "current",
+          "outcome": "clear",
+          "selected_class": null
+        }
+      },
+      "gap_count": 0,
+      "declaration_revision": 1,
+      "policy_stale": false
+    },
+    {
+      "id": "a2420ad6-7430-5e21-9005-a794e09599f5",
+      "source_id": "de9976b6-3b4e-453c-a03f-c8242315d03c",
+      "table_key": "csv",
+      "name": "employee_id",
+      "availability": "present",
+      "latest_snapshot": "44586e30-41c3-44c6-8ca2-81be6e49a0ef",
+      "source_name": "Learning walkthrough",
+      "source_kind": "CSV",
+      "snapshot_id": "44586e30-41c3-44c6-8ca2-81be6e49a0ef",
+      "scan_id": "5a4734f6-fb4f-4c7b-b378-d47dc4fce2aa",
+      "suggested": "Contact",
+      "ambiguous": false,
+      "mixed": false,
+      "profile": {
+        "distinct_count": 20,
+        "max_length": 10,
+        "min_length": 10,
+        "non_null": 20,
+        "null_count": 0,
+        "null_rate": 0.0,
+        "rows": 20,
+        "shapes": {
+          "numeric": 20
+        }
+      },
+      "candidates": [
+        {
+          "contributions": {
+            "declared_context": 0.0,
+            "name_hint": 0.0,
+            "value_format": 0.5
+          },
+          "label": "Contact",
+          "score": 0.5
+        },
+        {
+          "contributions": {
+            "declared_context": 0.0,
+            "name_hint": 0.2,
+            "value_format": 0.0
+          },
+          "label": "Identity",
+          "score": 0.2
+        }
+      ],
+      "reviews": {
+        "classification": {
+          "id": "7c092565-c6b6-49b1-a351-fe0b5becf9eb",
+          "scope": "classification",
+          "state": "reopened",
+          "outcome": "clear",
+          "selected_class": "Identity"
+        },
+        "metadata": {
+          "id": "8b8728ea-5c97-46bb-bd73-a11ba536d1f1",
+          "scope": "metadata",
+          "state": "current",
+          "outcome": "clear",
+          "selected_class": null
+        }
+      },
+      "gap_count": 0,
+      "declaration_revision": 1,
+      "policy_stale": false
+    },
+    {
+      "id": "1becdddc-bf22-5c37-b3c8-3a84465a7917",
+      "source_id": "de9976b6-3b4e-453c-a03f-c8242315d03c",
+      "table_key": "csv",
+      "name": "postal_code",
+      "availability": "present",
+      "latest_snapshot": "2c18d07f-fba2-4012-b126-2ba97b45459b",
+      "source_name": "Learning walkthrough",
+      "source_kind": "CSV",
+      "snapshot_id": "2c18d07f-fba2-4012-b126-2ba97b45459b",
+      "scan_id": "5a4734f6-fb4f-4c7b-b378-d47dc4fce2aa",
+      "suggested": "Location",
+      "ambiguous": false,
+      "mixed": false,
+      "profile": {
+        "distinct_count": 2,
+        "max_length": 6,
+        "min_length": 6,
+        "non_null": 20,
+        "null_count": 0,
+        "null_rate": 0.0,
+        "rows": 20,
+        "shapes": {
+          "numeric": 20
+        }
+      },
+      "candidates": [
+        {
+          "contributions": {
+            "declared_context": 0.0,
+            "name_hint": 0.2,
+            "value_format": 0.5
+          },
+          "label": "Location",
+          "score": 0.7
+        }
+      ],
+      "reviews": {
+        "classification": {
+          "id": "f9cc53bc-4171-4fe4-9853-367b635eb395",
+          "scope": "classification",
+          "state": "current",
+          "outcome": "clear",
+          "selected_class": "Location"
+        },
+        "metadata": {
+          "id": "1cbfcb61-ac84-43a3-ba73-bd4a318e9ac0",
+          "scope": "metadata",
+          "state": "current",
+          "outcome": "clear",
+          "selected_class": null
+        }
+      },
+      "gap_count": 0,
+      "declaration_revision": 1,
+      "policy_stale": false
+    }
+  ],
+  "scans": [
+    {
+      "id": "2f334b44-867b-48f5-a32c-c780eecfd3e0",
+      "source_id": "de9976b6-3b4e-453c-a03f-c8242315d03c",
+      "request_id": "b6c4fa07-0a19-4ba7-8cb9-503a256c8369",
+      "policy_id": "72a1cecd0026f75612ef6f3835e5c95fceeebc5ca9d786ba69f4f95baf3991b9",
+      "source_revision": 1,
+      "row_count": 20,
+      "field_count": 4,
+      "created_at": "2026-10-29T17:08:28.499+00:00"
+    },
+    {
+      "id": "5a4734f6-fb4f-4c7b-b378-d47dc4fce2aa",
+      "source_id": "de9976b6-3b4e-453c-a03f-c8242315d03c",
+      "request_id": "136ef3c9-3a37-4eb7-9b08-b1f925bbd315",
+      "policy_id": "72a1cecd0026f75612ef6f3835e5c95fceeebc5ca9d786ba69f4f95baf3991b9",
+      "source_revision": 2,
+      "row_count": 20,
+      "field_count": 4,
+      "created_at": "2026-10-29T17:08:44.377+00:00"
+    }
+  ],
+  "snapshots": [
+    {
+      "id": "0d5ee504-a25f-4e92-b8bb-6b9d1348c4ef",
+      "field_id": "a2420ad6-7430-5e21-9005-a794e09599f5",
+      "scan_id": "2f334b44-867b-48f5-a32c-c780eecfd3e0",
+      "payload": {
+        "ambiguous": false,
+        "candidates": [
+          {
+            "contributions": {
+              "declared_context": 0.0,
+              "name_hint": 0.2,
+              "value_format": 0.5
+            },
+            "label": "Identity",
+            "score": 0.7
+          }
+        ],
+        "declared_meaning": "",
+        "evidence": [
+          {
+            "candidate_class": "Identity",
+            "detector_id": "internal_id",
+            "detector_revision": "27042e2be4f49c8b1b2e4b27cd9cb635fba215f425cb054df9afc4ad031760e3",
+            "evidence_id": "ev:value:internal_id",
+            "format_matches": 20,
+            "group": "value_format",
+            "label": "Internal identifier",
+            "matches": 20,
+            "normalization_policy": "trim",
+            "notes": [
+              "Internal IDs require person or account context"
+            ],
+            "pass_rate": 1.0,
+            "sampled_non_null": 20,
+            "strength": 1.0,
+            "validation_check": ""
+          },
+          {
+            "candidate_class": "Identity",
+            "detector_id": "internal_id",
+            "detector_revision": "27042e2be4f49c8b1b2e4b27cd9cb635fba215f425cb054df9afc4ad031760e3",
+            "evidence_id": "ev:header:internal_id",
+            "group": "name_hint",
+            "label": "Internal identifier",
+            "notes": [
+              "Header context; no value-match denominator"
+            ],
+            "strength": 1.0
+          }
+        ],
+        "insufficient": false,
+        "interpretation": "candidate",
+        "limitations": [
+          "Format and checksum matches do not establish issuance, identity or ownership.",
+          "Scores are weighted evidence, not probabilities.",
+          "Metadata completeness is not a legal compliance verdict."
+        ],
+        "mixed": false,
+        "profile": {
+          "distinct_count": 20,
+          "max_length": 8,
+          "min_length": 8,
+          "non_null": 20,
+          "null_count": 0,
+          "null_rate": 0.0,
+          "rows": 20,
+          "shapes": {
+            "mixed": 20
+          }
+        },
+        "relevant_rules": {
+          "internal_id": "27042e2be4f49c8b1b2e4b27cd9cb635fba215f425cb054df9afc4ad031760e3"
+        },
+        "sampling": {
+          "id": "full-scan-v1",
+          "null_policy": "empty or whitespace only",
+          "order_independent": true
+        },
+        "scoring": {
+          "acceptance": 0.25,
+          "near_tie": 0.12,
+          "weights": {
+            "declared_context": 0.3,
+            "name_hint": 0.2,
+            "value_format": 0.5
+          }
+        },
+        "suggested": "Identity"
+      },
+      "declaration_id": null,
+      "declaration_revision": 0,
+      "created_at": "2026-10-29T17:08:28.499+00:00"
+    },
+    {
+      "id": "680f9375-f2a9-45af-bcf4-14e87da147af",
+      "field_id": "d88ef004-3c9c-5152-939d-0b821c114396",
+      "scan_id": "2f334b44-867b-48f5-a32c-c780eecfd3e0",
+      "payload": {
+        "ambiguous": false,
+        "candidates": [
+          {
+            "contributions": {
+              "declared_context": 0.0,
+              "name_hint": 0.2,
+              "value_format": 0.5
+            },
+            "label": "Contact",
+            "score": 0.7
+          }
+        ],
+        "declared_meaning": "",
+        "evidence": [
+          {
+            "candidate_class": "Contact",
+            "detector_id": "email",
+            "detector_revision": "f7003ca9ada627a42bd277a3a5751cec88dde6b3552703b3057d26de9d2b376f",
+            "evidence_id": "ev:value:email",
+            "format_matches": 20,
+            "group": "value_format",
+            "label": "Email address",
+            "matches": 20,
+            "normalization_policy": "trim",
+            "notes": [
+              "Format evidence only"
+            ],
+            "pass_rate": 1.0,
+            "sampled_non_null": 20,
+            "strength": 1.0,
+            "validation_check": ""
+          },
+          {
+            "candidate_class": "Contact",
+            "detector_id": "email",
+            "detector_revision": "f7003ca9ada627a42bd277a3a5751cec88dde6b3552703b3057d26de9d2b376f",
+            "evidence_id": "ev:header:email",
+            "group": "name_hint",
+            "label": "Email address",
+            "notes": [
+              "Header context; no value-match denominator"
+            ],
+            "strength": 1.0
+          }
+        ],
+        "insufficient": false,
+        "interpretation": "candidate",
+        "limitations": [
+          "Format and checksum matches do not establish issuance, identity or ownership.",
+          "Scores are weighted evidence, not probabilities.",
+          "Metadata completeness is not a legal compliance verdict."
+        ],
+        "mixed": false,
+        "profile": {
+          "distinct_count": 20,
+          "max_length": 21,
+          "min_length": 21,
+          "non_null": 20,
+          "null_count": 0,
+          "null_rate": 0.0,
+          "rows": 20,
+          "shapes": {
+            "mixed": 20
+          }
+        },
+        "relevant_rules": {
+          "email": "f7003ca9ada627a42bd277a3a5751cec88dde6b3552703b3057d26de9d2b376f"
+        },
+        "sampling": {
+          "id": "full-scan-v1",
+          "null_policy": "empty or whitespace only",
+          "order_independent": true
+        },
+        "scoring": {
+          "acceptance": 0.25,
+          "near_tie": 0.12,
+          "weights": {
+            "declared_context": 0.3,
+            "name_hint": 0.2,
+            "value_format": 0.5
+          }
+        },
+        "suggested": "Contact"
+      },
+      "declaration_id": null,
+      "declaration_revision": 0,
+      "created_at": "2026-10-29T17:08:28.500+00:00"
+    },
+    {
+      "id": "a99b083b-615f-4cdc-a5de-744ce637f306",
+      "field_id": "1becdddc-bf22-5c37-b3c8-3a84465a7917",
+      "scan_id": "2f334b44-867b-48f5-a32c-c780eecfd3e0",
+      "payload": {
+        "ambiguous": false,
+        "candidates": [
+          {
+            "contributions": {
+              "declared_context": 0.0,
+              "name_hint": 0.2,
+              "value_format": 0.5
+            },
+            "label": "Location",
+            "score": 0.7
+          }
+        ],
+        "declared_meaning": "",
+        "evidence": [
+          {
+            "candidate_class": "Location",
+            "detector_id": "postal_in",
+            "detector_revision": "e3b11033b49d1efb325006ad6a1cbfb9482bbc62cafe3e77844ddcd13a11cc32",
+            "evidence_id": "ev:value:postal_in",
+            "format_matches": 20,
+            "group": "value_format",
+            "label": "Indian postal code",
+            "matches": 20,
+            "normalization_policy": "trim",
+            "notes": [
+              "Six digits can also represent an internal code"
+            ],
+            "pass_rate": 1.0,
+            "sampled_non_null": 20,
+            "strength": 1.0,
+            "validation_check": ""
+          },
+          {
+            "candidate_class": "Location",
+            "detector_id": "postal_in",
+            "detector_revision": "e3b11033b49d1efb325006ad6a1cbfb9482bbc62cafe3e77844ddcd13a11cc32",
+            "evidence_id": "ev:header:postal_in",
+            "group": "name_hint",
+            "label": "Indian postal code",
+            "notes": [
+              "Header context; no value-match denominator"
+            ],
+            "strength": 1.0
+          }
+        ],
+        "insufficient": false,
+        "interpretation": "candidate",
+        "limitations": [
+          "Format and checksum matches do not establish issuance, identity or ownership.",
+          "Scores are weighted evidence, not probabilities.",
+          "Metadata completeness is not a legal compliance verdict."
+        ],
+        "mixed": false,
+        "profile": {
+          "distinct_count": 2,
+          "max_length": 6,
+          "min_length": 6,
+          "non_null": 20,
+          "null_count": 0,
+          "null_rate": 0.0,
+          "rows": 20,
+          "shapes": {
+            "numeric": 20
+          }
+        },
+        "relevant_rules": {
+          "postal_in": "e3b11033b49d1efb325006ad6a1cbfb9482bbc62cafe3e77844ddcd13a11cc32"
+        },
+        "sampling": {
+          "id": "full-scan-v1",
+          "null_policy": "empty or whitespace only",
+          "order_independent": true
+        },
+        "scoring": {
+          "acceptance": 0.25,
+          "near_tie": 0.12,
+          "weights": {
+            "declared_context": 0.3,
+            "name_hint": 0.2,
+            "value_format": 0.5
+          }
+        },
+        "suggested": "Location"
+      },
+      "declaration_id": null,
+      "declaration_revision": 0,
+      "created_at": "2026-10-29T17:08:28.500+00:00"
+    },
+    {
+      "id": "ef37b741-9c92-4ea3-8a0a-534e6f59e126",
+      "field_id": "69efce3f-1f99-5daa-996b-ffc8722b151f",
+      "scan_id": "2f334b44-867b-48f5-a32c-c780eecfd3e0",
+      "payload": {
+        "ambiguous": false,
+        "candidates": [
+          {
+            "contributions": {
+              "declared_context": 0.0,
+              "name_hint": 0.2,
+              "value_format": 0.5
+            },
+            "label": "Demographic",
+            "score": 0.7
+          }
+        ],
+        "declared_meaning": "",
+        "evidence": [
+          {
+            "candidate_class": "Demographic",
+            "detector_id": "age",
+            "detector_revision": "36f3d777b2993f456ed146a088610a11dad3f03bb81e33d9940e9616c6cfcb1a",
+            "evidence_id": "ev:value:age",
+            "format_matches": 20,
+            "group": "value_format",
+            "label": "Age",
+            "matches": 20,
+            "normalization_policy": "trim",
+            "notes": [
+              "Requires explicit age context"
+            ],
+            "pass_rate": 1.0,
+            "sampled_non_null": 20,
+            "strength": 1.0,
+            "validation_check": "age"
+          },
+          {
+            "candidate_class": "Demographic",
+            "detector_id": "age",
+            "detector_revision": "36f3d777b2993f456ed146a088610a11dad3f03bb81e33d9940e9616c6cfcb1a",
+            "evidence_id": "ev:header:age",
+            "group": "name_hint",
+            "label": "Age",
+            "notes": [
+              "Header context; no value-match denominator"
+            ],
+            "strength": 1.0
+          }
+        ],
+        "insufficient": false,
+        "interpretation": "candidate",
+        "limitations": [
+          "Format and checksum matches do not establish issuance, identity or ownership.",
+          "Scores are weighted evidence, not probabilities.",
+          "Metadata completeness is not a legal compliance verdict."
+        ],
+        "mixed": false,
+        "profile": {
+          "distinct_count": 20,
+          "max_length": 2,
+          "min_length": 2,
+          "non_null": 20,
+          "null_count": 0,
+          "null_rate": 0.0,
+          "rows": 20,
+          "shapes": {
+            "numeric": 20
+          }
+        },
+        "relevant_rules": {
+          "age": "36f3d777b2993f456ed146a088610a11dad3f03bb81e33d9940e9616c6cfcb1a"
+        },
+        "sampling": {
+          "id": "full-scan-v1",
+          "null_policy": "empty or whitespace only",
+          "order_independent": true
+        },
+        "scoring": {
+          "acceptance": 0.25,
+          "near_tie": 0.12,
+          "weights": {
+            "declared_context": 0.3,
+            "name_hint": 0.2,
+            "value_format": 0.5
+          }
+        },
+        "suggested": "Demographic"
+      },
+      "declaration_id": null,
+      "declaration_revision": 0,
+      "created_at": "2026-10-29T17:08:28.500+00:00"
+    },
+    {
+      "id": "44586e30-41c3-44c6-8ca2-81be6e49a0ef",
+      "field_id": "a2420ad6-7430-5e21-9005-a794e09599f5",
+      "scan_id": "5a4734f6-fb4f-4c7b-b378-d47dc4fce2aa",
+      "payload": {
+        "ambiguous": false,
+        "candidates": [
+          {
+            "contributions": {
+              "declared_context": 0.0,
+              "name_hint": 0.0,
+              "value_format": 0.5
+            },
+            "label": "Contact",
+            "score": 0.5
+          },
+          {
+            "contributions": {
+              "declared_context": 0.0,
+              "name_hint": 0.2,
+              "value_format": 0.0
+            },
+            "label": "Identity",
+            "score": 0.2
+          }
+        ],
+        "declared_meaning": "",
+        "evidence": [
+          {
+            "candidate_class": "Contact",
+            "detector_id": "phone_in",
+            "detector_revision": "b0c2fceac6fb6a8e4a550e5ba3d59cadb2c909d76a64ccd85c2387c6253b355a",
+            "evidence_id": "ev:value:phone_in",
+            "format_matches": 20,
+            "group": "value_format",
+            "label": "Indian mobile number",
+            "matches": 20,
+            "normalization_policy": "phone",
+            "notes": [
+              "Format evidence only"
+            ],
+            "pass_rate": 1.0,
+            "sampled_non_null": 20,
+            "strength": 1.0,
+            "validation_check": ""
+          },
+          {
+            "candidate_class": "Identity",
+            "detector_id": "internal_id",
+            "detector_revision": "27042e2be4f49c8b1b2e4b27cd9cb635fba215f425cb054df9afc4ad031760e3",
+            "evidence_id": "ev:header:internal_id",
+            "group": "name_hint",
+            "label": "Internal identifier",
+            "notes": [
+              "Header context; no value-match denominator"
+            ],
+            "strength": 1.0
+          }
+        ],
+        "insufficient": false,
+        "interpretation": "candidate",
+        "limitations": [
+          "Format and checksum matches do not establish issuance, identity or ownership.",
+          "Scores are weighted evidence, not probabilities.",
+          "Metadata completeness is not a legal compliance verdict."
+        ],
+        "mixed": false,
+        "profile": {
+          "distinct_count": 20,
+          "max_length": 10,
+          "min_length": 10,
+          "non_null": 20,
+          "null_count": 0,
+          "null_rate": 0.0,
+          "rows": 20,
+          "shapes": {
+            "numeric": 20
+          }
+        },
+        "relevant_rules": {
+          "internal_id": "27042e2be4f49c8b1b2e4b27cd9cb635fba215f425cb054df9afc4ad031760e3",
+          "phone_in": "b0c2fceac6fb6a8e4a550e5ba3d59cadb2c909d76a64ccd85c2387c6253b355a"
+        },
+        "sampling": {
+          "id": "full-scan-v1",
+          "null_policy": "empty or whitespace only",
+          "order_independent": true
+        },
+        "scoring": {
+          "acceptance": 0.25,
+          "near_tie": 0.12,
+          "weights": {
+            "declared_context": 0.3,
+            "name_hint": 0.2,
+            "value_format": 0.5
+          }
+        },
+        "suggested": "Contact"
+      },
+      "declaration_id": "d1c698e3-8516-4699-8940-47f79eda0208",
+      "declaration_revision": 1,
+      "created_at": "2026-10-29T17:08:44.377+00:00"
+    },
+    {
+      "id": "ffd99254-0cab-4a66-95ab-453e9e23118c",
+      "field_id": "d88ef004-3c9c-5152-939d-0b821c114396",
+      "scan_id": "5a4734f6-fb4f-4c7b-b378-d47dc4fce2aa",
+      "payload": {
+        "ambiguous": false,
+        "candidates": [
+          {
+            "contributions": {
+              "declared_context": 0.0,
+              "name_hint": 0.2,
+              "value_format": 0.5
+            },
+            "label": "Contact",
+            "score": 0.7
+          }
+        ],
+        "declared_meaning": "",
+        "evidence": [
+          {
+            "candidate_class": "Contact",
+            "detector_id": "email",
+            "detector_revision": "f7003ca9ada627a42bd277a3a5751cec88dde6b3552703b3057d26de9d2b376f",
+            "evidence_id": "ev:value:email",
+            "format_matches": 20,
+            "group": "value_format",
+            "label": "Email address",
+            "matches": 20,
+            "normalization_policy": "trim",
+            "notes": [
+              "Format evidence only"
+            ],
+            "pass_rate": 1.0,
+            "sampled_non_null": 20,
+            "strength": 1.0,
+            "validation_check": ""
+          },
+          {
+            "candidate_class": "Contact",
+            "detector_id": "email",
+            "detector_revision": "f7003ca9ada627a42bd277a3a5751cec88dde6b3552703b3057d26de9d2b376f",
+            "evidence_id": "ev:header:email",
+            "group": "name_hint",
+            "label": "Email address",
+            "notes": [
+              "Header context; no value-match denominator"
+            ],
+            "strength": 1.0
+          }
+        ],
+        "insufficient": false,
+        "interpretation": "candidate",
+        "limitations": [
+          "Format and checksum matches do not establish issuance, identity or ownership.",
+          "Scores are weighted evidence, not probabilities.",
+          "Metadata completeness is not a legal compliance verdict."
+        ],
+        "mixed": false,
+        "profile": {
+          "distinct_count": 20,
+          "max_length": 21,
+          "min_length": 21,
+          "non_null": 20,
+          "null_count": 0,
+          "null_rate": 0.0,
+          "rows": 20,
+          "shapes": {
+            "mixed": 20
+          }
+        },
+        "relevant_rules": {
+          "email": "f7003ca9ada627a42bd277a3a5751cec88dde6b3552703b3057d26de9d2b376f"
+        },
+        "sampling": {
+          "id": "full-scan-v1",
+          "null_policy": "empty or whitespace only",
+          "order_independent": true
+        },
+        "scoring": {
+          "acceptance": 0.25,
+          "near_tie": 0.12,
+          "weights": {
+            "declared_context": 0.3,
+            "name_hint": 0.2,
+            "value_format": 0.5
+          }
+        },
+        "suggested": "Contact"
+      },
+      "declaration_id": "d1c698e3-8516-4699-8940-47f79eda0208",
+      "declaration_revision": 1,
+      "created_at": "2026-10-29T17:08:44.377+00:00"
+    },
+    {
+      "id": "2c18d07f-fba2-4012-b126-2ba97b45459b",
+      "field_id": "1becdddc-bf22-5c37-b3c8-3a84465a7917",
+      "scan_id": "5a4734f6-fb4f-4c7b-b378-d47dc4fce2aa",
+      "payload": {
+        "ambiguous": false,
+        "candidates": [
+          {
+            "contributions": {
+              "declared_context": 0.0,
+              "name_hint": 0.2,
+              "value_format": 0.5
+            },
+            "label": "Location",
+            "score": 0.7
+          }
+        ],
+        "declared_meaning": "",
+        "evidence": [
+          {
+            "candidate_class": "Location",
+            "detector_id": "postal_in",
+            "detector_revision": "e3b11033b49d1efb325006ad6a1cbfb9482bbc62cafe3e77844ddcd13a11cc32",
+            "evidence_id": "ev:value:postal_in",
+            "format_matches": 20,
+            "group": "value_format",
+            "label": "Indian postal code",
+            "matches": 20,
+            "normalization_policy": "trim",
+            "notes": [
+              "Six digits can also represent an internal code"
+            ],
+            "pass_rate": 1.0,
+            "sampled_non_null": 20,
+            "strength": 1.0,
+            "validation_check": ""
+          },
+          {
+            "candidate_class": "Location",
+            "detector_id": "postal_in",
+            "detector_revision": "e3b11033b49d1efb325006ad6a1cbfb9482bbc62cafe3e77844ddcd13a11cc32",
+            "evidence_id": "ev:header:postal_in",
+            "group": "name_hint",
+            "label": "Indian postal code",
+            "notes": [
+              "Header context; no value-match denominator"
+            ],
+            "strength": 1.0
+          }
+        ],
+        "insufficient": false,
+        "interpretation": "candidate",
+        "limitations": [
+          "Format and checksum matches do not establish issuance, identity or ownership.",
+          "Scores are weighted evidence, not probabilities.",
+          "Metadata completeness is not a legal compliance verdict."
+        ],
+        "mixed": false,
+        "profile": {
+          "distinct_count": 2,
+          "max_length": 6,
+          "min_length": 6,
+          "non_null": 20,
+          "null_count": 0,
+          "null_rate": 0.0,
+          "rows": 20,
+          "shapes": {
+            "numeric": 20
+          }
+        },
+        "relevant_rules": {
+          "postal_in": "e3b11033b49d1efb325006ad6a1cbfb9482bbc62cafe3e77844ddcd13a11cc32"
+        },
+        "sampling": {
+          "id": "full-scan-v1",
+          "null_policy": "empty or whitespace only",
+          "order_independent": true
+        },
+        "scoring": {
+          "acceptance": 0.25,
+          "near_tie": 0.12,
+          "weights": {
+            "declared_context": 0.3,
+            "name_hint": 0.2,
+            "value_format": 0.5
+          }
+        },
+        "suggested": "Location"
+      },
+      "declaration_id": "d1c698e3-8516-4699-8940-47f79eda0208",
+      "declaration_revision": 1,
+      "created_at": "2026-10-29T17:08:44.377+00:00"
+    },
+    {
+      "id": "75be0ac5-4942-4d4e-ac65-f7863fe67018",
+      "field_id": "69efce3f-1f99-5daa-996b-ffc8722b151f",
+      "scan_id": "5a4734f6-fb4f-4c7b-b378-d47dc4fce2aa",
+      "payload": {
+        "ambiguous": false,
+        "candidates": [
+          {
+            "contributions": {
+              "declared_context": 0.0,
+              "name_hint": 0.2,
+              "value_format": 0.5
+            },
+            "label": "Demographic",
+            "score": 0.7
+          }
+        ],
+        "declared_meaning": "",
+        "evidence": [
+          {
+            "candidate_class": "Demographic",
+            "detector_id": "age",
+            "detector_revision": "36f3d777b2993f456ed146a088610a11dad3f03bb81e33d9940e9616c6cfcb1a",
+            "evidence_id": "ev:value:age",
+            "format_matches": 20,
+            "group": "value_format",
+            "label": "Age",
+            "matches": 20,
+            "normalization_policy": "trim",
+            "notes": [
+              "Requires explicit age context"
+            ],
+            "pass_rate": 1.0,
+            "sampled_non_null": 20,
+            "strength": 1.0,
+            "validation_check": "age"
+          },
+          {
+            "candidate_class": "Demographic",
+            "detector_id": "age",
+            "detector_revision": "36f3d777b2993f456ed146a088610a11dad3f03bb81e33d9940e9616c6cfcb1a",
+            "evidence_id": "ev:header:age",
+            "group": "name_hint",
+            "label": "Age",
+            "notes": [
+              "Header context; no value-match denominator"
+            ],
+            "strength": 1.0
+          }
+        ],
+        "insufficient": false,
+        "interpretation": "candidate",
+        "limitations": [
+          "Format and checksum matches do not establish issuance, identity or ownership.",
+          "Scores are weighted evidence, not probabilities.",
+          "Metadata completeness is not a legal compliance verdict."
+        ],
+        "mixed": false,
+        "profile": {
+          "distinct_count": 20,
+          "max_length": 2,
+          "min_length": 2,
+          "non_null": 20,
+          "null_count": 0,
+          "null_rate": 0.0,
+          "rows": 20,
+          "shapes": {
+            "numeric": 20
+          }
+        },
+        "relevant_rules": {
+          "age": "36f3d777b2993f456ed146a088610a11dad3f03bb81e33d9940e9616c6cfcb1a"
+        },
+        "sampling": {
+          "id": "full-scan-v1",
+          "null_policy": "empty or whitespace only",
+          "order_independent": true
+        },
+        "scoring": {
+          "acceptance": 0.25,
+          "near_tie": 0.12,
+          "weights": {
+            "declared_context": 0.3,
+            "name_hint": 0.2,
+            "value_format": 0.5
+          }
+        },
+        "suggested": "Demographic"
+      },
+      "declaration_id": "d1c698e3-8516-4699-8940-47f79eda0208",
+      "declaration_revision": 1,
+      "created_at": "2026-10-29T17:08:44.377+00:00"
+    }
+  ],
+  "declarations": [
+    {
+      "id": "d1c698e3-8516-4699-8940-47f79eda0208",
+      "target": "table:de9976b6-3b4e-453c-a03f-c8242315d03c:csv",
+      "revision": 1,
+      "payload": {
+        "meaning": "",
+        "owner": "Synthetic People Operations",
+        "provenance": "Synthetic owner statement v1 for this walkthrough",
+        "purpose": "Maintain the synthetic employee directory",
+        "retention_duration": 2,
+        "retention_start_trigger": "End of employment",
+        "retention_unit": "years"
+      },
+      "created_at": "2026-10-29T17:08:34.292+00:00"
+    }
+  ],
+  "policies": [
+    {
+      "id": "72a1cecd0026f75612ef6f3835e5c95fceeebc5ca9d786ba69f4f95baf3991b9",
+      "content": {
+        "acceptance": 0.25,
+        "checklist": [
+          "purpose",
+          "retention",
+          "retention_start_trigger",
+          "owner",
+          "provenance"
+        ],
+        "materiality": {
+          "minimum_denominator": 10,
+          "rate_delta": 0.1
+        },
+        "near_tie": 0.12,
+        "rules": [
+          {
+            "check": "",
+            "enabled": true,
+            "family": "Contact",
+            "headers": "email|contact",
+            "id": "email",
+            "label": "Email address",
+            "normalizer": "trim",
+            "note": "Format evidence only",
+            "pattern": "[^@\\s]+@[^@\\s]+\\.[^@\\s]+"
+          },
+          {
+            "check": "",
+            "enabled": true,
+            "family": "Contact",
+            "headers": "phone|mobile|contact",
+            "id": "phone_in",
+            "label": "Indian mobile number",
+            "normalizer": "phone",
+            "note": "Format evidence only",
+            "pattern": "(?:\\+?91)?[6-9]\\d{9}"
+          },
+          {
+            "check": "",
+            "enabled": true,
+            "family": "Identity",
+            "headers": "(^|_)(id|ref)(_|$)|loyalty",
+            "id": "internal_id",
+            "label": "Internal identifier",
+            "normalizer": "trim",
+            "note": "Internal IDs require person or account context",
+            "pattern": "[A-Z]{2,5}[-_]\\d{4,12}"
+          },
+          {
+            "check": "",
+            "enabled": true,
+            "family": "Identity",
+            "headers": "(^|_)(name|customer_name|employee_name|full_name)(_|$)",
+            "id": "person_name",
+            "label": "Person-name context",
+            "normalizer": "trim",
+            "note": "Header context alone; confirm the field meaning",
+            "pattern": ""
+          },
+          {
+            "check": "",
+            "enabled": true,
+            "family": "Location",
+            "headers": "pin_code|postal|postcode|pincode",
+            "id": "postal_in",
+            "label": "Indian postal code",
+            "normalizer": "trim",
+            "note": "Six digits can also represent an internal code",
+            "pattern": "[1-9]\\d{5}"
+          },
+          {
+            "check": "",
+            "enabled": true,
+            "family": "Location",
+            "headers": "address|street|city",
+            "id": "address",
+            "label": "Address context",
+            "normalizer": "trim",
+            "note": "Format evidence only",
+            "pattern": ""
+          },
+          {
+            "check": "verhoeff",
+            "enabled": true,
+            "family": "Official ID",
+            "headers": "aadhaar|aadhar",
+            "id": "aadhaar",
+            "label": "Aadhaar format + checksum",
+            "normalizer": "digits",
+            "note": "Checksum validity does not prove issuance",
+            "pattern": "[2-9]\\d{11}"
+          },
+          {
+            "check": "",
+            "enabled": true,
+            "family": "Official ID",
+            "headers": "pan",
+            "id": "pan",
+            "label": "PAN format",
+            "normalizer": "upper",
+            "note": "Holder type and person/entity linkage require context",
+            "pattern": "[A-Z]{3}[ABCFGHLJPT][A-Z]\\d{4}[A-Z]"
+          },
+          {
+            "check": "gstin",
+            "enabled": true,
+            "family": "Official ID",
+            "headers": "gstin|gst_number",
+            "id": "gstin",
+            "label": "GSTIN format + checksum",
+            "normalizer": "upper",
+            "note": "Business registration may link to a sole proprietor",
+            "pattern": "[0-3]\\d[A-Z]{5}\\d{4}[A-Z][1-9A-Z]Z[0-9A-Z]"
+          },
+          {
+            "check": "birth_date",
+            "enabled": true,
+            "family": "Demographic",
+            "headers": "(^|_)(dob|birth_date|date_of_birth)(_|$)",
+            "id": "birth_date",
+            "label": "Date of birth",
+            "normalizer": "trim",
+            "note": "Only explicit birth-date context supports this interpretation",
+            "pattern": "\\d{4}-\\d{2}-\\d{2}"
+          },
+          {
+            "check": "age",
+            "enabled": true,
+            "family": "Demographic",
+            "headers": "(^|_)age(_|$)",
+            "id": "age",
+            "label": "Age",
+            "normalizer": "trim",
+            "note": "Requires explicit age context",
+            "pattern": "\\d{1,3}"
+          }
+        ],
+        "weights": {
+          "declared_context": 0.3,
+          "name_hint": 0.2,
+          "value_format": 0.5
+        }
+      },
+      "created_at": "2026-10-29T17:08:23.540+00:00"
+    }
+  ],
+  "active_policy": "72a1cecd0026f75612ef6f3835e5c95fceeebc5ca9d786ba69f4f95baf3991b9",
+  "resolver": "An explicit field record completely overrides the table record; missing properties stay missing.",
+  "limitations": [
+    "Format and checksum matches do not establish issuance, identity or ownership.",
+    "Scores are weighted evidence, not probabilities.",
+    "Metadata completeness is not a legal compliance verdict."
+  ]
+}

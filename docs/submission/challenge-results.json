@@ -1,0 +1,473 @@
+{
+  "created_at": "2026-10-29T16:50:19.014+00:00",
+  "policy_id": "72a1cecd0026f75612ef6f3835e5c95fceeebc5ca9d786ba69f4f95baf3991b9",
+  "scenarios": [
+    {
+      "id": "values",
+      "title": "Change values, keep the header",
+      "description": "Internal IDs become mobile-shaped values.",
+      "expected": "Only the classification review reopens.",
+      "checks": [
+        {
+          "field": "email",
+          "scope": "metadata",
+          "expected": "current",
+          "observed": "current",
+          "passed": true,
+          "reason": "Review dependencies unchanged",
+          "dependencies": []
+        },
+        {
+          "field": "email",
+          "scope": "classification",
+          "expected": "current",
+          "observed": "current",
+          "passed": true,
+          "reason": "Review dependencies unchanged",
+          "dependencies": []
+        },
+        {
+          "field": "loyalty_id",
+          "scope": "metadata",
+          "expected": "current",
+          "observed": "current",
+          "passed": true,
+          "reason": "Review dependencies unchanged",
+          "dependencies": []
+        },
+        {
+          "field": "loyalty_id",
+          "scope": "classification",
+          "expected": "reopened",
+          "observed": "reopened",
+          "passed": true,
+          "reason": "Suggested changed; Candidates changed; Rules changed; Value-pattern evidence appeared or disappeared; Value-pattern evidence appeared or disappeared",
+          "dependencies": [
+            {
+              "after": "Contact",
+              "before": "Identity",
+              "dependency": "suggested",
+              "material": true,
+              "reason": "Suggested changed"
+            },
+            {
+              "after": [
+                "Contact",
+                "Identity"
+              ],
+              "before": [
+                "Identity"
+              ],
+              "dependency": "candidates",
+              "material": true,
+              "reason": "Candidates changed"
+            },
+            {
+              "after": {
+                "internal_id": "27042e2be4f49c8b1b2e4b27cd9cb635fba215f425cb054df9afc4ad031760e3",
+                "phone_in": "b0c2fceac6fb6a8e4a550e5ba3d59cadb2c909d76a64ccd85c2387c6253b355a"
+              },
+              "before": {
+                "internal_id": "27042e2be4f49c8b1b2e4b27cd9cb635fba215f425cb054df9afc4ad031760e3"
+              },
+              "dependency": "rules",
+              "material": true,
+              "reason": "Rules changed"
+            },
+            {
+              "after": null,
+              "before": {
+                "matches": 50,
+                "pass_rate": 1.0,
+                "sampled_non_null": 50
+              },
+              "dependency": "ev:value:internal_id",
+              "material": true,
+              "reason": "Value-pattern evidence appeared or disappeared"
+            },
+            {
+              "after": {
+                "matches": 50,
+                "pass_rate": 1.0,
+                "sampled_non_null": 50
+              },
+              "before": null,
+              "dependency": "ev:value:phone_in",
+              "material": true,
+              "reason": "Value-pattern evidence appeared or disappeared"
+            }
+          ]
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "purpose",
+      "title": "Remove the declared purpose",
+      "description": "Values stay the same; the owner removes a purpose.",
+      "expected": "Only the metadata review reopens.",
+      "checks": [
+        {
+          "field": "email",
+          "scope": "metadata",
+          "expected": "current",
+          "observed": "current",
+          "passed": true,
+          "reason": "No dependency changed.",
+          "dependencies": []
+        },
+        {
+          "field": "email",
+          "scope": "classification",
+          "expected": "current",
+          "observed": "current",
+          "passed": true,
+          "reason": "No dependency changed.",
+          "dependencies": []
+        },
+        {
+          "field": "loyalty_id",
+          "scope": "metadata",
+          "expected": "reopened",
+          "observed": "reopened",
+          "passed": true,
+          "reason": "Declared purpose changed",
+          "dependencies": [
+            {
+              "after": "",
+              "before": "Synthetic loyalty operations",
+              "dependency": "purpose",
+              "material": true,
+              "reason": "Declared purpose changed"
+            }
+          ]
+        },
+        {
+          "field": "loyalty_id",
+          "scope": "classification",
+          "expected": "current",
+          "observed": "current",
+          "passed": true,
+          "reason": "Review dependencies unchanged",
+          "dependencies": []
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "relevant_rule",
+      "title": "Change a relied-on rule",
+      "description": "Edit the internal-ID detector used by the review.",
+      "expected": "Only the classification review reopens.",
+      "checks": [
+        {
+          "field": "email",
+          "scope": "metadata",
+          "expected": "current",
+          "observed": "current",
+          "passed": true,
+          "reason": "Review dependencies unchanged",
+          "dependencies": []
+        },
+        {
+          "field": "email",
+          "scope": "classification",
+          "expected": "current",
+          "observed": "current",
+          "passed": true,
+          "reason": "Review dependencies unchanged",
+          "dependencies": []
+        },
+        {
+          "field": "loyalty_id",
+          "scope": "metadata",
+          "expected": "current",
+          "observed": "current",
+          "passed": true,
+          "reason": "Review dependencies unchanged",
+          "dependencies": []
+        },
+        {
+          "field": "loyalty_id",
+          "scope": "classification",
+          "expected": "reopened",
+          "observed": "reopened",
+          "passed": true,
+          "reason": "Suggested changed; Rules changed; Value-pattern evidence appeared or disappeared",
+          "dependencies": [
+            {
+              "after": null,
+              "before": "Identity",
+              "dependency": "suggested",
+              "material": true,
+              "reason": "Suggested changed"
+            },
+            {
+              "after": {
+                "internal_id": "64614d42b17854dc0186d0941888e9994f8eee9c3e45528bf9bbff06eb46fee7"
+              },
+              "before": {
+                "internal_id": "27042e2be4f49c8b1b2e4b27cd9cb635fba215f425cb054df9afc4ad031760e3"
+              },
+              "dependency": "rules",
+              "material": true,
+              "reason": "Rules changed"
+            },
+            {
+              "after": null,
+              "before": {
+                "matches": 50,
+                "pass_rate": 1.0,
+                "sampled_non_null": 50
+              },
+              "dependency": "ev:value:internal_id",
+              "material": true,
+              "reason": "Value-pattern evidence appeared or disappeared"
+            }
+          ]
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "unrelated_rule",
+      "title": "Change an unrelated rule",
+      "description": "Edit the birth-date detector; this source has no birth dates.",
+      "expected": "All four reviews stay current.",
+      "checks": [
+        {
+          "field": "email",
+          "scope": "metadata",
+          "expected": "current",
+          "observed": "current",
+          "passed": true,
+          "reason": "Review dependencies unchanged",
+          "dependencies": []
+        },
+        {
+          "field": "email",
+          "scope": "classification",
+          "expected": "current",
+          "observed": "current",
+          "passed": true,
+          "reason": "Review dependencies unchanged",
+          "dependencies": []
+        },
+        {
+          "field": "loyalty_id",
+          "scope": "metadata",
+          "expected": "current",
+          "observed": "current",
+          "passed": true,
+          "reason": "Review dependencies unchanged",
+          "dependencies": []
+        },
+        {
+          "field": "loyalty_id",
+          "scope": "classification",
+          "expected": "current",
+          "observed": "current",
+          "passed": true,
+          "reason": "Review dependencies unchanged",
+          "dependencies": []
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "identical",
+      "title": "Rescan identical data",
+      "description": "A fresh scan ID and timestamp carry the same evidence.",
+      "expected": "All four reviews stay current.",
+      "checks": [
+        {
+          "field": "email",
+          "scope": "metadata",
+          "expected": "current",
+          "observed": "current",
+          "passed": true,
+          "reason": "Review dependencies unchanged",
+          "dependencies": []
+        },
+        {
+          "field": "email",
+          "scope": "classification",
+          "expected": "current",
+          "observed": "current",
+          "passed": true,
+          "reason": "Review dependencies unchanged",
+          "dependencies": []
+        },
+        {
+          "field": "loyalty_id",
+          "scope": "metadata",
+          "expected": "current",
+          "observed": "current",
+          "passed": true,
+          "reason": "Review dependencies unchanged",
+          "dependencies": []
+        },
+        {
+          "field": "loyalty_id",
+          "scope": "classification",
+          "expected": "current",
+          "observed": "current",
+          "passed": true,
+          "reason": "Review dependencies unchanged",
+          "dependencies": []
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "rename",
+      "title": "Rename without a mapping",
+      "description": "member_reference replaces loyalty_id.",
+      "expected": "Old reviews become missing; the new field has no reviews.",
+      "checks": [
+        {
+          "field": "email",
+          "scope": "metadata",
+          "expected": "current",
+          "observed": "current",
+          "passed": true,
+          "reason": "Review dependencies unchanged",
+          "dependencies": []
+        },
+        {
+          "field": "email",
+          "scope": "classification",
+          "expected": "current",
+          "observed": "current",
+          "passed": true,
+          "reason": "Review dependencies unchanged",
+          "dependencies": []
+        },
+        {
+          "field": "loyalty_id",
+          "scope": "metadata",
+          "expected": "missing",
+          "observed": "missing",
+          "passed": true,
+          "reason": "Field absent after a successful source scan",
+          "dependencies": []
+        },
+        {
+          "field": "loyalty_id",
+          "scope": "classification",
+          "expected": "missing",
+          "observed": "missing",
+          "passed": true,
+          "reason": "Field absent after a successful source scan",
+          "dependencies": []
+        },
+        {
+          "field": "member_reference",
+          "scope": "both",
+          "expected": "unreviewed",
+          "observed": "unreviewed",
+          "passed": true,
+          "reason": "Exact column identity changed; no approval was copied.",
+          "dependencies": []
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "reversion",
+      "title": "Change values, then restore them",
+      "description": "A reopened decision needs a new human review even after reversion.",
+      "expected": "Classification stays reopened; metadata stays current.",
+      "checks": [
+        {
+          "field": "email",
+          "scope": "metadata",
+          "expected": "current",
+          "observed": "current",
+          "passed": true,
+          "reason": "Review dependencies unchanged",
+          "dependencies": []
+        },
+        {
+          "field": "email",
+          "scope": "classification",
+          "expected": "current",
+          "observed": "current",
+          "passed": true,
+          "reason": "Review dependencies unchanged",
+          "dependencies": []
+        },
+        {
+          "field": "loyalty_id",
+          "scope": "metadata",
+          "expected": "current",
+          "observed": "current",
+          "passed": true,
+          "reason": "Review dependencies unchanged",
+          "dependencies": []
+        },
+        {
+          "field": "loyalty_id",
+          "scope": "classification",
+          "expected": "reopened",
+          "observed": "reopened",
+          "passed": true,
+          "reason": "Awaiting a new human review",
+          "dependencies": []
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "small_change",
+      "title": "Stay within the rate tolerance",
+      "description": "One of 50 internal IDs becomes unrecognised; no new candidate appears.",
+      "expected": "All four reviews stay current.",
+      "checks": [
+        {
+          "field": "email",
+          "scope": "metadata",
+          "expected": "current",
+          "observed": "current",
+          "passed": true,
+          "reason": "Review dependencies unchanged",
+          "dependencies": []
+        },
+        {
+          "field": "email",
+          "scope": "classification",
+          "expected": "current",
+          "observed": "current",
+          "passed": true,
+          "reason": "Review dependencies unchanged",
+          "dependencies": []
+        },
+        {
+          "field": "loyalty_id",
+          "scope": "metadata",
+          "expected": "current",
+          "observed": "current",
+          "passed": true,
+          "reason": "Review dependencies unchanged",
+          "dependencies": []
+        },
+        {
+          "field": "loyalty_id",
+          "scope": "classification",
+          "expected": "current",
+          "observed": "current",
+          "passed": true,
+          "reason": "Review dependencies unchanged",
+          "dependencies": []
+        }
+      ],
+      "passed": true
+    }
+  ],
+  "correct": 33,
+  "total": 33,
+  "preserved": 26,
+  "false_reopenings": 0,
+  "missed_reopenings": 0,
+  "basis": "Real scans, declarations and saved synthetic reviews in disposable workspaces using the frozen reference configuration. Your workspace is unchanged. This is a scripted regression challenge, not independent accuracy validation."
+}

@@ -49,6 +49,14 @@ export default function ExportsView({
   const report = workspace.evaluation;
   const downloads = [
     {
+      kind: "bundle",
+      title: "Reproducible evidence package",
+      description:
+        "Inventory, evidence, dependencies, policies and a standalone verifier. Recalculate scores from aggregates.",
+      icon: FileCheck2,
+      type: "ZIP",
+    },
+    {
       kind: "passport",
       title: "Privacy Passport",
       description:
@@ -83,7 +91,6 @@ export default function ExportsView({
   ];
   return (
     <>
-      <AIReview workspace={workspace} inspect={inspect} onRefresh={onRefresh} />
       <ScanInsights
         workspace={workspace}
         inspect={inspect}
@@ -232,10 +239,10 @@ export default function ExportsView({
                     <tr key={m.label}>
                       <td>{m.label}</td>
                       <td>
-                        {m.support ? m.precision.toFixed(3) : "No support"}
+                        {m.predicted ? m.precision.toFixed(3) : "No predictions"}
                       </td>
-                      <td>{m.support ? m.recall.toFixed(3) : "No support"}</td>
-                      <td>{m.support ? m.f1.toFixed(3) : "No support"}</td>
+                      <td>{m.support ? m.recall.toFixed(3) : "No positives"}</td>
+                      <td>{m.support || m.predicted ? m.f1.toFixed(3) : "—"}</td>
                       <td>{m.support}</td>
                     </tr>
                   ))}
@@ -243,6 +250,75 @@ export default function ExportsView({
               </table>
             </div>
             <div className="evaluation-limit">{report.limitations}</div>
+            {!!report.baselines?.length && (
+              <>
+                <div className="panel-heading">
+                  <h2>Does validation help?</h2>
+                </div>
+                <p className="proof-note">{report.baseline_method}</p>
+                <div className="table-scroll">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>METHOD</th>
+                        <th>MACRO F1</th>
+                        <th>CASES</th>
+                        <th>ABSTENTIONS</th>
+                        <th>STRESS ERRORS</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {report.baselines.map((b) => (
+                        <tr key={b.name}>
+                          <td>{b.name}</td>
+                          <td>
+                            {b.macro_f1 === null
+                              ? "No support"
+                              : b.macro_f1.toFixed(3)}
+                          </td>
+                          <td>{b.cases}</td>
+                          <td>{b.abstentions}</td>
+                          <td>
+                            {b.stress_errors} / {b.stress_cases}
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+                <details className="evaluation-cases">
+                  <summary>
+                    Compare precision and recall for every class
+                  </summary>
+                  <div className="table-scroll">
+                    <table>
+                      <thead>
+                        <tr>
+                          <th>METHOD</th>
+                          <th>CLASS</th>
+                          <th>PRECISION</th>
+                          <th>RECALL</th>
+                          <th>SUPPORT</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {report.baselines.flatMap((b) =>
+                          b.metrics.map((m) => (
+                            <tr key={`${b.name}-${m.label}`}>
+                              <td>{b.name}</td>
+                              <td>{m.label}</td>
+                              <td>{m.precision.toFixed(3)}</td>
+                              <td>{m.recall.toFixed(3)}</td>
+                              <td>{m.support}</td>
+                            </tr>
+                          )),
+                        )}
+                      </tbody>
+                    </table>
+                  </div>
+                </details>
+              </>
+            )}
             <div className="panel-heading">
               <h2>ReviewGuard replay</h2>
               <span className="subtle-label">
@@ -322,6 +398,7 @@ export default function ExportsView({
           </Empty>
         )}
       </Panel>
+      <AIReview workspace={workspace} inspect={inspect} onRefresh={onRefresh} />
     </>
   );
 }

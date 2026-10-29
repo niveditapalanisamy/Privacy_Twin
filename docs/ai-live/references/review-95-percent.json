@@ -1,0 +1,1269 @@
+{
+  "generated_at": "2026-10-29T17:22:05.204Z",
+  "provider": "Actual Google Gemini API",
+  "simulated": false,
+  "external_provider_calls_requested": 1,
+  "model": "gemini-3.1-flash-lite",
+  "workspace_id": "1e83d078-19f1-42ee-9572-6737c0ca0d98",
+  "source": "Synthetic live AI learning source",
+  "steps": [
+    {
+      "id": "01-input",
+      "title": "Choose the synthetic input",
+      "explanation": "Twenty synthetic records contain three fields: email, employee_id and a mixed contact_value. No owner purpose or retention is declared. The source file stays local; the provider receives aggregate evidence instead of these rows.",
+      "observed": "Input selected; the source has not yet been registered.",
+      "screenshot": "screenshots/01-input.png"
+    },
+    {
+      "id": "02-before-ai",
+      "title": "The deterministic scanner runs first",
+      "explanation": "The ordinary scanner calculates candidate classes and evidence before any AI call. The mixed contact_value contains both email and mobile-shaped values. All three fields still need reviews and declared metadata.",
+      "observed": "3 scanned fields; 15 missing metadata items; no saved reviews.",
+      "screenshot": "screenshots/02-before-ai.png"
+    },
+    {
+      "id": "03-options",
+      "title": "Configure a bounded real AI run",
+      "explanation": "Automatic mode allows only locally validated clear proposals at or above 95% model confidence to apply. Both scopes are requested for three fields. Field-name sharing is off. The configured server key is used without being sent to the browser.",
+      "observed": "Actual Gemini API; maximum 3 fields; classification and metadata; confidence threshold 95%; field names off.",
+      "screenshot": "screenshots/03-options.png"
+    },
+    {
+      "id": "04-started",
+      "title": "The server sends the aggregate evidence",
+      "explanation": "The server freezes the selected evidence, snapshot references and review scopes. The real provider is called by the background worker. There is no simulated response or browser-route fixture in this capture.",
+      "observed": "Run 9861ee78-5c94-412b-837b-2e0b5302d63c; 3 fields requested. The screenshot records the state at capture time.",
+      "screenshot": "screenshots/04-started.png"
+    },
+    {
+      "id": "05-completed",
+      "title": "Inspect the actual completed run",
+      "explanation": "The provider returned structured proposals. The backend checked the requested field/scope pairs, evidence references, ambiguity, metadata completeness and current revisions. Only eligible clear proposals were allowed to apply.",
+      "observed": "Actual result: 6 proposals; 0 applied; 6 pending; 4 unresolved; 2180 provider-reported tokens.",
+      "screenshot": "screenshots/05-completed.png"
+    },
+    {
+      "id": "06-classification",
+      "title": "Read the email classification proposal",
+      "explanation": "Read the model's actual rationale, cited class and confidence. Applied means a review was saved; pending means it still awaits action. The confidence is the model's self-assessment, not measured accuracy.",
+      "observed": "email classification: clear; pending; confidence 0.7.",
+      "screenshot": "screenshots/06-classification.png"
+    },
+    {
+      "id": "07-metadata",
+      "title": "Missing documentation stays unresolved",
+      "explanation": "The source has no declared purpose, retention, owner or provenance. AI can identify that gap and suggest a next step, but it cannot invent the business declaration. A high confidence in an unresolved outcome is not permission to mark it complete.",
+      "observed": "email metadata: unresolved; pending. Five metadata gaps remain for this field.",
+      "screenshot": "screenshots/07-metadata.png"
+    },
+    {
+      "id": "08-mixed",
+      "title": "Mixed evidence needs clarification",
+      "explanation": "contact_value has ten email-shaped and ten mobile-shaped values. The system preserves the mixed-field state. It does not allow an ambiguous/mixed field to become an automatically clear classification merely because the model sounds confident.",
+      "observed": "contact_value classification: unresolved; pending.",
+      "screenshot": "screenshots/08-mixed.png"
+    },
+    {
+      "id": "09-inventory-after-ai",
+      "title": "Applied AI decisions appear in the inventory",
+      "explanation": "Current means the saved decision's dependencies are still fresh. Rows without applied decisions remain unreviewed. Metadata gaps stay visible regardless of whether classification was reviewed.",
+      "observed": "After the real run: 0 applied proposals; all 15 metadata gaps remain.",
+      "screenshot": "screenshots/09-inventory-after-ai.png"
+    },
+    {
+      "id": "10-accept-unresolved",
+      "title": "Accepting unresolved records the gap, not completeness",
+      "explanation": "Accept as unresolved saves the AI-assisted metadata assessment. It is a current unresolved review, explicitly attributed to user-approved AI. It does not fill purpose or retention and does not make the field ready.",
+      "observed": "email metadata: applied / current, outcome unresolved. The five documentation gaps remain.",
+      "screenshot": "screenshots/10-accept-unresolved.png"
+    },
+    {
+      "id": "11-reject",
+      "title": "Reject a proposal without saving a review",
+      "explanation": "Reject records the user's action on the proposal. It does not create a metadata review or remove documentary gaps. Existing current decisions are protected from AI overwrites.",
+      "observed": "employee_id metadata proposal: rejected; no metadata review was created for it.",
+      "screenshot": "screenshots/11-reject.png"
+    },
+    {
+      "id": "12-report",
+      "title": "The report includes AI provenance and unresolved work",
+      "explanation": "The actual report retains reviewer attribution, run information and proposal actions. Metadata gaps and unresolved outcomes remain visible. A report export does not approve a field.",
+      "observed": "Live run 9861ee78-5c94-412b-837b-2e0b5302d63c is included in report history. All three fields still have documentation gaps.",
+      "screenshot": "screenshots/12-report.png"
+    },
+    {
+      "id": "13-revoke",
+      "title": "Revoke an applied AI decision",
+      "explanation": "Revoke supersedes that applied AI review. It requires a fresh review and does not silently restore an earlier approval. The original proposal and action remain in the audit history.",
+      "observed": "email classification: revoked / superseded. No current classification decision remains for that field.",
+      "screenshot": "screenshots/13-revoke.png"
+    },
+    {
+      "id": "14-ai-review-reopens",
+      "title": "ReviewGuard also checks AI-origin decisions",
+      "explanation": "Only employee_id values changed to phone-shaped numbers. Its saved AI-origin classification review now reopens through the ordinary dependency logic. Accepting AI output does not bypass later evidence checks. No second AI call was made.",
+      "observed": "employee_id now has a Contact candidate and a reopened classification review. email's revoked classification remains unreviewed.",
+      "screenshot": "screenshots/14-ai-review-reopens.png"
+    }
+  ],
+  "browser_errors": [],
+  "before": {
+    "fields": 3,
+    "metadata_gaps": 15,
+    "reviews": 0
+  },
+  "run_id": "9861ee78-5c94-412b-837b-2e0b5302d63c",
+  "provider_result": {
+    "id": "9861ee78-5c94-412b-837b-2e0b5302d63c",
+    "status": "completed",
+    "processed": 3,
+    "error": "",
+    "created_at": "2026-10-29T17:22:08.528+00:00",
+    "options": {
+      "confidence_threshold": 0.95,
+      "max_fields": 3,
+      "mode": "automatic",
+      "scopes": [
+        "classification",
+        "metadata"
+      ],
+      "share_field_names": false,
+      "source_id": "7a7629c0-81e4-4799-877a-2492097ee976"
+    },
+    "total": 3,
+    "summaries": [
+      "Reviewed three fields for classification and metadata completeness. Field 1 exhibits mixed evidence (email and phone), while fields 2 and 3 show consistent patterns but all fields lack mandatory metadata declarations."
+    ],
+    "usage": {
+      "candidatesTokenCount": 894,
+      "promptTokenCount": 1286,
+      "totalTokenCount": 2180
+    },
+    "model": "gemini-3.1-flash-lite",
+    "proposals": [
+      {
+        "id": "bddd37fd-97c8-4d67-8db5-fdc2c0d8a530",
+        "run_id": "9861ee78-5c94-412b-837b-2e0b5302d63c",
+        "field_id": "6e03cee0-64e3-5523-afdb-a8e65c66ddb1",
+        "scope": "classification",
+        "payload": {
+          "decision": {
+            "confidence": 0.45,
+            "evidence_ids": [
+              "ev:value:email",
+              "ev:header:email",
+              "ev:value:phone_in",
+              "ev:header:phone_in"
+            ],
+            "field_id": "6e03cee0-64e3-5523-afdb-a8e65c66ddb1",
+            "outcome": "unresolved",
+            "rationale": "Evidence for both email and phone numbers creates conflicting classification signals.",
+            "scope": "classification",
+            "selected_class": null,
+            "suggestion": "Split this field into separate columns for email and phone data.",
+            "validation_notes": []
+          },
+          "expected_review_id": null,
+          "model": "gemini-3.1-flash-lite",
+          "prompt_version": "privacy-review-v1",
+          "token": {
+            "expected_declaration_id": null,
+            "expected_policy_id": "72a1cecd0026f75612ef6f3835e5c95fceeebc5ca9d786ba69f4f95baf3991b9",
+            "expected_snapshot_id": "989af815-8e6b-4215-a6a2-477ff3e75018"
+          }
+        },
+        "status": "pending",
+        "review_id": null,
+        "created_at": "2026-10-29T17:22:13.779+00:00",
+        "field": "contact_value"
+      },
+      {
+        "id": "99055332-50ef-4ecb-83ce-63f57e4855bf",
+        "run_id": "9861ee78-5c94-412b-837b-2e0b5302d63c",
+        "field_id": "6e03cee0-64e3-5523-afdb-a8e65c66ddb1",
+        "scope": "metadata",
+        "payload": {
+          "decision": {
+            "confidence": 1,
+            "evidence_ids": [],
+            "field_id": "6e03cee0-64e3-5523-afdb-a8e65c66ddb1",
+            "outcome": "unresolved",
+            "rationale": "All required metadata fields (purpose, retention, etc.) are missing.",
+            "scope": "metadata",
+            "selected_class": null,
+            "suggestion": "Define and document the purpose, retention, and ownership policies.",
+            "validation_notes": []
+          },
+          "expected_review_id": null,
+          "model": "gemini-3.1-flash-lite",
+          "prompt_version": "privacy-review-v1",
+          "token": {
+            "expected_declaration_id": null,
+            "expected_policy_id": "72a1cecd0026f75612ef6f3835e5c95fceeebc5ca9d786ba69f4f95baf3991b9",
+            "expected_snapshot_id": "989af815-8e6b-4215-a6a2-477ff3e75018"
+          }
+        },
+        "status": "pending",
+        "review_id": null,
+        "created_at": "2026-10-29T17:22:13.779+00:00",
+        "field": "contact_value"
+      },
+      {
+        "id": "d21f5a81-b482-421f-aed6-3a32673e6119",
+        "run_id": "9861ee78-5c94-412b-837b-2e0b5302d63c",
+        "field_id": "ffc91c14-8302-53ef-88c4-560026ea02dc",
+        "scope": "classification",
+        "payload": {
+          "decision": {
+            "confidence": 0.7,
+            "evidence_ids": [
+              "ev:value:email",
+              "ev:header:email"
+            ],
+            "field_id": "ffc91c14-8302-53ef-88c4-560026ea02dc",
+            "outcome": "clear",
+            "rationale": "Evidence supports a consistent Contact classification based on email format and header hints.",
+            "scope": "classification",
+            "selected_class": "Contact",
+            "suggestion": "Proceed with Contact classification.",
+            "validation_notes": []
+          },
+          "expected_review_id": null,
+          "model": "gemini-3.1-flash-lite",
+          "prompt_version": "privacy-review-v1",
+          "token": {
+            "expected_declaration_id": null,
+            "expected_policy_id": "72a1cecd0026f75612ef6f3835e5c95fceeebc5ca9d786ba69f4f95baf3991b9",
+            "expected_snapshot_id": "f9c591f1-184c-4cf7-be8c-4d701227bde5"
+          }
+        },
+        "status": "pending",
+        "review_id": null,
+        "created_at": "2026-10-29T17:22:13.779+00:00",
+        "field": "email"
+      },
+      {
+        "id": "f2723ed6-ac52-4c1f-b2db-477c7dcd1e03",
+        "run_id": "9861ee78-5c94-412b-837b-2e0b5302d63c",
+        "field_id": "ffc91c14-8302-53ef-88c4-560026ea02dc",
+        "scope": "metadata",
+        "payload": {
+          "decision": {
+            "confidence": 1,
+            "evidence_ids": [],
+            "field_id": "ffc91c14-8302-53ef-88c4-560026ea02dc",
+            "outcome": "unresolved",
+            "rationale": "Required metadata documentation is entirely missing.",
+            "scope": "metadata",
+            "selected_class": null,
+            "suggestion": "Declare the purpose, retention, and ownership for this field.",
+            "validation_notes": []
+          },
+          "expected_review_id": null,
+          "model": "gemini-3.1-flash-lite",
+          "prompt_version": "privacy-review-v1",
+          "token": {
+            "expected_declaration_id": null,
+            "expected_policy_id": "72a1cecd0026f75612ef6f3835e5c95fceeebc5ca9d786ba69f4f95baf3991b9",
+            "expected_snapshot_id": "f9c591f1-184c-4cf7-be8c-4d701227bde5"
+          }
+        },
+        "status": "pending",
+        "review_id": null,
+        "created_at": "2026-10-29T17:22:13.779+00:00",
+        "field": "email"
+      },
+      {
+        "id": "a3048cbf-9d3f-4f18-b557-ae0bfaf8f7ed",
+        "run_id": "9861ee78-5c94-412b-837b-2e0b5302d63c",
+        "field_id": "7e039765-23e7-541c-b825-8ac6495572ca",
+        "scope": "classification",
+        "payload": {
+          "decision": {
+            "confidence": 0.7,
+            "evidence_ids": [
+              "ev:value:internal_id",
+              "ev:header:internal_id"
+            ],
+            "field_id": "7e039765-23e7-541c-b825-8ac6495572ca",
+            "outcome": "clear",
+            "rationale": "Internal ID patterns and naming conventions strongly support Identity classification.",
+            "scope": "classification",
+            "selected_class": "Identity",
+            "suggestion": "Maintain Identity classification.",
+            "validation_notes": []
+          },
+          "expected_review_id": null,
+          "model": "gemini-3.1-flash-lite",
+          "prompt_version": "privacy-review-v1",
+          "token": {
+            "expected_declaration_id": null,
+            "expected_policy_id": "72a1cecd0026f75612ef6f3835e5c95fceeebc5ca9d786ba69f4f95baf3991b9",
+            "expected_snapshot_id": "e94c8296-7b8e-49a9-a2e6-d57b705a4914"
+          }
+        },
+        "status": "pending",
+        "review_id": null,
+        "created_at": "2026-10-29T17:22:13.779+00:00",
+        "field": "employee_id"
+      },
+      {
+        "id": "dc231323-b2bb-4c0a-ae10-c8d59d271e9f",
+        "run_id": "9861ee78-5c94-412b-837b-2e0b5302d63c",
+        "field_id": "7e039765-23e7-541c-b825-8ac6495572ca",
+        "scope": "metadata",
+        "payload": {
+          "decision": {
+            "confidence": 1,
+            "evidence_ids": [],
+            "field_id": "7e039765-23e7-541c-b825-8ac6495572ca",
+            "outcome": "unresolved",
+            "rationale": "Mandatory metadata fields are not declared.",
+            "scope": "metadata",
+            "selected_class": null,
+            "suggestion": "Populate metadata fields for internal ID governance.",
+            "validation_notes": []
+          },
+          "expected_review_id": null,
+          "model": "gemini-3.1-flash-lite",
+          "prompt_version": "privacy-review-v1",
+          "token": {
+            "expected_declaration_id": null,
+            "expected_policy_id": "72a1cecd0026f75612ef6f3835e5c95fceeebc5ca9d786ba69f4f95baf3991b9",
+            "expected_snapshot_id": "e94c8296-7b8e-49a9-a2e6-d57b705a4914"
+          }
+        },
+        "status": "pending",
+        "review_id": null,
+        "created_at": "2026-10-29T17:22:13.779+00:00",
+        "field": "employee_id"
+      }
+    ]
+  },
+  "initial_counts": {
+    "proposals": 6,
+    "applied": 0,
+    "pending": 6,
+    "unresolved": 4,
+    "tokens": 2180
+  },
+  "after_actions": {
+    "workspace_id": "1e83d078-19f1-42ee-9572-6737c0ca0d98",
+    "sources": [
+      {
+        "id": "7a7629c0-81e4-4799-877a-2492097ee976",
+        "name": "Synthetic live AI learning source",
+        "kind": "CSV",
+        "synthetic": 0,
+        "demo_key": null,
+        "revision": 2,
+        "status": "ready",
+        "error": null,
+        "created_at": "2026-10-29T17:22:06.226+00:00",
+        "field_count": 3,
+        "row_count": 20,
+        "last_scan": "2026-10-29T17:22:21.211+00:00"
+      }
+    ],
+    "fields": [
+      {
+        "id": "6e03cee0-64e3-5523-afdb-a8e65c66ddb1",
+        "source_id": "7a7629c0-81e4-4799-877a-2492097ee976",
+        "table_key": "csv",
+        "name": "contact_value",
+        "availability": "present",
+        "latest_snapshot": "1262f5be-c90e-43fd-9ed7-c08d6dc01f42",
+        "source_name": "Synthetic live AI learning source",
+        "source_kind": "CSV",
+        "snapshot_id": "1262f5be-c90e-43fd-9ed7-c08d6dc01f42",
+        "scan_id": "7b1c197a-0784-4734-a173-0e699cee00f4",
+        "suggested": "Contact",
+        "ambiguous": false,
+        "mixed": true,
+        "profile": {
+          "distinct_count": 20,
+          "max_length": 19,
+          "min_length": 10,
+          "non_null": 20,
+          "null_count": 0,
+          "null_rate": 0,
+          "rows": 20,
+          "shapes": {
+            "mixed": 10,
+            "numeric": 10
+          }
+        },
+        "candidates": [
+          {
+            "contributions": {
+              "declared_context": 0,
+              "name_hint": 0.2,
+              "value_format": 0.25
+            },
+            "label": "Contact",
+            "score": 0.45
+          }
+        ],
+        "reviews": {},
+        "gap_count": 5,
+        "declaration_revision": 0,
+        "policy_stale": false
+      },
+      {
+        "id": "ffc91c14-8302-53ef-88c4-560026ea02dc",
+        "source_id": "7a7629c0-81e4-4799-877a-2492097ee976",
+        "table_key": "csv",
+        "name": "email",
+        "availability": "present",
+        "latest_snapshot": "68e28468-9d17-40ed-b9e5-083656169507",
+        "source_name": "Synthetic live AI learning source",
+        "source_kind": "CSV",
+        "snapshot_id": "68e28468-9d17-40ed-b9e5-083656169507",
+        "scan_id": "7b1c197a-0784-4734-a173-0e699cee00f4",
+        "suggested": "Contact",
+        "ambiguous": false,
+        "mixed": false,
+        "profile": {
+          "distinct_count": 20,
+          "max_length": 21,
+          "min_length": 21,
+          "non_null": 20,
+          "null_count": 0,
+          "null_rate": 0,
+          "rows": 20,
+          "shapes": {
+            "mixed": 20
+          }
+        },
+        "candidates": [
+          {
+            "contributions": {
+              "declared_context": 0,
+              "name_hint": 0.2,
+              "value_format": 0.5
+            },
+            "label": "Contact",
+            "score": 0.7
+          }
+        ],
+        "reviews": {
+          "metadata": {
+            "id": "d99b05c3-6806-41af-bcf5-4c61d74a3702",
+            "scope": "metadata",
+            "state": "current",
+            "outcome": "unresolved",
+            "selected_class": null
+          }
+        },
+        "gap_count": 5,
+        "declaration_revision": 0,
+        "policy_stale": false
+      },
+      {
+        "id": "7e039765-23e7-541c-b825-8ac6495572ca",
+        "source_id": "7a7629c0-81e4-4799-877a-2492097ee976",
+        "table_key": "csv",
+        "name": "employee_id",
+        "availability": "present",
+        "latest_snapshot": "73cbbd6d-ccad-46f7-800e-26fcab2fe584",
+        "source_name": "Synthetic live AI learning source",
+        "source_kind": "CSV",
+        "snapshot_id": "73cbbd6d-ccad-46f7-800e-26fcab2fe584",
+        "scan_id": "7b1c197a-0784-4734-a173-0e699cee00f4",
+        "suggested": "Contact",
+        "ambiguous": false,
+        "mixed": false,
+        "profile": {
+          "distinct_count": 20,
+          "max_length": 10,
+          "min_length": 10,
+          "non_null": 20,
+          "null_count": 0,
+          "null_rate": 0,
+          "rows": 20,
+          "shapes": {
+            "numeric": 20
+          }
+        },
+        "candidates": [
+          {
+            "contributions": {
+              "declared_context": 0,
+              "name_hint": 0,
+              "value_format": 0.5
+            },
+            "label": "Contact",
+            "score": 0.5
+          },
+          {
+            "contributions": {
+              "declared_context": 0,
+              "name_hint": 0.2,
+              "value_format": 0
+            },
+            "label": "Identity",
+            "score": 0.2
+          }
+        ],
+        "reviews": {
+          "classification": {
+            "id": "a23095b4-138b-473e-b58c-e29b22c7ffaa",
+            "scope": "classification",
+            "state": "reopened",
+            "outcome": "clear",
+            "selected_class": "Identity"
+          }
+        },
+        "gap_count": 5,
+        "declaration_revision": 0,
+        "policy_stale": false
+      }
+    ],
+    "scans": [
+      {
+        "id": "7b1c197a-0784-4734-a173-0e699cee00f4",
+        "source_id": "7a7629c0-81e4-4799-877a-2492097ee976",
+        "request_id": "9acf20a3-fb11-40c9-998a-cdfb436ae0a3",
+        "policy_id": "72a1cecd0026f75612ef6f3835e5c95fceeebc5ca9d786ba69f4f95baf3991b9",
+        "source_revision": 2,
+        "row_count": 20,
+        "field_count": 3,
+        "created_at": "2026-10-29T17:22:21.211+00:00",
+        "source_name": "Synthetic live AI learning source"
+      },
+      {
+        "id": "d6a11a2e-09c3-43b7-bd1c-6d461b3c5d0b",
+        "source_id": "7a7629c0-81e4-4799-877a-2492097ee976",
+        "request_id": "ef7e9012-ca05-4a50-89e2-c15cdb4c3083",
+        "policy_id": "72a1cecd0026f75612ef6f3835e5c95fceeebc5ca9d786ba69f4f95baf3991b9",
+        "source_revision": 1,
+        "row_count": 20,
+        "field_count": 3,
+        "created_at": "2026-10-29T17:22:06.366+00:00",
+        "source_name": "Synthetic live AI learning source"
+      }
+    ],
+    "events": [
+      {
+        "id": 18,
+        "field_id": null,
+        "review_id": null,
+        "scan_id": "7b1c197a-0784-4734-a173-0e699cee00f4",
+        "type": "scan_committed",
+        "scope": null,
+        "before_state": null,
+        "after_state": null,
+        "reason": "Scanned 20 rows and 3 fields",
+        "comparisons": [],
+        "created_at": "2026-10-29T17:22:21.211+00:00",
+        "field_name": null,
+        "source_name": null
+      },
+      {
+        "id": 17,
+        "field_id": "7e039765-23e7-541c-b825-8ac6495572ca",
+        "review_id": "a23095b4-138b-473e-b58c-e29b22c7ffaa",
+        "scan_id": "7b1c197a-0784-4734-a173-0e699cee00f4",
+        "type": "reopened",
+        "scope": "classification",
+        "before_state": "current",
+        "after_state": "reopened",
+        "reason": "Suggested changed; Candidates changed; Rules changed; Value-pattern evidence appeared or disappeared; Value-pattern evidence appeared or disappeared",
+        "comparisons": [
+          {
+            "after": "Contact",
+            "before": "Identity",
+            "dependency": "suggested",
+            "material": true,
+            "reason": "Suggested changed"
+          },
+          {
+            "after": [
+              "Contact",
+              "Identity"
+            ],
+            "before": [
+              "Identity"
+            ],
+            "dependency": "candidates",
+            "material": true,
+            "reason": "Candidates changed"
+          },
+          {
+            "after": {
+              "internal_id": "27042e2be4f49c8b1b2e4b27cd9cb635fba215f425cb054df9afc4ad031760e3",
+              "phone_in": "b0c2fceac6fb6a8e4a550e5ba3d59cadb2c909d76a64ccd85c2387c6253b355a"
+            },
+            "before": {
+              "internal_id": "27042e2be4f49c8b1b2e4b27cd9cb635fba215f425cb054df9afc4ad031760e3"
+            },
+            "dependency": "rules",
+            "material": true,
+            "reason": "Rules changed"
+          },
+          {
+            "after": null,
+            "before": {
+              "matches": 20,
+              "pass_rate": 1,
+              "sampled_non_null": 20
+            },
+            "dependency": "ev:value:internal_id",
+            "material": true,
+            "reason": "Value-pattern evidence appeared or disappeared"
+          },
+          {
+            "after": {
+              "matches": 20,
+              "pass_rate": 1,
+              "sampled_non_null": 20
+            },
+            "before": null,
+            "dependency": "ev:value:phone_in",
+            "material": true,
+            "reason": "Value-pattern evidence appeared or disappeared"
+          }
+        ],
+        "created_at": "2026-10-29T17:22:21.211+00:00",
+        "field_name": "employee_id",
+        "source_name": "Synthetic live AI learning source"
+      },
+      {
+        "id": 16,
+        "field_id": "ffc91c14-8302-53ef-88c4-560026ea02dc",
+        "review_id": "d99b05c3-6806-41af-bcf5-4c61d74a3702",
+        "scan_id": "7b1c197a-0784-4734-a173-0e699cee00f4",
+        "type": "preserved",
+        "scope": "metadata",
+        "before_state": "current",
+        "after_state": "current",
+        "reason": "Review dependencies unchanged",
+        "comparisons": [],
+        "created_at": "2026-10-29T17:22:21.211+00:00",
+        "field_name": "email",
+        "source_name": "Synthetic live AI learning source"
+      },
+      {
+        "id": 15,
+        "field_id": "ffc91c14-8302-53ef-88c4-560026ea02dc",
+        "review_id": null,
+        "scan_id": null,
+        "type": "ai_proposal_action",
+        "scope": "classification",
+        "before_state": null,
+        "after_state": null,
+        "reason": "revoke: proposal d21f5a81-b482-421f-aed6-3a32673e6119",
+        "comparisons": [],
+        "created_at": "2026-10-29T17:22:20.817+00:00",
+        "field_name": "email",
+        "source_name": "Synthetic live AI learning source"
+      },
+      {
+        "id": 14,
+        "field_id": "ffc91c14-8302-53ef-88c4-560026ea02dc",
+        "review_id": "37d71ced-1549-4b6c-8e2d-8f7a5fcfa6aa",
+        "scan_id": null,
+        "type": "ai_revoked",
+        "scope": "classification",
+        "before_state": "current",
+        "after_state": "superseded",
+        "reason": "User revoked AI decision. A new review is required; earlier decisions were not restored.",
+        "comparisons": [],
+        "created_at": "2026-10-29T17:22:20.817+00:00",
+        "field_name": "email",
+        "source_name": "Synthetic live AI learning source"
+      },
+      {
+        "id": 13,
+        "field_id": "7e039765-23e7-541c-b825-8ac6495572ca",
+        "review_id": null,
+        "scan_id": null,
+        "type": "ai_proposal_action",
+        "scope": "classification",
+        "before_state": null,
+        "after_state": null,
+        "reason": "accept: proposal a3048cbf-9d3f-4f18-b557-ae0bfaf8f7ed",
+        "comparisons": [],
+        "created_at": "2026-10-29T17:22:20.251+00:00",
+        "field_name": "employee_id",
+        "source_name": "Synthetic live AI learning source"
+      },
+      {
+        "id": 12,
+        "field_id": "7e039765-23e7-541c-b825-8ac6495572ca",
+        "review_id": "a23095b4-138b-473e-b58c-e29b22c7ffaa",
+        "scan_id": null,
+        "type": "ai_applied",
+        "scope": "classification",
+        "before_state": null,
+        "after_state": null,
+        "reason": "Proposal a3048cbf-9d3f-4f18-b557-ae0bfaf8f7ed applied (user-approved); model gemini-3.1-flash-lite",
+        "comparisons": [],
+        "created_at": "2026-10-29T17:22:20.251+00:00",
+        "field_name": "employee_id",
+        "source_name": "Synthetic live AI learning source"
+      },
+      {
+        "id": 11,
+        "field_id": "7e039765-23e7-541c-b825-8ac6495572ca",
+        "review_id": "a23095b4-138b-473e-b58c-e29b22c7ffaa",
+        "scan_id": "d6a11a2e-09c3-43b7-bd1c-6d461b3c5d0b",
+        "type": "review_saved",
+        "scope": "classification",
+        "before_state": null,
+        "after_state": "current",
+        "reason": "Internal ID patterns and naming conventions strongly support Identity classification.",
+        "comparisons": [],
+        "created_at": "2026-10-29T17:22:20.250+00:00",
+        "field_name": "employee_id",
+        "source_name": "Synthetic live AI learning source"
+      },
+      {
+        "id": 10,
+        "field_id": "ffc91c14-8302-53ef-88c4-560026ea02dc",
+        "review_id": null,
+        "scan_id": null,
+        "type": "ai_proposal_action",
+        "scope": "classification",
+        "before_state": null,
+        "after_state": null,
+        "reason": "accept: proposal d21f5a81-b482-421f-aed6-3a32673e6119",
+        "comparisons": [],
+        "created_at": "2026-10-29T17:22:19.945+00:00",
+        "field_name": "email",
+        "source_name": "Synthetic live AI learning source"
+      },
+      {
+        "id": 9,
+        "field_id": "ffc91c14-8302-53ef-88c4-560026ea02dc",
+        "review_id": "37d71ced-1549-4b6c-8e2d-8f7a5fcfa6aa",
+        "scan_id": null,
+        "type": "ai_applied",
+        "scope": "classification",
+        "before_state": null,
+        "after_state": null,
+        "reason": "Proposal d21f5a81-b482-421f-aed6-3a32673e6119 applied (user-approved); model gemini-3.1-flash-lite",
+        "comparisons": [],
+        "created_at": "2026-10-29T17:22:19.945+00:00",
+        "field_name": "email",
+        "source_name": "Synthetic live AI learning source"
+      },
+      {
+        "id": 8,
+        "field_id": "ffc91c14-8302-53ef-88c4-560026ea02dc",
+        "review_id": "37d71ced-1549-4b6c-8e2d-8f7a5fcfa6aa",
+        "scan_id": "d6a11a2e-09c3-43b7-bd1c-6d461b3c5d0b",
+        "type": "review_saved",
+        "scope": "classification",
+        "before_state": null,
+        "after_state": "current",
+        "reason": "Evidence supports a consistent Contact classification based on email format and header hints.",
+        "comparisons": [],
+        "created_at": "2026-10-29T17:22:19.944+00:00",
+        "field_name": "email",
+        "source_name": "Synthetic live AI learning source"
+      },
+      {
+        "id": 7,
+        "field_id": "7e039765-23e7-541c-b825-8ac6495572ca",
+        "review_id": null,
+        "scan_id": null,
+        "type": "ai_proposal_action",
+        "scope": "metadata",
+        "before_state": null,
+        "after_state": null,
+        "reason": "reject: proposal dc231323-b2bb-4c0a-ae10-c8d59d271e9f",
+        "comparisons": [],
+        "created_at": "2026-10-29T17:22:19.476+00:00",
+        "field_name": "employee_id",
+        "source_name": "Synthetic live AI learning source"
+      },
+      {
+        "id": 6,
+        "field_id": "ffc91c14-8302-53ef-88c4-560026ea02dc",
+        "review_id": null,
+        "scan_id": null,
+        "type": "ai_proposal_action",
+        "scope": "metadata",
+        "before_state": null,
+        "after_state": null,
+        "reason": "accept: proposal f2723ed6-ac52-4c1f-b2db-477c7dcd1e03",
+        "comparisons": [],
+        "created_at": "2026-10-29T17:22:19.100+00:00",
+        "field_name": "email",
+        "source_name": "Synthetic live AI learning source"
+      },
+      {
+        "id": 5,
+        "field_id": "ffc91c14-8302-53ef-88c4-560026ea02dc",
+        "review_id": "d99b05c3-6806-41af-bcf5-4c61d74a3702",
+        "scan_id": null,
+        "type": "ai_applied",
+        "scope": "metadata",
+        "before_state": null,
+        "after_state": null,
+        "reason": "Proposal f2723ed6-ac52-4c1f-b2db-477c7dcd1e03 applied (user-approved); model gemini-3.1-flash-lite",
+        "comparisons": [],
+        "created_at": "2026-10-29T17:22:19.100+00:00",
+        "field_name": "email",
+        "source_name": "Synthetic live AI learning source"
+      },
+      {
+        "id": 4,
+        "field_id": "ffc91c14-8302-53ef-88c4-560026ea02dc",
+        "review_id": "d99b05c3-6806-41af-bcf5-4c61d74a3702",
+        "scan_id": "d6a11a2e-09c3-43b7-bd1c-6d461b3c5d0b",
+        "type": "review_saved",
+        "scope": "metadata",
+        "before_state": null,
+        "after_state": "current",
+        "reason": "Required metadata documentation is entirely missing.",
+        "comparisons": [],
+        "created_at": "2026-10-29T17:22:19.100+00:00",
+        "field_name": "email",
+        "source_name": "Synthetic live AI learning source"
+      },
+      {
+        "id": 3,
+        "field_id": null,
+        "review_id": null,
+        "scan_id": null,
+        "type": "ai_completed",
+        "scope": null,
+        "before_state": null,
+        "after_state": null,
+        "reason": "Review run 9861ee78-5c94-412b-837b-2e0b5302d63c completed; proposals and report available.",
+        "comparisons": [],
+        "created_at": "2026-10-29T17:22:14.903+00:00",
+        "field_name": null,
+        "source_name": null
+      },
+      {
+        "id": 2,
+        "field_id": null,
+        "review_id": null,
+        "scan_id": null,
+        "type": "ai_started",
+        "scope": null,
+        "before_state": null,
+        "after_state": null,
+        "reason": "gemini-3.1-flash-lite: automatic review of 3 fields; prompt privacy-review-v1",
+        "comparisons": [],
+        "created_at": "2026-10-29T17:22:08.528+00:00",
+        "field_name": null,
+        "source_name": null
+      },
+      {
+        "id": 1,
+        "field_id": null,
+        "review_id": null,
+        "scan_id": "d6a11a2e-09c3-43b7-bd1c-6d461b3c5d0b",
+        "type": "scan_committed",
+        "scope": null,
+        "before_state": null,
+        "after_state": null,
+        "reason": "Scanned 20 rows and 3 fields",
+        "comparisons": [],
+        "created_at": "2026-10-29T17:22:06.366+00:00",
+        "field_name": null,
+        "source_name": null
+      }
+    ],
+    "policy_id": "72a1cecd0026f75612ef6f3835e5c95fceeebc5ca9d786ba69f4f95baf3991b9",
+    "config": {
+      "acceptance": 0.25,
+      "checklist": [
+        "purpose",
+        "retention",
+        "retention_start_trigger",
+        "owner",
+        "provenance"
+      ],
+      "materiality": {
+        "minimum_denominator": 10,
+        "rate_delta": 0.1
+      },
+      "near_tie": 0.12,
+      "rules": [
+        {
+          "check": "",
+          "enabled": true,
+          "family": "Contact",
+          "headers": "email|contact",
+          "id": "email",
+          "label": "Email address",
+          "normalizer": "trim",
+          "note": "Format evidence only",
+          "pattern": "[^@\\s]+@[^@\\s]+\\.[^@\\s]+"
+        },
+        {
+          "check": "",
+          "enabled": true,
+          "family": "Contact",
+          "headers": "phone|mobile|contact",
+          "id": "phone_in",
+          "label": "Indian mobile number",
+          "normalizer": "phone",
+          "note": "Format evidence only",
+          "pattern": "(?:\\+?91)?[6-9]\\d{9}"
+        },
+        {
+          "check": "",
+          "enabled": true,
+          "family": "Identity",
+          "headers": "(^|_)(id|ref)(_|$)|loyalty",
+          "id": "internal_id",
+          "label": "Internal identifier",
+          "normalizer": "trim",
+          "note": "Internal IDs require person or account context",
+          "pattern": "[A-Z]{2,5}[-_]\\d{4,12}"
+        },
+        {
+          "check": "",
+          "enabled": true,
+          "family": "Identity",
+          "headers": "(^|_)(name|customer_name|employee_name|full_name)(_|$)",
+          "id": "person_name",
+          "label": "Person-name context",
+          "normalizer": "trim",
+          "note": "Header context alone; confirm the field meaning",
+          "pattern": ""
+        },
+        {
+          "check": "",
+          "enabled": true,
+          "family": "Location",
+          "headers": "pin_code|postal|postcode|pincode",
+          "id": "postal_in",
+          "label": "Indian postal code",
+          "normalizer": "trim",
+          "note": "Six digits can also represent an internal code",
+          "pattern": "[1-9]\\d{5}"
+        },
+        {
+          "check": "",
+          "enabled": true,
+          "family": "Location",
+          "headers": "address|street|city",
+          "id": "address",
+          "label": "Address context",
+          "normalizer": "trim",
+          "note": "Format evidence only",
+          "pattern": ""
+        },
+        {
+          "check": "verhoeff",
+          "enabled": true,
+          "family": "Official ID",
+          "headers": "aadhaar|aadhar",
+          "id": "aadhaar",
+          "label": "Aadhaar format + checksum",
+          "normalizer": "digits",
+          "note": "Checksum validity does not prove issuance",
+          "pattern": "[2-9]\\d{11}"
+        },
+        {
+          "check": "",
+          "enabled": true,
+          "family": "Official ID",
+          "headers": "pan",
+          "id": "pan",
+          "label": "PAN format",
+          "normalizer": "upper",
+          "note": "Holder type and person/entity linkage require context",
+          "pattern": "[A-Z]{3}[ABCFGHLJPT][A-Z]\\d{4}[A-Z]"
+        },
+        {
+          "check": "gstin",
+          "enabled": true,
+          "family": "Official ID",
+          "headers": "gstin|gst_number",
+          "id": "gstin",
+          "label": "GSTIN format + checksum",
+          "normalizer": "upper",
+          "note": "Business registration may link to a sole proprietor",
+          "pattern": "[0-3]\\d[A-Z]{5}\\d{4}[A-Z][1-9A-Z]Z[0-9A-Z]"
+        },
+        {
+          "check": "birth_date",
+          "enabled": true,
+          "family": "Demographic",
+          "headers": "(^|_)(dob|birth_date|date_of_birth)(_|$)",
+          "id": "birth_date",
+          "label": "Date of birth",
+          "normalizer": "trim",
+          "note": "Only explicit birth-date context supports this interpretation",
+          "pattern": "\\d{4}-\\d{2}-\\d{2}"
+        },
+        {
+          "check": "age",
+          "enabled": true,
+          "family": "Demographic",
+          "headers": "(^|_)age(_|$)",
+          "id": "age",
+          "label": "Age",
+          "normalizer": "trim",
+          "note": "Requires explicit age context",
+          "pattern": "\\d{1,3}"
+        }
+      ],
+      "weights": {
+        "declared_context": 0.3,
+        "name_hint": 0.2,
+        "value_format": 0.5
+      }
+    },
+    "evaluation": null,
+    "totals": {
+      "fields": 3,
+      "sources": 1,
+      "reopened": 1,
+      "current": 1,
+      "gaps": 15
+    }
+  },
+  "final_run": {
+    "id": "9861ee78-5c94-412b-837b-2e0b5302d63c",
+    "status": "completed",
+    "processed": 3,
+    "error": "",
+    "created_at": "2026-10-29T17:22:08.528+00:00",
+    "options": {
+      "confidence_threshold": 0.95,
+      "max_fields": 3,
+      "mode": "automatic",
+      "scopes": [
+        "classification",
+        "metadata"
+      ],
+      "share_field_names": false,
+      "source_id": "7a7629c0-81e4-4799-877a-2492097ee976"
+    },
+    "total": 3,
+    "summaries": [
+      "Reviewed three fields for classification and metadata completeness. Field 1 exhibits mixed evidence (email and phone), while fields 2 and 3 show consistent patterns but all fields lack mandatory metadata declarations."
+    ],
+    "usage": {
+      "candidatesTokenCount": 894,
+      "promptTokenCount": 1286,
+      "totalTokenCount": 2180
+    },
+    "model": "gemini-3.1-flash-lite",
+    "proposals": [
+      {
+        "id": "bddd37fd-97c8-4d67-8db5-fdc2c0d8a530",
+        "run_id": "9861ee78-5c94-412b-837b-2e0b5302d63c",
+        "field_id": "6e03cee0-64e3-5523-afdb-a8e65c66ddb1",
+        "scope": "classification",
+        "payload": {
+          "decision": {
+            "confidence": 0.45,
+            "evidence_ids": [
+              "ev:value:email",
+              "ev:header:email",
+              "ev:value:phone_in",
+              "ev:header:phone_in"
+            ],
+            "field_id": "6e03cee0-64e3-5523-afdb-a8e65c66ddb1",
+            "outcome": "unresolved",
+            "rationale": "Evidence for both email and phone numbers creates conflicting classification signals.",
+            "scope": "classification",
+            "selected_class": null,
+            "suggestion": "Split this field into separate columns for email and phone data.",
+            "validation_notes": []
+          },
+          "expected_review_id": null,
+          "model": "gemini-3.1-flash-lite",
+          "prompt_version": "privacy-review-v1",
+          "token": {
+            "expected_declaration_id": null,
+            "expected_policy_id": "72a1cecd0026f75612ef6f3835e5c95fceeebc5ca9d786ba69f4f95baf3991b9",
+            "expected_snapshot_id": "989af815-8e6b-4215-a6a2-477ff3e75018"
+          }
+        },
+        "status": "pending",
+        "review_id": null,
+        "created_at": "2026-10-29T17:22:13.779+00:00",
+        "field": "contact_value"
+      },
+      {
+        "id": "99055332-50ef-4ecb-83ce-63f57e4855bf",
+        "run_id": "9861ee78-5c94-412b-837b-2e0b5302d63c",
+        "field_id": "6e03cee0-64e3-5523-afdb-a8e65c66ddb1",
+        "scope": "metadata",
+        "payload": {
+          "decision": {
+            "confidence": 1,
+            "evidence_ids": [],
+            "field_id": "6e03cee0-64e3-5523-afdb-a8e65c66ddb1",
+            "outcome": "unresolved",
+            "rationale": "All required metadata fields (purpose, retention, etc.) are missing.",
+            "scope": "metadata",
+            "selected_class": null,
+            "suggestion": "Define and document the purpose, retention, and ownership policies.",
+            "validation_notes": []
+          },
+          "expected_review_id": null,
+          "model": "gemini-3.1-flash-lite",
+          "prompt_version": "privacy-review-v1",
+          "token": {
+            "expected_declaration_id": null,
+            "expected_policy_id": "72a1cecd0026f75612ef6f3835e5c95fceeebc5ca9d786ba69f4f95baf3991b9",
+            "expected_snapshot_id": "989af815-8e6b-4215-a6a2-477ff3e75018"
+          }
+        },
+        "status": "pending",
+        "review_id": null,
+        "created_at": "2026-10-29T17:22:13.779+00:00",
+        "field": "contact_value"
+      },
+      {
+        "id": "d21f5a81-b482-421f-aed6-3a32673e6119",
+        "run_id": "9861ee78-5c94-412b-837b-2e0b5302d63c",
+        "field_id": "ffc91c14-8302-53ef-88c4-560026ea02dc",
+        "scope": "classification",
+        "payload": {
+          "decision": {
+            "confidence": 0.7,
+            "evidence_ids": [
+              "ev:value:email",
+              "ev:header:email"
+            ],
+            "field_id": "ffc91c14-8302-53ef-88c4-560026ea02dc",
+            "outcome": "clear",
+            "rationale": "Evidence supports a consistent Contact classification based on email format and header hints.",
+            "scope": "classification",
+            "selected_class": "Contact",
+            "suggestion": "Proceed with Contact classification.",
+            "validation_notes": []
+          },
+          "expected_review_id": null,
+          "model": "gemini-3.1-flash-lite",
+          "prompt_version": "privacy-review-v1",
+          "token": {
+            "expected_declaration_id": null,
+            "expected_policy_id": "72a1cecd0026f75612ef6f3835e5c95fceeebc5ca9d786ba69f4f95baf3991b9",
+            "expected_snapshot_id": "f9c591f1-184c-4cf7-be8c-4d701227bde5"
+          }
+        },
+        "status": "revoked",
+        "review_id": "37d71ced-1549-4b6c-8e2d-8f7a5fcfa6aa",
+        "created_at": "2026-10-29T17:22:13.779+00:00",
+        "field": "email",
+        "review_state": "superseded"
+      },
+      {
+        "id": "f2723ed6-ac52-4c1f-b2db-477c7dcd1e03",
+        "run_id": "9861ee78-5c94-412b-837b-2e0b5302d63c",
+        "field_id": "ffc91c14-8302-53ef-88c4-560026ea02dc",
+        "scope": "metadata",
+        "payload": {
+          "decision": {
+            "confidence": 1,
+            "evidence_ids": [],
+            "field_id": "ffc91c14-8302-53ef-88c4-560026ea02dc",
+            "outcome": "unresolved",
+            "rationale": "Required metadata documentation is entirely missing.",
+            "scope": "metadata",
+            "selected_class": null,
+            "suggestion": "Declare the purpose, retention, and ownership for this field.",
+            "validation_notes": []
+          },
+          "expected_review_id": null,
+          "model": "gemini-3.1-flash-lite",
+          "prompt_version": "privacy-review-v1",
+          "token": {
+            "expected_declaration_id": null,
+            "expected_policy_id": "72a1cecd0026f75612ef6f3835e5c95fceeebc5ca9d786ba69f4f95baf3991b9",
+            "expected_snapshot_id": "f9c591f1-184c-4cf7-be8c-4d701227bde5"
+          }
+        },
+        "status": "applied",
+        "review_id": "d99b05c3-6806-41af-bcf5-4c61d74a3702",
+        "created_at": "2026-10-29T17:22:13.779+00:00",
+        "field": "email",
+        "review_state": "current"
+      },
+      {
+        "id": "a3048cbf-9d3f-4f18-b557-ae0bfaf8f7ed",
+        "run_id": "9861ee78-5c94-412b-837b-2e0b5302d63c",
+        "field_id": "7e039765-23e7-541c-b825-8ac6495572ca",
+        "scope": "classification",
+        "payload": {
+          "decision": {
+            "confidence": 0.7,
+            "evidence_ids": [
+              "ev:value:internal_id",
+              "ev:header:internal_id"
+            ],
+            "field_id": "7e039765-23e7-541c-b825-8ac6495572ca",
+            "outcome": "clear",
+            "rationale": "Internal ID patterns and naming conventions strongly support Identity classification.",
+            "scope": "classification",
+            "selected_class": "Identity",
+            "suggestion": "Maintain Identity classification.",
+            "validation_notes": []
+          },
+          "expected_review_id": null,
+          "model": "gemini-3.1-flash-lite",
+          "prompt_version": "privacy-review-v1",
+          "token": {
+            "expected_declaration_id": null,
+            "expected_policy_id": "72a1cecd0026f75612ef6f3835e5c95fceeebc5ca9d786ba69f4f95baf3991b9",
+            "expected_snapshot_id": "e94c8296-7b8e-49a9-a2e6-d57b705a4914"
+          }
+        },
+        "status": "applied",
+        "review_id": "a23095b4-138b-473e-b58c-e29b22c7ffaa",
+        "created_at": "2026-10-29T17:22:13.779+00:00",
+        "field": "employee_id",
+        "review_state": "reopened"
+      },
+      {
+        "id": "dc231323-b2bb-4c0a-ae10-c8d59d271e9f",
+        "run_id": "9861ee78-5c94-412b-837b-2e0b5302d63c",
+        "field_id": "7e039765-23e7-541c-b825-8ac6495572ca",
+        "scope": "metadata",
+        "payload": {
+          "decision": {
+            "confidence": 1,
+            "evidence_ids": [],
+            "field_id": "7e039765-23e7-541c-b825-8ac6495572ca",
+            "outcome": "unresolved",
+            "rationale": "Mandatory metadata fields are not declared.",
+            "scope": "metadata",
+            "selected_class": null,
+            "suggestion": "Populate metadata fields for internal ID governance.",
+            "validation_notes": []
+          },
+          "expected_review_id": null,
+          "model": "gemini-3.1-flash-lite",
+          "prompt_version": "privacy-review-v1",
+          "token": {
+            "expected_declaration_id": null,
+            "expected_policy_id": "72a1cecd0026f75612ef6f3835e5c95fceeebc5ca9d786ba69f4f95baf3991b9",
+            "expected_snapshot_id": "e94c8296-7b8e-49a9-a2e6-d57b705a4914"
+          }
+        },
+        "status": "rejected",
+        "review_id": null,
+        "created_at": "2026-10-29T17:22:13.779+00:00",
+        "field": "employee_id"
+      }
+    ]
+  },
+  "outcome": "completed_and_actions_verified",
+  "checks": {
+    "real_provider_completed": true,
+    "expected_six_proposals": true,
+    "missing_metadata_unresolved": true,
+    "mixed_classification_unresolved": true,
+    "accepted_unresolved_did_not_fill_metadata": true,
+    "rejection_verified": true,
+    "revocation_verified": true,
+    "ai_origin_review_reopened_on_changed_values": true,
+    "raw_values_absent_from_saved_model_input": true,
+    "field_names_not_shared": true,
+    "browser_errors": 0
+  }
+}

@@ -130,6 +130,46 @@ def checksum(value: str, kind: str) -> bool:
     return True
 
 
+def score_evidence(evidence: list[dict], scoring: dict) -> dict:
+    """One scoring path for scans, baselines and read-only sensitivity experiments."""
+    candidates = []
+    for family in CLASSES:
+        grouped = {g: max([e["strength"] for e in evidence if e["candidate_class"] == family and e["group"] == g] or [0]) for g in scoring["weights"]}
+        contributions = {g: round(v * scoring["weights"][g], 6) for g, v in grouped.items()}
+        score = round(sum(contributions.values()), 6)
+        if score:
+            candidates.append(dict(label=family, score=score, contributions=contributions))
+    candidates.sort(key=lambda c: (-c["score"], c["label"]))
+    suggested = candidates[0]["label"] if candidates and candidates[0]["score"] >= scoring["acceptance"] else None
+    ambiguous = len(candidates) > 1 and candidates[0]["score"] - candidates[1]["score"] <= scoring["near_tie"]
+    return dict(candidates=candidates, suggested=suggested, ambiguous=ambiguous)
+
+
+def sensitivity(snapshot: dict, disabled_groups: list[str], without_checksums=False) -> dict:
+    """Recalculate a frozen snapshot using aggregates; never read source values or write state."""
+    if set(disabled_groups) - {"name_hint", "value_format", "declared_context"}:
+        raise ValueError("Unknown evidence group")
+    evidence = []
+    for original in snapshot["evidence"]:
+        if original["group"] in disabled_groups:
+            continue
+        item = dict(original)
+        if without_checksums and item.get("validation_check") in ("verhoeff", "gstin"):
+            n = item["sampled_non_null"]
+            item.update(matches=item["format_matches"], pass_rate=item["format_matches"] / n if n else 0,
+                        strength=item["format_matches"] / n if n else 0)
+        evidence.append(item)
+    before = score_evidence(snapshot["evidence"], snapshot["scoring"])
+    after = score_evidence(evidence, snapshot["scoring"])
+    scores = lambda result: {c["label"]: c["score"] for c in result["candidates"]}
+    a, b = scores(before), scores(after)
+    return dict(before=before, after=after, disabled_groups=sorted(set(disabled_groups)), without_checksums=without_checksums,
+                changed=before != after, deltas=[dict(label=label, before=a.get(label, 0), after=b.get(label, 0),
+                    delta=round(b.get(label, 0)-a.get(label, 0), 6)) for label in CLASSES if label in a or label in b],
+                complete_validation_evidence=all("validation_check" in e for e in snapshot["evidence"] if e["group"] == "value_format"),
+                explanation="Weights and thresholds stay frozen; removed signals are not redistributed. This experiment changes no saved findings or reviews.")
+
+
 def analyze(name: str, values: list[Any], config: dict, declaration: dict | None = None) -> dict:
     nonnull = [str(v).strip() for v in values if v is not None and str(v).strip()]
     n = len(nonnull)
@@ -154,11 +194,11 @@ def analyze(name: str, values: list[Any], config: dict, declaration: dict | None
         revision = digest(semantic_rule)
         if counts or header:
             relevant[r["id"]] = revision
-        if counts:
+        if counts or format_count:
             evidence.append(dict(evidence_id=f"ev:value:{r['id']}", detector_id=r["id"], detector_revision=revision,
                                  label=r["label"], candidate_class=r["family"], group="value_format", matches=counts,
                                  format_matches=format_count, sampled_non_null=n, pass_rate=round(counts/n, 6),
-                                 strength=round(counts/n, 6), normalization_policy=r["normalizer"], notes=[r["note"]]))
+                                 strength=round(counts/n, 6), normalization_policy=r["normalizer"], validation_check=r["check"], notes=[r["note"]]))
         if header and n:
             evidence.append(dict(evidence_id=f"ev:header:{r['id']}", detector_id=r["id"], detector_revision=revision,
                                  label=r["label"], candidate_class=r["family"], group="name_hint", strength=1.0,
@@ -168,17 +208,9 @@ def analyze(name: str, values: list[Any], config: dict, declaration: dict | None
         evidence.append(dict(evidence_id="ev:declared:meaning", detector_id="declared_meaning", detector_revision=digest(meaning),
                              label="Declared field meaning", candidate_class=meaning, group="declared_context", strength=1.0,
                              notes=["Explicit human declaration"]))
-    candidates = []
-    for family in CLASSES:
-        grouped = {g: max([e["strength"] for e in evidence if e["candidate_class"] == family and e["group"] == g] or [0]) for g in config["weights"]}
-        contributions = {g: round(v * config["weights"][g], 6) for g, v in grouped.items()}
-        score = round(sum(contributions.values()), 6)
-        if score:
-            candidates.append(dict(label=family, score=score, contributions=contributions))
-    candidates.sort(key=lambda c: (-c["score"], c["label"]))
-    suggested = candidates[0]["label"] if candidates and candidates[0]["score"] >= config["acceptance"] else None
-    ambiguous = len(candidates) > 1 and candidates[0]["score"] - candidates[1]["score"] <= config["near_tie"]
-    value_evidence = [e for e in evidence if e["group"] == "value_format"]
+    scored = score_evidence(evidence, config)
+    suggested, ambiguous, candidates = scored["suggested"], scored["ambiguous"], scored["candidates"]
+    value_evidence = [e for e in evidence if e["group"] == "value_format" and e["matches"]]
     mixed = len([e for e in value_evidence if e["matches"] < n]) > 1
     shapes = Counter("numeric" if re.fullmatch(r"\d+", v) else "alphabetic" if re.fullmatch(r"[\p{L} ]+", v) else "mixed" for v in nonnull)
     lengths = [len(v) for v in nonnull]

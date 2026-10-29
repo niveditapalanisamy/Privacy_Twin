@@ -4,6 +4,7 @@ import io
 import json
 import sqlite3
 import uuid
+from contextlib import nullcontext
 from pathlib import Path
 
 from .adapters import MAX_BYTES, read_source
@@ -315,8 +316,11 @@ class Service:
             event(c, None, "policy_saved", "Updated configuration. Rescan sources to apply detection changes.")
         return {"policy_id": policy_id}
 
-    def export(self, kind):
-        with self.store.connection() as c:
+    def export(self, kind, c=None):
+        with self.store.connection() if c is None else nullcontext(c) as c:
+            if kind == "bundle":
+                from .package import evidence_package
+                return evidence_package(self, c)
             policy_id, config = self.store.config(c)
             inventory = self.inventory(c, config)
             if kind in ("inventory", "gaps"):

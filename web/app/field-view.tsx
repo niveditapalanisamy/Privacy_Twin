@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import EvidenceExperiment from "./evidence-experiment";
 import { useDraftGuard } from "./use-draft-guard";
 import {
   ArrowLeft,
@@ -295,6 +296,11 @@ export default function DetailView({
               </div>
             </Panel>
           </div>
+          <EvidenceExperiment
+            key={snapshot.id}
+            fieldId={detail.field.id}
+            snapshotId={snapshot.id}
+          />
           <Panel
             title="Snapshot comparison"
             action={<GitCompareArrows size={20} />}
